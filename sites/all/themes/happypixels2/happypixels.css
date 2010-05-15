@@ -1,0 +1,516 @@
+
+/** 
+ *     Global
+ */
+/* This is redeclared so that it is processed by the color module */
+
+a:link, a:visited {
+  color: #87AC0E;
+}
+
+#tabs-wrapper
+{
+  border: none;
+  margin-bottom: 0px;
+}
+
+ul.secondary {
+  border-bottom: 1px solid #eee;
+  margin: 0 0 1em;
+}
+
+tr.odd, tr.info {
+  background-color: #A1FFA1;
+}
+
+tr.even, tr.odd, tbody th {
+  border-color: #78FF78;
+}
+
+.node, #comments {
+  margin: 0;
+}
+
+fieldset {
+  background-image: none
+}
+
+#header-region {
+  min-height: 0;
+}
+
+#wrapper {
+  background: url('images/body-top.png') repeat-x;
+}
+
+body {
+  background: url(images/body.png) repeat 50% 0;
+}
+
+
+ul.primary{
+  margin-left: 200px;
+  margin-top: -5px;
+  margin-bottom: 5px;
+}
+
+ul.primary li a, ul.primary li.active a, ul.primary li a:hover, ul.primary li a:visited, ul.secondary li a, ul.secondary li.active a, ul.secondary li a:hover, ul.secondary li a:visited {
+  margin-tp: -5px;
+  border-color: #eee;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  color: #000000;
+}
+
+ul.primary li.active a, ul.primary li.active a:link, ul.primary li.active a:visited, ul.primary li a:hover, ul.secondary li.active a, ul.secondary li.active a:link, ul.secondary li.active a:visited, ul.secondary li a:hover {
+  border-color: #ccc;
+  background-image: none;
+  color: #000000;
+}
+
+
+
+
+
+
+
+/** 
+ * 	Container
+ */
+
+#wrapper #container {
+  width: 970px;
+  padding: 0px;
+  background: url(images/container.png) repeat-y top left;
+}
+
+#wrapper #container-top {
+  background: url(images/header.png) no-repeat;
+}
+
+#wrapper #container-bottom {
+  padding: 15px;
+  background: url(images/footer.png) no-repeat bottom left;
+}
+
+
+
+
+/** 
+ * 	Header
+ */
+
+#wrapper #container #header {
+  height: 195px;
+}
+
+#wrapper #container #header #logo-floater {
+}
+
+#wrapper #container #header h1 {
+  margin-top : 8px;
+  height: 195px;
+  width : 940px;
+  background: url(images/logo.png) no-repeat top left;
+}
+
+#wrapper #container #header h1 span{
+  display: none;
+}
+
+#wrapper #container #header h2 {
+  text-align: right;
+  padding-right: 8px;
+  font-size: 12px;
+  color: #027AC6;
+  clear: both;
+}
+
+#wrapper #container #header h1 a:link, #wrapper #container #header h1 a:visited {
+  line-height: normal;
+  color: #027AC6;
+  float: left;
+  padding: 8px;
+  border-bottom: solid 1px #eee;
+  margin-bottom: -1px;
+  text-shadow: none;
+}
+
+#wrapper #container #header h1 span {
+  font-weight: normal;
+}
+
+
+
+/** 
+ * 	Breadcrumb
+ */
+
+#wrapper #container .breadcrumb {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  padding: .5em;
+  margin-bottom: -10px;
+}
+
+#wrapper #container .breadcrumb, 
+#wrapper #container .breadcrumb a {
+  color: #A6D115;
+}
+
+
+
+
+/* Enleve les commentaire sur auteur et date de pubmication */
+span.submitted
+{
+	display: none;
+}
+
+
+
+
+/** 
+ * 	Sidebars
+ */
+#wrapper #container .sidebar {
+  width: 200px;
+  margin: 0px 0;
+}
+#wrapper #container .sidebar h2 {
+  text-align: center;
+}
+
+#wrapper #container #sidebar-right {
+  margin-left: 10px;
+  margin-top: 8px;
+}
+
+#sidebar-right .block {
+  padding: 0px 0px 0px 0px;
+}
+
+
+
+
+/**
+ * 	Content
+ */
+
+#wrapper #container #center {
+  background: url(images/content-1s.png) repeat-y top left;
+  width: 729px;
+  margin-top: 15px;
+}
+#wrapper #container #center #squeeze {
+  background: url(images/content-1s-top.png) no-repeat top left;
+}
+#wrapper #container #center #squeeze2 {
+  background: url(images/content-1s-bottom.png) no-repeat bottom left;
+  padding: 20px 10px;
+  min-height: 150px;
+}
+
+#wrapper #container #center #squeeze2 h2 {
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+#wrapper #container #center #squeeze2 div.node {
+  border-top: 1px solid #eee;
+  padding: 10px 15px 0px 15px;
+}
+
+
+
+/** 
+ * 	Newsletter
+ */
+
+#wrapper #container #newsletter {
+  background: url(images/newsletter.png) no-repeat;
+  width: 180px;
+  height: 150px;
+  padding: 10px;
+}
+
+#wrapper #container #newsletter H2 {
+  float: left;
+  width: 180px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#wrapper #container #newsletter label {
+  float: left;
+  clear: left;
+  width: 180px;
+  font-weight: normal;
+  text-align: left;
+}
+
+#wrapper #container #newsletter input.newsletter {
+  float: left;
+  clear: left;
+  width: 130px;
+  height: 17px;
+  background: #FFFFFF;
+  padding: 0px;
+  margin-top: 1px;
+  border: solid 1px #000000;
+}
+
+#wrapper #container #newsletter input.button {
+  float: left;
+  margin-left: 5px;
+}
+
+#wrapper #container #newsletter a {
+  float: left;
+  clear: left;
+  color: #000000;
+  margin-top: 10px;
+}
+
+
+
+
+
+
+/** 
+ * 	Connexion
+ */
+
+#wrapper #container div#block-user-0 {
+  background: url(images/connexion.png) no-repeat;
+  width: 180px;
+  height: 250px;
+  padding: 10px;
+  margin: 0px;
+  margin-top: -30px;
+}
+
+#wrapper #container div#block-user-0 h2 {
+  float: left;
+  margin-top: 4px;
+  margin-left: 0px;
+  margin-bottom: 5px;
+}
+
+#wrapper #container #block-user-0 label {
+  float: left;
+  clear: left;
+  width: 180px;
+  font-weight: normal;
+  text-align: left;
+  margin-top: 5px;
+}
+
+#wrapper #container #block-user-0 input#edit-name,
+#wrapper #container #block-user-0 input#edit-pass {
+  float: left;
+  clear: left;
+  width: 150px;
+  height: 17px;
+  background: #FFFFFF;
+  padding: 0px;
+  margin-top: 1px;
+  border: solid 1px #000000;
+}
+
+#wrapper #container #block-user-0 input#edit-submit {
+  margin-top: 15px;
+}
+
+#wrapper #container #block-user-0 li {
+  list-style-image: none;
+  background-image: none;
+}
+
+#wrapper #container #block-user-0 a {
+  float: left;
+  clear: left;
+  color: #000000;
+  margin-top: 9px;
+  margin-left: -19px;
+  margin-right: 10px;
+
+}
+
+
+
+
+
+
+
+/** 
+ * 	Menu bas / Footer
+ */
+
+#wrapper #container #menuBas 
+{
+  width: 400px;
+  margin-left: 180px;
+  height: 10px;
+}
+
+#wrapper #container #menuBas  ul li
+{
+  float: left;
+  padding: 0px 0px 0px 0px;
+  list-style-image: none;
+  background-image: none;
+}
+
+#wrapper #container #menuBas  ul li a:link, 
+#wrapper #container #menuBas  ul li a:visited
+{
+  background-image: none;
+  color: #A6D115;
+  margin: 0px 0px 0px 0px;
+  height: 10px;
+  padding: 3px 7px 0px 7px;
+  float: left;
+  list-style-image: none;
+	
+}
+#wrapper #container #menuBas  ul li a:hover,
+#wrapper #container #menuBas  ul li a:active
+{
+  color: #A6D115;
+  background-image: none;
+  text-decoration: underline;
+  list-style-image: none;
+}
+
+#wrapper #container #footer {
+  min-height: 5px;
+  margin: 0px;
+}
+
+
+/** 
+ * 	Menu
+ */
+
+#wrapper #container #menu 
+{
+  background: transparent url(images/menu.png) no-repeat;
+  width: 940px;
+  height: 29px;
+  margin-left: 0px;
+}
+
+#wrapper #container #menu div.content{
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+}
+
+#wrapper #container #menu  h2
+{
+  display: none;
+}
+
+#wrapper #container #menu  ul.menu
+{
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+}
+
+#wrapper #container #menu  ul.menu li
+{
+  float: left;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+  list-style-image: none;
+  background-image: none;
+}
+
+#wrapper #container #menu  ul.menu li a:link, 
+#wrapper #container #menu  ul.menu li a:visited
+{
+  background-image: none;
+  border-right: solid #FFFFFF 1px;
+  color: #FFFFFF;
+  margin: 0px 0px 0px 0px;
+  height: 29px;
+  padding: 4px 7px 0px 7px;
+  float: left;
+  list-style-image: none;
+
+	
+}
+#wrapper #container #menu  ul.menu li a:hover,
+#wrapper #container #menu  ul.menu li a:active
+{
+  color: #FFFFFF;
+  background-image: none;
+  text-decoration: underline;
+  list-style-image: none;
+}
+
+#wrapper #container #menu ul.menu ul.menu
+{
+  position: absolute;  
+  z-index: 10;
+  width: 0px;
+
+  margin-top: 29px;
+
+}
+
+
+#wrapper #container #menu  ul.menu ul.menu li
+{
+  background: #000000;
+  border-right: none;
+  width: 170px;
+  margin: 0px;
+}
+
+#wrapper #container #menu  ul.menu ul.menu li a
+{
+  width: 170px;
+  background: #A6D114;
+  border-bottom: 1px #FFFFFF solid;
+  border-right: none;
+
+}
+
+#wrapper #container #menu ul.menu ul.menu ul.menu
+{
+   display: none;
+}
+
+
+
+
+/** 
+ * 	Accueil
+ */
+
+#wrapper #container #accueil
+{
+  width: 865px;
+  height: 550px;
+  margin-top: 20px;
+  margin-left: 40px;
+}
+
+#wrapper #container #accueil #objet
+{
+  height: 480px;
+}
+
+#wrapper #container #accueil .bouton
+{
+  padding: 20px 40px 20px 40px;
+  margin-top: 1000px;
+  margin-left: 355px;
+  margin-bottom: 30px;
+  color: #000000;
+  font-size: 150%;
+
+}
