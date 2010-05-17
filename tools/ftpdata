@@ -1,0 +1,8 @@
+; A deplacer dans .git/ftpdata avec les bon mots de passe
+; http://wiki.github.com/ezyang/git-ftp/
+[ftp]
+username=
+password=
+hostname=60gp.ovh.net
+remotepath=/www/futuregit
+repository=/var/www/pms
