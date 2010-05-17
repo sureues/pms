@@ -1,0 +1,3 @@
+[submodule "tools/git-ftp"]
+	path = tools/git-ftp
+	url = http://github.com/ezyang/git-ftp.git
