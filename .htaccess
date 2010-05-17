@@ -2,6 +2,8 @@
 # Apache/PHP/Drupal settings:
 #
 
+SetEnv PHP_VER 5
+
 # Protect files and directories from prying eyes.
 <FilesMatch "\.(engine|inc|info|install|make|module|profile|test|po|sh|.*sql|theme|tpl(\.php)?|xtmpl|svn-base)$|^(code-style\.pl|Entries.*|Repository|Root|Tag|Template|all-wcprops|entries|format)$">
   Order allow,deny
