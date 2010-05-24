@@ -1,0 +1,399 @@
+<?php // $Id: postal.module,v 1.24 2009/08/23 21:06:50 jerdavis Exp $
+
+/**
+ * Implementation of hook_menu().
+ */
+function postal_menu() {
+  module_load_include('menu.inc', 'postal', 'includes/postal');
+  return postal_menu_menu();
+}
+
+/**
+ * Implementation of hook_theme().
+ */
+function postal_theme() {
+  module_load_include('theme.inc', 'postal', 'theme/postal');
+  return postal_theme_theme();
+}
+
+/**
+ * Implementation of hook_elements().
+ */
+function postal_elements() {
+  return array(
+    'postal' => array(
+      '#input' => TRUE,
+      '#tree' => TRUE,
+      '#value_callback' => 'postal_element_value',
+      '#process' => array('postal_element_process'),
+      '#columns' => array_keys(postal_database_columns()),
+    ),
+    'postal_general' => array(
+      '#input' => TRUE,
+      '#tree' => TRUE,
+      '#value_callback' => 'postal_element_value',
+      '#process' => array('postal_element_process'),
+      '#columns' => array_keys(postal_database_columns()),
+    ),
+  );
+}
+
+/**
+ * An element #value_callback function for postal elements.
+ */
+function postal_element_value($element, $edit = FALSE) {
+  // Nothing has been posted: simply return the default value.
+  if (!$edit) return $element['#default_value'];
+
+  // Some fields may be hard-coded and not posted by the user: Account for them.
+  foreach (array('type', 'country', 'state') as $key) {
+    if (!isset($edit[$key])) $edit[$key] = $element['#default_value'][$key];
+  }
+
+  // If the element's country has changed, unset subordinate values.
+  if ($edit['country'] != $element['#defalt_value']['country']) {
+    unset($edit['state']);
+  }
+  return $edit;
+}
+
+/**
+ * An element #process callback for postal elements.
+ */
+function postal_element_process($element, $edit, &$form_state, $form) {
+  module_load_include('form.inc', 'postal', 'includes/postal');
+  if (function_exists($func = 'postal_form_process_'. $element['#type'])) {
+    return $func($element, $edit, $form_state, $form);
+  }
+}
+
+/**
+ * Implementation of hook_views_api().
+ */
+function postal_views_api() {
+  return array(
+    'api' => 2,
+    'path' => drupal_get_path('module', 'postal') . '/includes/views',
+  );
+}
+
+/**
+ * API Function: recommended database columns for any table that stores 
+ * addresses.
+ */
+function postal_database_columns() {
+  return array(
+    'type'    => array(
+      'description' => t('The address type (e.g. city, state)'),
+      'type' => 'varchar',
+      'length' => 100,
+      'sortable' => TRUE,
+     ),
+
+    'name'    => array(
+      'description' => t('A user-defined address name'),
+      'type' => 'varchar',
+      'length' => 100,
+      'sortable' => TRUE,
+     ),
+
+    'street1' => array(
+      'description' => t('Street address'),
+      'type' => 'varchar',
+      'length' => 64,
+      'sortable' => FALSE,
+      'views' => array(
+        'filter' => array(
+          'handler' => 'views_handler_filter_string',
+        ),
+       ),
+     ),
+
+    'street2' => array(
+      'description' => t('Street address - additional'),
+      'type' => 'varchar',
+      'length' => 64,
+      'sortable' => FALSE
+    ),
+
+    'zip' => array(
+      'description' => t('Postal code'),
+      'type' => 'varchar', 
+      'length' => 10, 
+      'sortable' => TRUE,
+      'views' => array(
+        'filter' => array(
+          'handler' => 'views_handler_filter_string',
+        ),
+        'argument' => array(
+          'handler' => 'views_handler_argument_string',
+        ),
+      ),
+    ),
+
+    'city' => array(
+      'description' => t('City'),
+      'type' => 'varchar',
+      'length' => 32, 
+      'sortable' => TRUE,
+      'views' => array(
+        'filter' => array(
+          'handler' => 'views_handler_filter_string',
+        ),
+        'argument' => array(
+          'handler' => 'views_handler_argument_string',
+        ),
+      ),
+    ),
+
+    'state'   => array(
+      'description' => t('State/province'),
+      'type' => 'varchar', 
+      'length' => 32, 
+      'sortable' => TRUE,
+      'views' => array(
+        'filter' => array(
+          'handler' => 'postal_views_handler_filter_state',
+          'postal field' => 'state',
+        ),
+        'argument' => array(
+          'handler' => 'postal_views_handler_argument',
+          'postal field' => 'state',
+        ),
+      ),
+    ),
+
+    'country' => array(
+      'description' => t('Country'),
+      'type' => 'varchar', 
+      'length' => 2, 
+      'sortable' => TRUE,
+      'views' => array(
+        'filter' => array(
+          'handler' => 'postal_views_handler_filter_country',
+          'postal field' => 'country',
+        ),
+        'argument' => array(
+          'handler' => 'postal_views_handler_argument',
+          'postal field' => 'country',
+        ),
+      ),
+    ),
+  );
+}
+
+/**
+ * API Function: return an address object, formatted as postal would expect
+ * to find it.
+ */
+function postal_address($address = NULL, $id = NULL, $values = array()) {
+  $fields = array_keys(postal_database_columns());
+
+  if (!$address) {
+    $address = new stdClass();
+  }
+  elseif (is_array($address) && isset($address['#item'])) {
+    $address = $address['#item'];
+  }
+  $address = (object) $address;
+  
+  // If an address granularity is defined, exclude non-pertinent fields.
+  $unset = array();
+  switch ($address->type) {
+    case 'country':
+      $unset = array('street1', 'street2', 'city', 'state', 'zip');
+      break;
+
+    case 'state':
+      $unset = array('street1', 'street2', 'city', 'zip');
+      break;
+
+    case 'city':
+      $unset = array('street1', 'street2', 'zip');
+      break;
+
+    case 'zip':
+      $unset = array('street1', 'street2');
+      break;
+  }
+  
+  $address->empty = TRUE;
+
+  foreach ($fields as $field) {
+    if (in_array($field, $unset) || !array_key_exists($field, $address)) {
+      $address->$field = '';
+    }
+    elseif ($address->$field) $address->empty = FALSE;
+  }
+
+  return $address;
+}
+
+/**
+ * API function: Load information about one or more countries.
+ */
+function postal_country_load($countries = NULL, $scope = NULL, $reset = FALSE) {
+  static $cache = array();
+  if ($reset) $cache = array();
+
+  $result = $fetch = array();
+
+  // If a single value is passed, only return a single result.
+  if (!$countries) {
+    $all = TRUE;
+  }
+  elseif (!is_array($countries)) {
+    $single = TRUE;
+    $countries = array($countries);
+  }
+
+  // Decide whether to pull from our static cache or build a query.
+  if (is_array($countries)) {
+    foreach ($countries as $country) {
+      if (isset($cache[$country])) {
+        $result[$country] = $cache[$country];
+      }
+      else {
+        // Add the country to the result array to preserve ordering.
+        $result[$country] = array();
+        $fetch[] = check_plain($country);
+      }
+    }
+  }
+
+  if ($all || $fetch) {
+    $filter = $fetch ? "AND c.code IN ('". join("', '", $fetch) ."')" : "";
+
+    if ($scope) {
+      $res = db_query("SELECT c.* FROM {postal} c, {postal_admin} a
+        WHERE a.id = c.id
+        AND a.status = 1
+        AND c.type = 'country' $filter ORDER BY a.weight, c.name");
+    }
+    else {
+      $res = db_query("SELECT c.* FROM {postal} c
+        WHERE c.type = 'country' $filter ORDER BY c.name");
+    }
+
+    while ($row = db_fetch_object($res)) {
+      $result[$row->code] = $cache[$row->code] = $row;
+    }
+  }
+
+  if ($single) return current($result);
+  return $result;
+}
+
+/**
+ * API function: return an array of state entries for one or more countries.
+ */
+function postal_country_states($countries = array(), $scope = NULL) {
+  static $cache = array();
+  $result = $fetch = $info = array();
+
+  // If a single value is passed, only return a single result.
+  if (!is_array($countries)) {
+    $single = TRUE;
+    $countries = array($countries);
+  }
+
+  foreach ($countries as $country) {
+    if (isset($cache[$country])) {
+      $result[$country] = $cache[$country];
+    }
+    else {
+      // Add the country to the result array to preserve ordering.
+      $result[$country] = $cache[$country] = array();
+      $fetch[] = check_plain($country);
+    }
+  }
+
+  if ($fetch) {
+    $filter = "AND c.code IN ('". join("', '", $fetch) ."')";
+
+    // If we have received a "scope" argument, filter and weight results
+    // according to the configuration for that scope.
+    if ($scope) {
+      $scope = check_plain($scope);
+      $sql = "SELECT s.*, c.code AS country 
+        FROM {postal} s, {postal} c, {postal_admin} a
+        WHERE a.id = s.id
+        AND a.scope = '$scope'
+        AND s.parent_id = c.id
+        AND s.type = 'state' AND c.type = 'country' $filter
+        AND a.status = 1
+        ORDER BY s.parent_id, a.weight, s.name";
+    }
+
+    // Include all entries.
+    else {
+      $sql = "SELECT s.*, c.code AS country 
+        FROM {postal} s, {postal} c
+        WHERE s.parent_id = c.id
+        AND s.type = 'state' AND c.type = 'country' $filter
+        ORDER BY s.parent_id, s.name";
+    }
+    $res = db_query($sql);
+
+    while ($row = db_fetch_object($res)) {
+      $result[$row->country][$row->code] = $cache[$row->country][$row->code] = $row;
+    }
+
+  }
+
+  if ($single) return current($result);
+  return $result;
+}
+
+/**
+ * API function: Return an array of code => name country names.
+ */
+function postal_country_names($countries = NULL, $scope = NULL) {
+  $names = array();
+  foreach (postal_country_load($countries, $scope) as $country) {
+    $names[$country->code] = $country->name;
+  }
+  return $names;
+}
+
+/**
+ * API function: Return an array of code => name state/province entries
+ * for a given country.
+ */
+function postal_country_state_names($country, $scope = NULL) {
+  $names = array();
+  foreach (postal_country_states($country, $scope) as $state) {
+    $names[$state->code] = $state->name;
+  }
+  return $names;
+}
+
+/**
+ * API function: expand the state and/or country codes in an address object
+ * to their full names, if available.
+ */
+function postal_set_names($address) {
+  if ($address->state) {
+    $names = postal_country_state_names($address->country);
+    if (isset($names[$address->state])) $address->state = $names[$address->state];
+  }
+  if ($address->country && $country = postal_country_load($address->country)) {
+    $address->country = $country->name;
+  }
+  return $address;
+}
+
+/**
+ * Implementation of hook_token_list().
+ */
+function postal_token_list($type = 'all') {
+
+}
+
+/**
+ * Implementation of hook_token_values().
+ */
+function postal_token_values($type, $object = NULL) {
+
+}
+

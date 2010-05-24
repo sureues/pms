@@ -1,0 +1,208 @@
+<?php // $Id: postal_field.module,v 1.9 2009/08/23 21:06:50 jerdavis Exp $
+/*
+  TODO/wishlist:
+   - implement a nicer theme for form, including dropdowns and stuff.
+   - widget settings to show/hide various fields (names, country, etc.)
+   - Add views tables/arguments/filters for field components (zip, street, etc.)
+ */
+
+/**
+ * Implementation of hook_field_info().
+ */
+function postal_field_field_info() {
+  return array(
+    'postal' => array('label' => t('Postal address')),
+    'callbacks' => array(
+      'tables' => CONTENT_CALLBACK_DEFAULT,
+      'arguments' => CONTENT_CALLBACK_DEFAULT,
+    ),
+  );
+}
+
+/**
+ * Implementation of hook_field().
+ */
+function postal_field_field($op, &$node, $field, &$node_field, $teaser, $page) {
+  switch ($op) {
+  }
+}
+
+/**
+ * Implementation of hook_field_settings().
+ */
+function postal_field_field_settings($op, $field) {
+  switch ($op) {
+
+    case 'database columns':
+      return postal_database_columns();
+
+    case 'views data':
+      // CCK will respect the 'views' element returned by the 'database columns'
+      // call above.  However, it discards any custom handlers and uses its own.
+      // The following code reverts this behavior while retaining CCK's
+      // relationships, labels, etc.
+
+      // Start with CCK's defaults for this field.
+      $data = content_views_field_views_data($field);
+
+      // Reset the handlers to the orignal values from the Postal API.
+      $table = content_views_tablename($field);
+      foreach (postal_database_columns() as $name => $info) {
+        if ($views = $info['views']) {
+          $alias = $field['field_name'] .'_'. $name;
+          foreach (array('field', 'filter', 'argument') as $key) {
+            if (isset($views[$key]) && isset($data[$table][$alias][$key])) {
+             $data[$table][$alias][$key] = array_merge($data[$table][$alias][$key], $views[$key]);
+            }
+          }
+        }
+      }
+      return $data;
+  }
+}
+
+/**
+ * Implementation of hook_content_is_empty().
+ */
+function postal_field_content_is_empty($item, $field) {
+  // The postal API already determines whether an address is empty - use that.
+  $address = postal_address($item);
+  return $address->empty;
+}
+
+/**
+ * Implementation of hook_widget_info().
+ */
+function postal_field_widget_info() {
+  return array(
+    'postal_field' => array(
+      'label' => t('Address form'),
+      'field types' => array('postal'),
+      'multiple values' => CONTENT_HANDLE_CORE,
+      'callbacks' => array(
+        'default value' => CONTENT_CALLBACK_DEFAULT,
+      ),
+    ),
+    'postal_general' => array(
+      'label' => t('Address component (state, city or zip)'),
+      'field types' => array('postal'),
+      'multiple values' => CONTENT_HANDLE_CORE,
+      'callbacks' => array(
+        'default value' => CONTENT_CALLBACK_DEFAULT,
+      ),
+    ),
+  );
+}
+
+/**
+ * Implementation of hook_widget_settings().
+ */
+function postal_field_widget_settings($op, $widget) {
+  switch ($op) {
+
+    case 'form':
+      module_load_include('form.inc', 'postal', 'includes/postal');
+
+      // Use the "settings" callbacks from the the postal API.
+      $func = 'postal_form_'. $widget['type'] .'_settings';
+      if (function_exists($func)) {
+        return array('postal' => $func($widget['postal']));
+      }
+      return; 
+
+    case 'save':
+      return array('postal');
+  }
+}
+
+/**
+ * Implementation of hook_widget().
+ */
+function postal_field_widget(&$form, &$form_state, $field, $items, $delta = 0) {
+  $settings = $field['widget']['postal'];
+
+  // We know we're on the "default value" form because it's not fully-baked.
+  // Unset any options that would stand in the way of setting useful defaults.
+  if (!$form['#id']) {
+    $settings = array();
+  }
+
+  $element = array(
+    '#title' => $field['widget']['label'],
+    '#type' => str_replace('_field', '', $field['widget']['type']),
+    '#postal_settings' => $settings,
+    '#default_value' => isset($items[$delta]) ? $items[$delta] : NULL,
+  );
+  return $element;
+}
+
+/**
+ * Implementation of hook_field_formatter_info().
+ */
+function postal_field_field_formatter_info() {
+  return array(
+    'default' => array(
+      'label' => 'Default',
+      'field types' => array('postal'),
+    ),
+    'country' => array(
+      'label' => t('Country'),
+      'field types' => array('postal'),
+    ),
+    'city' => array(
+      'label' => t('City'),
+      'field types' => array('postal'),
+    ),
+    'state' => array(
+      'label' => t('State'),
+      'field types' => array('postal'),
+    ),
+    'zip' => array(
+      'label' => t('Postal code'),
+      'field types' => array('postal'),
+    ),
+  );
+}
+
+/**
+ * Implementation of hook_theme().
+ */
+function postal_field_theme($existing, $type, $theme, $path) {
+  $registry = array();
+  foreach (array('default', 'country', 'city', 'state', 'zip') as $func) {
+    $function = ($func == 'default') ? 'postal_address' : 'postal_'. $func;
+    $registry['postal_field_formatter_'. $func] = $existing[$function];
+  }
+  return $registry;
+}
+
+/**
+ * Implementation of hook_token_list().
+ */
+function postal_field_token_list($type = 'all') {
+  if ($type == 'field' || $type == 'all') {
+    $tokens = array();
+    $tokens['postal']['country'] = t('Country');
+    $tokens['postal']['state'] = t('State');
+    $tokens['postal']['city'] = t('City');
+    $tokens['postal']['zip'] = t('Postal code');
+    $tokens['postal']['type'] = t('Postal type');
+    $tokens['postal']['addresss'] = t('Address');
+    return $tokens;
+  }
+}
+
+/**
+ * Implementation of hook_token_values().
+ */
+function postal_field_token_values($type, $object = NULL) {
+  if($type == 'field') {
+    $item = $object[0];
+    $tokens['country'] = $item['country'];
+    $tokens['state'] = $item['state'];
+    $tokens['city'] = $item['city'];
+    $tokens['zip'] = $item['zip'];
+    $tokens['address'] = theme("postal_address", $item); 
+    return $tokens;
+  }
+}

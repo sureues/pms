@@ -1,0 +1,11 @@
+/* $Id: postal.css,v 1.2 2009/06/30 21:55:44 jerdavis Exp $*/
+/* Postal default example stylesheet */
+
+.postal-form .form-item {
+}
+
+.postal-locale .form-item {
+  margin-right: .75em;
+  width: 30%;
+  float: left;
+}

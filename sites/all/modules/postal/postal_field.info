@@ -1,0 +1,14 @@
+; $Id: postal_field.info,v 1.2 2008/09/18 03:57:40 vauxia Exp $
+name = Postal Field
+description = Defines an address field type for CCK
+dependencies[] = content
+dependencies[] = postal
+package = CCK
+core = 6.x
+
+; Information added by drupal.org packaging script on 2009-10-08
+version = "6.x-1.0-alpha1"
+core = "6.x"
+project = "postal"
+datestamp = "1255030286"
+

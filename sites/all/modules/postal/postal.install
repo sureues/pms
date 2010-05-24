@@ -1,0 +1,131 @@
+<?php // $Id: postal.install,v 1.2 2009/08/11 02:03:33 vauxia Exp $
+
+/**
+ * Implementation of hook_schema().
+ */
+function postal_schema() {
+  return array(
+    'postal' => array(
+      'description' => t('Stores lookup information for postal data.'),
+      'fields' => array(
+        'id' => array(
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+        'type' => array(
+          'type' => 'varchar',
+          'length' => 32,
+        ),
+        'parent_id' => array(
+          'type' => 'int',
+          'unsigned' => TRUE,
+        ),
+        'iso' => array(
+          'type' => 'char',
+          'length' => 2,
+        ),
+        'iso3' => array(
+          'type' => 'char',
+          'length' => 3,
+        ),
+        'ison' => array(
+          'type' => 'int',
+        ),
+        'fips' => array(
+          'type' => 'char',
+          'length' => 2,
+        ),
+        'code' => array(
+          'type' => 'char',
+          'length' => 2,
+        ),
+        'name' => array(
+          'type' => 'varchar',
+          'length' => 200,
+        ),
+        'zip_format' => array(
+          'type' => 'varchar',
+          'length' => 100,
+        ),
+        'zip_regex' => array(
+          'type' => 'varchar',
+          'length' => 200,
+        ),
+        'children' => array(
+          'type' => 'int',
+        ),
+      ),
+      'primary key' => array('id'),
+    ),
+    'postal_admin' => array(
+      'description' => t('Stores information about locations as relative to the site.'),
+      'fields' => array(
+        'id' => array(
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+        'scope' => array(
+          'type' => 'varchar',
+          'length' => 100,
+        ),
+        'status' => array(
+          'type' => 'int',
+          'size' => 'tiny',
+          'not null' => TRUE,
+          'default' => 1,
+        ),
+        'default' => array(
+          'type' => 'int',
+          'size' => 'tiny',
+          'not null' => TRUE,
+          'default' => 0,
+        ),
+        'weight' => array(
+          'type' => 'int',
+          'not null' => TRUE,
+          'default' => 0,
+        ),
+        'name' => array(
+          'type' => 'varchar',
+          'length' => 200,
+        ),
+      ),
+      'primary key' => array('id', 'scope'),
+    ),
+  );
+}
+
+/**
+ * Implementation of hook_install().
+ */
+function postal_install() {
+  drupal_install_schema('postal');
+}
+
+function postal_enable() {
+  // Rebuild the schema cache so the initialization will work.
+  drupal_get_schema(NULL, TRUE);
+
+  // Collect a current list of countries.
+  module_load_include('admin.inc', 'postal', 'includes/postal');
+  postal_admin_load_countries();
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function postal_uninstall() {
+  drupal_uninstall_schema('postal');
+}
+
+function postal_update_6001() {
+  drupal_get_schema(NULL, TRUE);
+  drupal_install_schema('postal');
+
+  // Collect a current list of countries.
+  module_load_include('admin.inc', 'postal', 'includes/postal');
+  postal_admin_load_countries();
+  return array();
+}

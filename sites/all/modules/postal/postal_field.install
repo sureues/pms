@@ -1,0 +1,33 @@
+<?php // $Id: postal_field.install,v 1.3 2009/08/20 05:18:11 vauxia Exp $
+
+/**
+* Implementation of hook_install().
+*/
+function postal_field_install() {
+  drupal_load('module', 'content');
+  content_notify('install', 'postal_field');
+}
+
+/**
+* Implementation of hook_uninstall().
+*/
+function postal_field_uninstall() {
+  drupal_load('module', 'content');
+  content_notify('uninstall', 'postal_field');
+}
+
+/**
+* Implementation of hook_enable().
+*/
+function postal_field_enable() {
+  drupal_load('module', 'content');
+  content_notify('enable', 'postal_field');
+}
+
+/**
+* Implementation of hook_disable().
+*/
+function postal_field_disable() {
+  drupal_load('module', 'content');
+  content_notify('disable', 'postal_field');
+}
