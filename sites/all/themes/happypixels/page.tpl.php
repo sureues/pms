@@ -15,9 +15,9 @@
    if($monUrl != "http://www.ventepms.com/future/"){ //http://www.pmsnormande.com/future
 ?>
     <!-- script du menu -->
-    <script type="text/javascript" src="/future/themes/happypixels/dynMenu.js"></script>
+    <script type="text/javascript" src="/future/sites/all/themes/happypixels/dynMenu.js"></script>
     <!-- détéction du navigateur -->
-    <script type="text/javascript" src="/future/themes/happypixels/browserdetect.js"></script>
+    <script type="text/javascript" src="/future/sites/all/themes/happypixels/browserdetect.js"></script>
 <?php
    }
 ?>
