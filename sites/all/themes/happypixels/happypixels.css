@@ -20,11 +20,20 @@ ul.secondary {
 }
 
 tr.odd, tr.info {
-  background-color: #A1FFA1;
+  background-color: #F1FFF1;
 }
 
 tr.even, tr.odd, tbody th {
-  border-color: #78FF78;
+  border-color: #C0C0C0;
+}
+
+table thead th {
+  border-bottom: 1px solid #808080;
+}
+
+table th a, table th a.active
+{
+  color: #000000;
 }
 
 .node, #comments {
@@ -251,10 +260,10 @@ span.submitted
   text-align: left;
 }
 
-#wrapper #container #newsletter input.newsletter {
+#wrapper #container #newsletter input[type="text"] {
   float: left;
   clear: left;
-  width: 130px;
+  width: 175px;
   height: 17px;
   background: #FFFFFF;
   padding: 0px;
@@ -262,9 +271,10 @@ span.submitted
   border: solid 1px #000000;
 }
 
-#wrapper #container #newsletter input.button {
+#wrapper #container #newsletter input[type="submit"] {
   float: left;
-  margin-left: 5px;
+  margin-top: 10px;
+  margin-left: 45px;
 }
 
 #wrapper #container #newsletter a {
@@ -320,8 +330,8 @@ span.submitted
   border: solid 1px #000000;
 }
 
-#wrapper #container #block-user-0 input#edit-submit {
-  margin-top: 15px;
+#wrapper #container #block-user-0 input[type="submit"] {
+  margin-top: 10px;;
 }
 
 #wrapper #container #block-user-0 li {
@@ -333,13 +343,38 @@ span.submitted
   float: left;
   clear: left;
   color: #000000;
-  margin-top: 9px;
+  margin-top: 6px;
   margin-left: -19px;
   margin-right: 10px;
-
 }
 
+/** 
+ * 	Bloc apres connexion
+ */
 
+#wrapper #container #login {
+  background: url(images/login.png) no-repeat;
+  width: 180px;
+  height: 95px;
+  padding: 10px;
+}
+
+#wrapper #container #login H2 {
+  float: left;
+  width: 180px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#wrapper #container #login ul {
+	clear: left;
+	 float: left;
+}
+
+#wrapper #container #login ul li a {
+  color: #000000;
+}
 
 
 
@@ -426,6 +461,7 @@ span.submitted
   margin: 0px 0px 0px 0px;
   list-style-image: none;
   background-image: none;
+  font-weight: bold;
 }
 
 #wrapper #container #menu  ul.menu li a:link, 
@@ -513,4 +549,63 @@ span.submitted
   color: #000000;
   font-size: 150%;
 
+}
+
+
+/** 
+ * 	Calendrier
+ */
+
+table.mini tr td
+{
+  padding-right: 7px;
+}
+
+table.mini tr td.has-events
+{
+  background-color: #fed8d8;
+}
+
+div.view-footer a 
+{
+  color: #000000;
+  text-align: left;
+  margin-left: 10px;
+}
+
+div.feed-icon
+{
+  display: none;
+}
+
+
+/** 
+ * 	Forum
+ */
+
+div#forum ul li.last{
+  position: absolute;
+  margin-left: 350px;
+  margin-top: -40px;
+}
+
+
+div#forum ul li.last a {
+  border-color: #eee;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  color: #000000;
+  padding: 5px 5px 5px 5px;
+}
+ 
+
+div#forum ul li.last a:hover {
+  border-color: #ccc;
+  background-image: none;
+  color: #000000;
+  padding: 5px 5px 5px 5px;
+}
+
+div.forum-topic-navigation {
+  display: none;
 }
