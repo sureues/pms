@@ -1,0 +1,486 @@
+<?php
+
+// $Id:
+
+
+require_once (drupal_get_path('module', 'document') . '/document.inc');
+
+/**
+ * Implementation of hook_perm().
+ */
+function document_perm() {
+  return array(
+      'administer document',
+      'moderate document',
+      'access document',
+      'create documents',
+      'delete own documents',
+      'delete any document',
+      'edit own documents',
+      'edit any document');
+}
+
+/**
+ * Views 2 Integration.
+ * Implementation of hook_views_api().
+ */
+function document_views_api() {
+  return array('api' => 2.0);
+}
+
+/**
+ * Implementation of hook_mail().
+ */
+function document_mail($key, &$message, $params) {
+  $language = $message['language'];
+  $variables = document_mail_tokens($params['account'], $params['node'], $language);
+  $message['subject'] .= document_mail_text($key . '_subject', $language, $variables);
+  $message['body'][] = document_mail_text($key . '_body', $language, $variables);
+}
+
+/**
+ * Implementation of hook_taxonomy().
+ */
+function document_taxonomy($op, $type, $array) {
+  //TODO: Clear cache only if Document vocabulary or its terms are affected.
+  cache_clear_all('document_types', 'cache');
+}
+
+function document_access($op, $node, $account) {
+  switch ($op) {
+    case 'create':
+      // Anonymous users cannot post even if they have the permission.
+      return user_access('create documents', $account) && $account->uid ? TRUE : NULL;
+    case 'update':
+      return user_access('edit any document', $account) || (user_access('edit own documents', $account) && ($node->uid == $account->uid)) ? TRUE : NULL;
+    case 'delete':
+      return user_access('delete any document', $account) || (user_access('delete own documents', $account) && ($node->uid == $account->uid)) ? TRUE : NULL;
+  }
+}
+
+function document_node_info() {
+  return array(
+      'document' => array(
+          'name' => t('Document'),
+          'module' => 'document',
+          'body_label' => 'Abstract',
+          'description' => t('Upload new document. Please note that the document would be would be visible after administrators have published it.')));
+}
+
+/**
+ * Implementation of hook_menu().
+ */
+function document_menu() {
+  $items = array();
+
+  $items['document'] = array(
+      'title' => 'Documents',
+      'description' => 'Search & Download Documents.',
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array(
+          'document_search_form',
+          NULL),
+      'access arguments' => array('access document'),
+      'file' => 'document.search.inc');
+
+  //  $items['node/add/document'] = array(
+  //      'title' => 'Document',
+  //      'description' => 'Upload a document. The uploaded document would be visible only after an admin publishes it.',
+  //      'page callback' => 'drupal_get_form',
+  //      'page arguments' => array(
+  //          'document_add_form',
+  //          NULL),
+  //      'access arguments' => array('upload document'),
+  //      'file' => 'document.user.inc');
+
+
+  $items['admin/content/document'] = array(
+      'title' => 'Documents',
+      'description' => 'Moderate Documents.',
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array(
+          'document_moderate_form',
+          NULL),
+      'access arguments' => array('moderate document'),
+      'file' => 'document.admin.inc');
+
+  $items['admin/settings/document'] = array(
+      'title' => 'Documents',
+      'description' => 'Administer Documents module.',
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array(
+          'document_settings_form',
+          NULL),
+      'access arguments' => array('administer document'),
+      'file' => 'document.admin.inc');
+
+  $items['document/search'] = array(
+      'type' => MENU_CALLBACK,
+      'page callback' => 'document_search',
+      'access arguments' => array('access document'),
+      'file' => 'document.callback.inc');
+
+  $items['document/add_type'] = array(
+      'type' => MENU_CALLBACK,
+      'page callback' => 'document_add_type',
+      'access arguments' => array('administer document'),
+      'file' => 'document.callback.inc');
+
+  $items['document/delete_types'] = array(
+      'type' => MENU_CALLBACK,
+      'page callback' => 'document_delete_types',
+      'access arguments' => array('administer document'),
+      'file' => 'document.callback.inc');
+
+  $items['document/delete_doc'] = array(
+      'type' => MENU_CALLBACK,
+      'page callback' => 'document_delete_doc',
+      'access arguments' => array('moderate document'),
+      'file' => 'document.callback.inc');
+
+  $items['document/change_doc_status'] = array(
+      'type' => MENU_CALLBACK,
+      'page callback' => 'document_change_doc_status',
+      'access arguments' => array('moderate document'),
+      'file' => 'document.callback.inc');
+
+  return $items;
+}
+
+/**
+ * Implementation of hook_form().
+ */
+function document_form(&$node, $form_state) {
+  $type = node_get_types('type', $node);
+  $form = array();
+  $form['#attributes'] = array('enctype' => 'multipart/form-data');
+
+  $form['title'] = array(
+      '#type' => 'textfield',
+      '#title' => check_plain($type->title_label),
+      '#required' => TRUE,
+      '#default_value' => $node->title,
+      '#weight' => -5);
+  $form['body_field'] = node_body_field($node, $type->body_label, $type->min_word_count);
+
+  $form['document_edit_fieldset'] = array(
+      '#type' => 'fieldset',
+      '#collapsible' => TRUE,
+      '#collapsed' => FALSE,
+      '#title' => t('Add Document'),
+      '#weight' => -4,
+      '#description' => 'Upload new document. Please note that the document would be would be visible after administrators have published it.');
+
+  if ($node->nid && user_access('moderate document')) {
+    $form['document_edit_fieldset']['document_current'] = array(
+        '#type' => 'item',
+        '#title' => t('Current Document Path'),
+        '#value' => $node->document_url,
+        '#description' => t('Path to the document associated to this node for the current revision.'));
+  }
+
+  $form['document_edit_fieldset']['document_filepath'] = array(
+      '#type' => 'file',
+      '#title' => t('Select Document'),
+      '#description' => t('Document to upload. <b>This document should only be specified either while creating a new node, or while creating a revision for an existing node. The document will not be saved while updating an existing node, if a new revision is not created for the node.</b>'));
+
+  if (variable_get('document_allow_external', FALSE)) {
+    $form['document_edit_fieldset']['document_external_url'] = array(
+        '#type' => 'textfield',
+        '#title' => t('External Document Url'),
+        '#default_value' => isset($node->document_url) && ($node->document_external == DOCUMENT_EXTERNAL) ? $node->document_url : '',
+        '#description' => t('External Url to the document. <b>You should either specify this url or upload a document. The document would not be created in case you specify both.</b>'));
+  }
+
+  $form['document_edit_fieldset']['document_author'] = array(
+      '#type' => 'textfield',
+      '#required' => TRUE,
+      '#title' => t('Document Author(s)'),
+      '#default_value' => isset($node->document_author) ? $node->document_author : '',
+      '#description' => t('A comma separated list of Authors'));
+
+  $form['document_edit_fieldset']['document_year'] = array(
+      '#type' => 'select',
+      '#options' => drupal_map_assoc(array_reverse(document_get_years())),
+      '#required' => TRUE,
+      '#title' => t('Year of Publication'),
+      '#default_value' => isset($node->document_year) ? $node->document_year : '',
+      '#description' => t('Year of Publication'));
+
+  //  $form['document_edit_fieldset']['document_type'] = array(
+  //      '#type' => 'select',
+  //      '#options' => document_get_types(FALSE),
+  //      '#required' => TRUE,
+  //      '#title' => t('Document Type'),
+  //      '#default_value' => isset($node->document_type) ? $node->document_type : '',
+  //      '#description' => t('Document Type'));
+
+
+  $form['document_edit_fieldset']['document_keywords'] = array(
+      '#type' => 'textarea',
+      '#rows' => 5,
+      '#title' => 'Keywords',
+      '#description' => t('Comma separated list of key terms associated with the document.'),
+      '#default_value' => isset($node->document_keywords) ? $node->document_keywords : '');
+
+  return $form;
+}
+
+/**
+ * Implementation of hook_validate().
+ */
+function document_validate($node) {
+  //A new document must be uploaded for a new node, or a new Revision for an existing node.
+  $hasDoc = _document_is_uploaded();
+  $external_url = isset($node->document_external_url) ? $node->document_external_url : '';
+  $is_external = (strlen($external_url) > 0);
+  $existing = NULL;
+
+  if ($node->nid && !$node->revision) {
+    //A switch from external to internal url or vice versa is only allowed while creating a revision.
+    if ($existing == NULL) {
+      $existing = node_load($node->nid);
+    }
+    $existing_external = ($existing->document_external == DOCUMENT_EXTERNAL);
+    if ($is_external != $existing_external) {
+      form_set_error('document_filepath', t('A switch from an external document url to an internal file or vice versa is only allowed while creating a revision.'));
+      return;
+    }
+  }
+
+  if ($is_external) {
+    if ($hasDoc) {
+      form_set_error('document_external_url', t('You cannot specify an external Url and upload a document simultaneously.'));
+    }
+    if (!valid_url($external_url, TRUE)) {
+      form_set_error('document_external_url', t('Invalid external url for document. You must specify a valid absolute url.'));
+    }
+    if ($node->nid && !$node->revision) {
+      //A change in external url is not allowed without creating a revision.
+      if ($existing == NULL) {
+        $existing = node_load($node->nid);
+      }
+      if ($external_url != $existing->document_url) {
+        form_set_error('document_external_url', t('A change in external url is only allowed while creating a revision.'));
+      }
+    }
+  }
+  else {
+    //No external url specified. A document must have been uploaded while creating a node/new revision.
+    if (!$node->nid || $node->revision) {
+      if (!$hasDoc) {
+        form_set_error('document_filepath', t('The document could not be uploaded. Neither did you specify an external url. Please try again. If the error persists, contact the administrator.'));
+      }
+    }
+  }
+
+  if ($hasDoc) {
+    if ($node->nid && !$node->revision) {
+      //A new document cannot be uploaded without creating a revision.
+      form_set_error('document_filepath', t('A new document cannot be specified without creating a new Revision for an existing node.'));
+    }
+  }
+}
+
+/**
+ * Implementation of hook_insert().
+ */
+function document_insert($node) {
+  try {
+    $external_url = isset($node->document_external_url) ? $node->document_external_url : '';
+    $external = (strlen($external_url) > 0 ? DOCUMENT_EXTERNAL : DOCUMENT_INTERNAL);
+
+    $author = $node->document_author;
+    $year = $node->document_year;
+    $type = _document_get_node_terms($node);
+    $keywords = $node->document_keywords;
+
+    $fid = 0;
+    $file = NULL;
+    $doc_url = NULL;
+    if ($external == DOCUMENT_INTERNAL) {
+      //Save the Document uploaded.
+      $file = file_save_upload('document_filepath', array(), document_get_path());
+      if ($file !== 0) {
+        $fid = $file->fid;
+        $doc_url = file_create_url($file->filepath);
+      }
+      else {
+        drupal_set_message(t('Please select a document to upload.'), 'error');
+      }
+    }
+    else {
+      $doc_url = $external_url;
+    }
+
+    db_query("INSERT INTO {document} (nid, vid, fid, type, author, publish_year, keywords, url, external) VALUES (%d, %d, %d, '%s', '%s', '%d', '%s', '%s', %d)", $node->nid, $node->vid, $fid, $type, $author, $year, $keywords, $doc_url, $external);
+    if ($fid != 0) {
+      //Set the status of the uploaded file.
+      file_set_status($file, FILE_STATUS_PERMANENT);
+    }
+    drupal_set_message(t('The document has been submitted. Please wait until administrators review and publish it.'), 'status');
+  }
+  catch (Exception $ex) {
+    drupal_set_message(t($ex->getMessage()), 'error');
+  }
+}
+
+/**
+ * Implementation of hook_update().
+ */
+function document_update($node) {
+  //$revisions = node_revision_list($node);
+  // if this is a new node or we're adding a new revision,
+  if ($node->revision) {
+    document_insert($node);
+  }
+  else if (!isset($node->document_publishing)) {
+    //While publishing a document in the callback, other fields cannot change. But taxonomy is not available,
+    //and hence we should not make any updations during async document publishing by the node.
+    $author = $node->document_author;
+    $year = $node->document_year;
+    $type = _document_get_node_terms($node);
+    $keywords = $node->document_keywords;
+
+    //The Url/External status of a document cannot change without creating a revision.
+    //A revision would lead to insertion code above. So, no need to update Url/External status.
+    db_query("UPDATE {document} SET type = '%s', author = '%s', publish_year = %d, keywords = '%s' WHERE nid = %d AND vid = %d", $type, $author, $year, $keywords, $node->nid, $node->vid);
+  }
+}
+
+/**
+ * Implementation of hook_nodeapi().
+ */
+function document_nodeapi(&$node, $op, $teaser, $page) {
+  switch ($op) {
+    case 'delete_revision':
+      // Notice that we're matching a single revision based on the node's vid.
+      _document_delete_revision($node->nid, $node->vid);
+      break;
+  }
+}
+
+/**
+ * Implementation of hook_delete().
+ */
+function document_delete($node) {
+  //$revisions = node_revision_list($node);
+  $results = db_query('SELECT * FROM {document} WHERE nid = %d', $node->nid);
+  while ($rev = db_fetch_object($results)) {
+    _document_delete_revision($node->nid, $rev->vid);
+  }
+}
+
+/**
+ * Implementation of hook_load().
+ */
+function document_load($node) {
+  $additions = db_fetch_object(db_query('SELECT type AS document_type, author AS document_author, publish_year AS document_year, keywords AS document_keywords, url AS document_url, external AS document_external FROM {document} d WHERE d.vid = %d', $node->vid));
+  return $additions;
+}
+
+/**
+ * Implementation of hook_view().
+ */
+function document_view($node, $teaser = FALSE, $page = FALSE) {
+  $node = node_prepare($node, $teaser);
+  $node->content['document'] = array(
+      '#value' => theme('document_info', $node),
+      '#weight' => -5);
+
+  return $node;
+}
+
+/**
+ * Implementation of hook_theme().
+ */
+function document_theme() {
+  return array(
+      'document_info' => array(
+          'arguments' => array('node')));
+}
+
+/**
+ * A custom theme function.
+ *
+ * By using this function to format our node-specific information, themes
+ * can override this presentation if they wish. We also wrap the default
+ * presentation in a CSS class that is prefixed by the module name. This
+ * way, style sheets can modify the output without requiring theme code.
+ */
+function theme_document_info($node) {
+  $output = '<div class="document_info">';
+  $output .= '<div class="document_info_type"><b>Type</b>: %s</div>';
+  $output .= '<div class="document_info_author"><b>Author</b>: %s</div>';
+  $output .= '<div class="document_info_year"><b>Year of Publishing</b>: %d</div>';
+  $output .= '<div class="document_info_keywords"><b>Keywords</b>: %s</div>';
+  $output .= '<div class="document_info_download">%s</div>';
+  $output .= '</div>';
+
+  $url = l('Download', $node->document_url, array(
+      'attributes' => array('target' => '_blank')));
+
+  $output = sprintf($output, check_plain($node->document_type), check_plain($node->document_author), $node->document_year, check_plain($node->document_keywords), $url);
+
+  return $output;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+//Private Methods
+
+
+function _document_delete_revision($nid, $vid) {
+  // Notice that we're matching a single revision based on the node's vid.
+  //For external url documents, there would be no file.
+  $result = db_query('SELECT * FROM {files} AS f INNER JOIN {document} AS d ON f.fid = d.fid WHERE d.nid = %d AND d.vid = %d AND d.fid <> 0', $nid, $vid);
+  if ($doc = db_fetch_object($result)) {
+    $fid = $doc->fid;
+    $path = $doc->filepath;
+    db_query('DELETE FROM {files} WHERE fid = %d', $fid);
+    file_delete($path);
+  }
+  db_query('DELETE FROM {document} WHERE nid = %d AND vid = %d', $nid, $vid);
+}
+
+function _document_is_uploaded() {
+  $hasDoc = TRUE;
+  if (array_key_exists('document_filepath', $_FILES)) {
+    if ($_FILES['document_filepath']['error'] != UPLOAD_ERR_OK) {
+      $hasDoc = FALSE;
+    }
+  }
+  else if (array_key_exists('error', $_FILES)) {
+    if ($_FILES['error']['document_filepath'] != UPLOAD_ERR_OK) {
+      $hasDoc = FALSE;
+    }
+  }
+  else if (array_key_exists('files', $_FILES)) {
+    if ($_FILES['files']['error']['document_filepath'] != UPLOAD_ERR_OK) {
+      $hasDoc = FALSE;
+    }
+  }
+  else {
+    $hasDoc = FALSE;
+  }
+
+  return ($hasDoc);
+}
+
+function _document_get_node_terms($node) {
+  $term_ids = $node->taxonomy[document_get_vocid()];
+  if (empty($term_ids)) {
+    return ('');
+  }
+  else {
+    $types = document_get_types(TRUE);
+    if (!is_array($term_ids)) {
+      $term_ids = explode(',', $term_ids);
+    }
+    $terms = array();
+    foreach ($term_ids as $id) {
+      $terms[] = $types[$id];
+    }
+
+    return (implode($terms));
+  }
+}

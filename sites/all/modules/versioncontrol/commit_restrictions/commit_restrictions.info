@@ -1,0 +1,13 @@
+; $Id: commit_restrictions.info,v 1.2 2009/01/02 20:36:43 jpetso Exp $
+name = "Commit Restrictions"
+description = "Restrict commits, branches and tags based on item path or branch/tag name."
+dependencies[] = versioncontrol
+package = Version Control
+core = 6.x
+
+; Information added by drupal.org packaging script on 2009-06-09
+version = "6.x-1.0-rc2"
+core = "6.x"
+project = "versioncontrol"
+datestamp = "1244576815"
+

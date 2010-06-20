@@ -1,0 +1,12 @@
+; $Id: 
+name = Document
+description = Allows users to upload Documents, search & download them.
+core = 6.x
+dependencies[] = taxonomy
+
+; Information added by drupal.org packaging script on 2010-05-19
+version = "6.x-1.0-beta1"
+core = "6.x"
+project = "document"
+datestamp = "1274292610"
+

@@ -1,0 +1,12 @@
+/* $Id: versioncontrol.css,v 1.1 2009/06/01 13:22:47 jpetso Exp $ */
+
+.versioncontrol-committer-item {
+  line-height: 120%;
+}
+
+.versioncontrol-commit-times {
+  margin-top: 3px;
+  color: #9d9d93;
+  font-size: .8em;
+  line-height: 110%;
+}

@@ -1,0 +1,13 @@
+; $Id: repoview.info,v 1.2 2009/01/02 20:43:44 jpetso Exp $
+name = Repository Viewer
+description = "Browse repositories for Version Control API backends supporting this functionality."
+dependencies[] = versioncontrol
+package = Version Control
+core = 6.x
+
+; Information added by drupal.org packaging script on 2009-06-09
+version = "6.x-1.0-beta2"
+core = "6.x"
+project = "repoview"
+datestamp = "1244578580"
+

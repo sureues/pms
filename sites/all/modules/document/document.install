@@ -1,0 +1,72 @@
+<?php
+
+// $Id:
+
+require_once (drupal_get_path('module', 'document') . '/document.inc');
+
+
+function document_install() {
+  drupal_install_schema('document');
+
+  //Create a vocabulary for documents.
+  document_get_vocid();
+}
+
+function document_uninstall() {
+  drupal_uninstall_schema('document');
+
+  variable_del('document_path');
+  variable_del('document_allow_external');
+  variable_del('document_publish_email');
+  variable_del('document_publish_subject');
+  variable_del('document_publish_body');
+  variable_del('document_path');
+  variable_del('document_vocabulary');
+}
+
+/**
+ * Implementation of hook_schema().
+ */
+function document_schema() {
+  $schema['document'] = array(
+      'fields' => array(
+          'nid' => array(
+              'type' => 'int',
+              'unsigned' => TRUE,
+              'not null' => TRUE),
+          'vid' => array(
+              'type' => 'int',
+              'unsigned' => TRUE,
+              'not null' => TRUE),
+          'fid' => array(
+              'type' => 'int',
+              'unsigned' => TRUE,
+              'not null' => TRUE),
+          'type' => array(
+              'type' => 'varchar',
+              'not null' => TRUE,
+              'length' => 1024),
+          'author' => array(
+              'type' => 'varchar',
+              'not null' => TRUE,
+              'length' => 255),
+          'publish_year' => array(
+              'type' => 'int',
+              'unsigned' => TRUE,
+              'not null' => TRUE,
+              'size' => 'normal'),
+          'keywords' => array(
+              'type' => 'varchar',
+              'not null' => TRUE,
+              'length' => 1024),
+          'url' => array(
+              'type' => 'varchar',
+              'not null' => TRUE,
+              'length' => 1024),
+          'external' => array(
+              'type' => 'int',
+              'not null' => TRUE,
+              'size' => 'normal')),
+      'primary key' => array('vid'));
+  return $schema;
+}
