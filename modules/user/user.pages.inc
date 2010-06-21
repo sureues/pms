@@ -188,6 +188,7 @@ function template_preprocess_user_profile(&$variables) {
     $variables['profile'][$key] = drupal_render($variables['account']->content[$key]);
   }
   // Collect all profiles to make it easier to print all items at once.
+  ksort($variables['profile']);
   $variables['user_profile'] = implode($variables['profile']);
 }
 
