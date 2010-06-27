@@ -1,0 +1,771 @@
+# Russian translation of drupal (6.3)
+# Copyright (c) 2008 by the Russian translation team
+#
+# Generated from files:
+#  photos.admin.inc,v 1.0.4 2008/7/29 16:45 east
+#  photos.module,v 1.0.6 2008/8/2 17:26 east
+#  photos.page.inc,v 1.0.2 2008/8/2 17:26 east
+#  photos.info,v 1.0 2008/7/20 20:24 east
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drupal (6.3)\n"
+"POT-Creation-Date: 2008-08-06 01:37+0400\n"
+"PO-Revision-Date: 2008-06-27 13:45+0400\n"
+"Language-Team: Russian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):(((((n%10)>=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(1):2));\n"
+
+#: photos.admin.inc:6
+msgid "Number of upload"
+msgstr "Количество загрузок"
+
+#: photos.admin.inc:9
+msgid "Maxium amount allowed for one upload"
+msgstr "Максимальное количество при одной загрузке"
+
+#: photos.admin.inc:13
+msgid "Number of albums"
+msgstr "Количество альбомов"
+
+#: photos.admin.inc:16
+msgid "The number of albums a user allowed to create. Administrater is not limited."
+msgstr "Количество альбомов, которые может создать пользователь. Администраторы могут создать неограниченоое количество"
+
+#: photos.admin.inc:20
+msgid "zip compressed upload"
+msgstr "загрузка zip-архива"
+
+#: photos.admin.inc:22
+msgid "Will be allowed to upload images compressed into a zip, extract the necessary support to open php"
+msgstr "Будет позволено загружать изображения, запакованные в zip-архив. Для распаковки необходима поддержка PHP."
+
+#: photos.admin.inc:23;30;37;80 photos.module:677;684;736
+msgid "Disabled"
+msgstr "Выключено"
+
+#: photos.admin.inc:23;30;37;80 photos.module:677;684;736
+msgid "Enabled"
+msgstr "Включено"
+
+#: photos.admin.inc:27
+msgid "Rename image"
+msgstr "Переименовать"
+
+#: photos.admin.inc:29
+msgid "Rename uploaded image by random numbers, to solve problems with non-ASCII filenames such as Chinese."
+msgstr "Переименовывать загруженные изображения случайными числами, это поможет решить проблему с не-ASCII именами файлов."
+
+#: photos.admin.inc:34 photos.module:736
+msgid "Show exif information"
+msgstr "Показывать EXIF"
+
+#: photos.admin.inc:36
+msgid "When the image is available exif information, automatically read and display. Open this option, you must load the php exif."
+msgstr "Автоматически читает и отображает EXIF информацию, если изображение ее содержит. Для этой опции необходим PHP EXIF."
+
+#: photos.admin.inc:41
+msgid "Thumbnail size"
+msgstr "Размер превью"
+
+#: photos.admin.inc:43;57
+msgid "This photos module creates 2 formats of thumbnails, and saves original image. Please set size"
+msgstr "Этот модуль создает 2 вида превью и сохраняет оригинальное изображение. Пожалуйста, укажите размер"
+
+#: photos.admin.inc:48
+msgid "Thumbnail format"
+msgstr "Формат превью"
+
+#: photos.admin.inc:51;65
+msgid "scale: Keep ratio for resizing, crop:  Fix size, aligned by a border."
+msgstr "scale: Сохранять отношения сторон при изменении, crop:  Фиксированный размер, выровненный по границе."
+
+#: photos.admin.inc:55
+msgid "Medium image size"
+msgstr "Размер среднего изображения"
+
+#: photos.admin.inc:62
+msgid "Medium image format"
+msgstr "Формат среднего изображения"
+
+#: photos.admin.inc:69
+msgid "Path of saving"
+msgstr "Путь для сохранения"
+
+#: photos.admin.inc:71
+msgid "The path where the files should be saved, may save by user id or user name, e.g.: photos/%uid or photos/%username"
+msgstr "Путь, по которому будут сохраняться файлы, можно использовать id пользователя или имя пользователя, т.е. photos/%uid or photos/%username"
+
+#: photos.admin.inc:77
+msgid "FLASH slide show"
+msgstr "Flash слайд-шоу"
+
+#: photos.admin.inc:79
+msgid "FLASH use slide show album, must be enabled "
+msgstr "Использовать Flash для слайд-шоу в альбомах, должен быть включен "
+
+#: photos.page.inc:5
+msgid "From my gallery, select the image"
+msgstr "Из моей галереи, выберите изображение"
+
+#: photos.page.inc:5
+msgid "Click here to close"
+msgstr "Закрыть"
+
+#: photos.page.inc:24
+msgid "Insert thumbnails"
+msgstr "Вставить превью"
+
+#: photos.page.inc:24
+msgid "Insert appropriate size"
+msgstr "Вставить настоящий размер"
+
+#: photos.page.inc:33
+msgid "Select Album"
+msgstr "Выбрать альбом"
+
+#: photos.page.inc:42
+msgid "Insert the selected image"
+msgstr "Вставить выбранные изображения"
+
+#: photos.page.inc:42
+msgid "Upload a new image"
+msgstr "Загрузить"
+
+#: photos.page.inc:64
+msgid "Without"
+msgstr "Нет изображения"
+
+#: photos.page.inc:68
+msgid "previou"
+msgstr "назад"
+
+#: photos.page.inc:68;78
+msgid "There are !num image"
+msgstr "!num изображений"
+
+#: photos.page.inc:78
+msgid "next"
+msgstr "вперед"
+
+#: photos.page.inc:89
+msgid "Slide View album"
+msgstr "Слайд-шоу"
+
+#: photos.page.inc:89 photos.module:230
+msgid "Upload images"
+msgstr "Загрузить изображения"
+
+#: photos.page.inc:89;234;244 photos.module:229
+msgid "Create album"
+msgstr "Создать альбом"
+
+#: photos.page.inc:92
+msgid "A total of %num albums under the image"
+msgstr "Всего %num изображений в этом альбоме"
+
+#: photos.page.inc:94
+msgid "Under no image album"
+msgstr "Нет альбома"
+
+#: photos.page.inc:99
+msgid "A total of %num nodes under the image"
+msgstr "Всего %num страниц для изображения"
+
+#: photos.page.inc:101
+msgid "Nodes under no image"
+msgstr "Нет страниц"
+
+#: photos.page.inc:108 photos.module:460
+msgid "Browse images: "
+msgstr "Просмотр изображений: "
+
+#: photos.page.inc:109;298;342 photos.module:442;449;455;461
+msgid "Home"
+msgstr "Главная"
+
+#: photos.page.inc:119
+msgid "delete"
+msgstr "удалить"
+
+#: photos.page.inc:125
+msgid "weight"
+msgstr "вес"
+
+#: photos.page.inc:137;400
+msgid "Confirm the change"
+msgstr "Подтвердить"
+
+#: photos.page.inc:143
+msgid "You are not logged in or does not have permission to operate this image."
+msgstr "Вы не вошли или не имеете прав для управления изображениями."
+
+#: photos.page.inc:147
+msgid "Cancel"
+msgstr "Отмена"
+
+#: photos.page.inc:161
+msgid "Delete success"
+msgstr "Успешно удалено"
+
+#: photos.page.inc:163
+msgid "Failure to delete"
+msgstr "Ошибка при удалении"
+
+#: photos.page.inc:170
+msgid "Laws success"
+msgstr "Обновление прошло успешно"
+
+#: photos.page.inc:172
+msgid "Laws failure"
+msgstr "Обновление не удалось"
+
+#: photos.page.inc:193
+msgid "Image does not exist"
+msgstr "Изображение не существует"
+
+#: photos.page.inc:193;237;254;273;292
+msgid "Upload a image"
+msgstr "Загрузить изображение"
+
+#: photos.page.inc:193;237;254;273;292
+msgid "Create a album"
+msgstr "Создать альбом"
+
+#: photos.page.inc:203
+msgid "To return to the album"
+msgstr "Назад в альбом"
+
+#: photos.page.inc:204
+msgid "Back to the article"
+msgstr "Назад к странице"
+
+#: photos.page.inc:205
+msgid "Original Size"
+msgstr "Оригинальный размер"
+
+#: photos.page.inc:205
+msgid "Moderate size"
+msgstr "Отредактированный размер"
+
+#: photos.page.inc:205;427
+msgid "Thumbnails"
+msgstr "Превью"
+
+#: photos.page.inc:205
+msgid "Show EXIF information"
+msgstr "Показывать EXIF"
+
+#: photos.page.inc:205
+msgid "Back image"
+msgstr "Вернуться"
+
+#: photos.page.inc:207
+msgid "Photo quoted link: "
+msgstr "Ссылка на фото: "
+
+#: photos.page.inc:221
+msgid "See a image exif"
+msgstr "Просмотр exif"
+
+#: photos.page.inc:234;271
+msgid "A total of !img image, !num albums"
+msgstr "Всего !img изображений и !num альбомов"
+
+#: photos.page.inc:234
+msgid "View Albums"
+msgstr "Просмотр альбомов"
+
+#: photos.page.inc:234;244
+msgid "Upload pictures"
+msgstr "Загрузка изображений"
+
+#: photos.page.inc:237;273;445
+msgid "No image"
+msgstr "Нет изображения"
+
+#: photos.page.inc:248;286
+msgid "A total of !num albums, !img image"
+msgstr "Всего !num альбомов и !img изображений"
+
+#: photos.page.inc:248;271;286
+msgid "View images"
+msgstr "Просмотр изображений"
+
+#: photos.page.inc:254;292
+msgid "No album"
+msgstr "Нет альбома"
+
+#: photos.page.inc:262 photos.module:507;710
+msgid "Image"
+msgstr "Изображение"
+
+#: photos.page.inc:264
+msgid "My image"
+msgstr "Мои изображения"
+
+#: photos.page.inc:266
+msgid "!name's image"
+msgstr "изображения !name"
+
+#: photos.page.inc:278 photos.module:16
+msgid "Album"
+msgstr "Альбом"
+
+#: photos.page.inc:280
+msgid "My Album"
+msgstr "Мой альбом"
+
+#: photos.page.inc:282
+msgid "!name's Album"
+msgstr "Альбом !name"
+
+#: photos.page.inc:311
+msgid "Please create a new album"
+msgstr "Создайте новый альбом, пожалуйста"
+
+#: photos.page.inc:321
+msgid "Published in "
+msgstr "Опубликовано"
+
+#: photos.page.inc:321
+msgid "A total of !num images"
+msgstr "Всего !num изображений"
+
+#: photos.page.inc:323;341 photos.module:639
+msgid "Organize images"
+msgstr "Управление картинками"
+
+#: photos.page.inc:323
+msgid "Edit Album"
+msgstr "Редактирование альбома"
+
+#: photos.page.inc:334
+msgid "You are in management article !title image. A total of !num images. "
+msgstr "Вы редактируете картинку для статьи !title. Всего !num изображений. "
+
+#: photos.page.inc:336
+msgid "You are in management album !title image. A total of !num images. "
+msgstr "Вы редактируете альбом !title. Всего !num изображений. "
+
+#: photos.page.inc:374
+msgid "Uploaded to the article "
+msgstr "Загружено на страницу"
+
+#: photos.page.inc:379
+msgid "Categories in the album "
+msgstr "Категории в альбоме"
+
+#: photos.page.inc:386
+msgid "Upload the images in "
+msgstr "Загружено "
+
+#: photos.page.inc:397
+msgid "Select All"
+msgstr "Выбрать все"
+
+#: photos.page.inc:397
+msgid "Deselect"
+msgstr "Снять выделение"
+
+#: photos.page.inc:421
+msgid "Move to the album"
+msgstr "Переместить в альбом"
+
+#: photos.page.inc:423
+msgid "His album"
+msgstr "Его альбом"
+
+#: photos.page.inc:426
+msgid "Delete"
+msgstr "Удалить"
+
+#: photos.page.inc:428
+msgid "Description"
+msgstr "Описание"
+
+#: photos.page.inc:430
+msgid "Weight"
+msgstr "Вес"
+
+#: photos.page.inc:458
+msgid "Unknown"
+msgstr "Неизвестно"
+
+#: photos.page.inc:529
+msgid "Show details"
+msgstr "Подробнее"
+
+#: photos.page.inc:587
+msgid "Information"
+msgstr "Информация"
+
+#: photos.page.inc:587
+msgid "This image does not EXIF information"
+msgstr "Это изображение не содержит EXIF"
+
+#: photos.page.inc:592
+msgid "EXIF information"
+msgstr "EXIF"
+
+#: photos.module:19
+msgid "Album name"
+msgstr "Имя альбома"
+
+#: photos.module:21
+msgid "Album description"
+msgstr "Описание альбома"
+
+#: photos.module:59
+msgid "You may create %a albums, now you have created %b albums, you can still create %aa albums."
+msgstr "Вы можете создать %a альбомов, вы уже создали %b альбомов, осталось %aa."
+
+#: photos.module:79
+msgid "album cover"
+msgstr "Обложка альбома"
+
+#: photos.module:87
+msgid "the best size of the cover image is 120x90."
+msgstr "наилучший размер для обложки альбома 120x90."
+
+#: photos.module:107
+msgid "You cannot create more albums."
+msgstr "Вы не можете создать больше альбомов."
+
+#: photos.module:140
+msgid "There's no cover uploaded for the album, this image is the default cover."
+msgstr "Обложка для альбома не была загружена, это изображение по умолчанию."
+
+#: photos.module:210;221
+msgid "%count images are deleted."
+msgstr "удалено %count изображений."
+
+#: photos.module:229
+msgid "There are !a albums in total"
+msgstr "Всего !a альбомов"
+
+#: photos.module:229
+msgid "No alubms yet, "
+msgstr "Пока альбомов нет, "
+
+#: photos.module:230
+msgid "There are !a images in total"
+msgstr "Всего !a изображений"
+
+#: photos.module:230
+msgid "No images yet, "
+msgstr "Пока изображений нет, "
+
+#: photos.module:233
+msgid "Album image"
+msgstr "Изображений альбома"
+
+#: photos.module:423
+msgid "Click to change description"
+msgstr "Редактировать описание"
+
+#: photos.module:423
+msgid "View original image"
+msgstr "Оригинальный размер"
+
+#: photos.module:442
+msgid "Browse node images"
+msgstr "Просмотр изображений страницы"
+
+#: photos.module:443
+msgid "Browse images of node: "
+msgstr "Просмотр изображений страницы: "
+
+#: photos.module:449
+msgid "Browse album images"
+msgstr "Просмотр альбома"
+
+#: photos.module:450
+msgid "Browse images of album: "
+msgstr "Просмотр альбома: "
+
+#: photos.module:455
+msgid "!user's images"
+msgstr "изображения !user"
+
+#: photos.module:455
+msgid "Browse user images"
+msgstr "Просмотр картинок пользователя"
+
+#: photos.module:456
+msgid "Browse images of the user: "
+msgstr "Просмотр картинок пользователя: "
+
+#: photos.module:461
+msgid "Browse images"
+msgstr "Просмотр изображений"
+
+#: photos.module:466
+msgid "Uploaded by: "
+msgstr "Загружено: "
+
+#: photos.module:466
+msgid "View all images"
+msgstr "Просмотреть все"
+
+#: photos.module:466
+msgid "Browse all images of the user"
+msgstr "Просмотр всех картинок пользователя"
+
+#: photos.module:466
+msgid "Time of upload: "
+msgstr "Время: "
+
+#: photos.module:468
+msgid "Belongs to album:"
+msgstr "Принадлежит альбомам: "
+
+#: photos.module:468
+msgid "Browse album"
+msgstr "Просмотр альбома"
+
+#: photos.module:468
+msgid "There are !count images in the album"
+msgstr "В альбоме !count изображений"
+
+#: photos.module:471
+msgid "Belongs to node:"
+msgstr "Принадлежит странице: "
+
+#: photos.module:471
+msgid "Browse node"
+msgstr "Просмотр страницы"
+
+#: photos.module:471
+msgid "There are !count images in the node"
+msgstr "Всего !count изображений на странице"
+
+#: photos.module:492
+msgid "The image does not exist."
+msgstr "Изображение не существует."
+
+#: photos.module:492
+msgid "Upload an image"
+msgstr "Загрузить изображение"
+
+#: photos.module:492
+msgid "Create a new album"
+msgstr "Создать альбом"
+
+#: photos.module:505
+msgid "You can zip into the image compression format to upload to enhance efficiency."
+msgstr "Для большей эффективности, вы можете загрузить файлы в виде zip-архива."
+
+#: photos.module:523
+msgid "You must first !create an album to upload images."
+msgstr "Сначала нужно !create альбом для загрузки изображений."
+
+#: photos.module:523
+msgid "create"
+msgstr "создать"
+
+#: photos.module:530
+msgid "Import zip"
+msgstr "Импортировать zip"
+
+#: photos.module:532
+msgid "From the server directory into zip files, to extract. You can upload images to a directory server, enter here path, you can extract and add to the album phtos. Path such as: !zip/test.zip. Documents must be read and write, php can operate. This feature allows only the default super (uid equivalent to 1) administrator."
+msgstr "Распаковывается из zip-файла в директорию на сервере. Вы можете загрузить архив, указать здесь путь к нему, распаковать и добавить фотографии в альбом. Пример пути: !zip/test.zip. Документы должны быть для чтения и для записи, PHP должен работать. Эта возможность доступна только для администратора."
+
+#: photos.module:544
+msgid "Upload to album"
+msgstr "Загрузить в альбом"
+
+#: photos.module:548
+msgid "You may create a new album"
+msgstr "Вы можете создать новый альбом"
+
+#: photos.module:555
+msgid "Confirm upload"
+msgstr "Подтвердить"
+
+#: photos.module:598
+msgid "Please Album photos set to open zip upload"
+msgstr "Пожалуйста, включите опцию для zip-загрузки"
+
+#: photos.module:607
+msgid "Failed to upload"
+msgstr "Ошибка загрузки"
+
+#: photos.module:622
+msgid "%count image(s) uploaded successfully."
+msgstr "Успешно загружено %count изображений"
+
+#: photos.module:641
+msgid "Organize images of !title"
+msgstr "Управление картинками"
+
+#: photos.module:645
+msgid "Organize albums"
+msgstr "Управление альбомами"
+
+#: photos.module:647
+msgid "Organize albums of !title"
+msgstr "Управление альбомами !title"
+
+#: photos.module:655
+msgid "!count images"
+msgstr "!count изображений"
+
+#: photos.module:657
+msgid "Browse all images of !title"
+msgstr "Все изображения !title"
+
+#: photos.module:668
+msgid "Image upload"
+msgstr "Загрузка изображений"
+
+#: photos.module:675
+msgid "Upload"
+msgstr "Загрузить"
+
+#: photos.module:678
+msgid "You can upload images to nodes after enable this."
+msgstr "Вы можете загружать картинки на страницы после включения поддержки этой опции."
+
+#: photos.module:682
+msgid "Reference"
+msgstr "Ссылка"
+
+#: photos.module:685
+msgid "After enable this, you can insert a reference of images from other albums to the node, but do not attach the image to the node."
+msgstr "После включения, вы можете вставлять ссылки на изображения из альбомов на страницу, но не прикреплять изображения к странице."
+
+#: photos.module:691
+msgid "Number of images displayed in a teaser"
+msgstr "Количество изображений в анонсе"
+
+#: photos.module:697
+msgid "Number of images displayed in a page"
+msgstr "Количество изображений на странице"
+
+#: photos.module:718
+msgid "Insert an existing image"
+msgstr "Вставить существующую картинку"
+
+#: photos.module:718
+msgid "Choose an image from my albums to insert into the node"
+msgstr "Выберите изображения из своих альбомов для вставки на страницу"
+
+#: photos.module:729;761;309
+msgid "Latest images"
+msgstr "Последние изображения"
+
+#: photos.module:730
+msgid "User's images"
+msgstr "Изображения пользователя"
+
+#: photos.module:731;789
+msgid "Photo information"
+msgstr "Информация о фото"
+
+#: photos.module:739
+msgid "Show several images"
+msgstr "Показывать изображений"
+
+#: photos.module:759;781
+msgid "more"
+msgstr "далее"
+
+#: photos.module:783
+msgid "%name's images"
+msgstr "изображения %name"
+
+#: photos.module:960
+msgid "All albums"
+msgstr "Все альбомы"
+
+#: photos.module:969
+msgid "You do not have an album yet."
+msgstr "У вас еще нет альбомов."
+
+#: photos.module:1070
+msgid "Compressed file does not exist, please check the path: "
+msgstr "Сжатый файл не существует, пожалуйста, проверьте путь: "
+
+#: photos.module:1105;1143
+msgid "To extract the success of %num image"
+msgstr "Успешно распаковано %num изображений"
+
+#: photos.module:1107;1145
+msgid "Decompression problems"
+msgstr "Проблемы распаковки"
+
+#: photos.module:28
+msgid "view photo"
+msgstr "просмотр фото"
+
+#: photos.module:29
+msgid "create photo"
+msgstr "создание фото"
+
+#: photos.module:30
+msgid "edit own photo"
+msgstr "редактировать свои фото"
+
+#: photos.module:31
+msgid "edit any photo"
+msgstr "редактировать любые фото"
+
+#: photos.module:32
+msgid "delete own photo"
+msgstr "удалить свои фото"
+
+#: photos.module:33
+msgid "delete any photo"
+msgstr "удалить любые фото"
+
+#: photos.module:266
+msgid "Photos upload"
+msgstr "Загрузка фото"
+
+#: photos.module:275
+msgid "Photos management"
+msgstr "Управление фотографиями"
+
+#: photos.module:294
+msgid "Album photos"
+msgstr "Фотографии"
+
+#: photos.module:317
+msgid "Latest albums"
+msgstr "Последние альбомы"
+
+#: photos.module:325
+msgid "Photos admin"
+msgstr "Фото-админ"
+
+#: photos.module:334
+msgid "Photos reference download"
+msgstr "Доступные фото"
+
+#: photos.module:349
+msgid "My albums"
+msgstr "Мои альбомы"
+
+#: photos.module:358
+msgid "My images"
+msgstr "Мои изображения"
+
+#: photos.module:367
+msgid "Upload image"
+msgstr "Загрузить изображение"
+
+#: photos.module:0
+msgid "photos"
+msgstr "фотографии"
+
+#: photos.info:0
+msgid "album photos"
+msgstr "альбом фотографий"
+
+#: photos.info:0
+msgid "Picture Management Module"
+msgstr "Модуль управления изображениями"

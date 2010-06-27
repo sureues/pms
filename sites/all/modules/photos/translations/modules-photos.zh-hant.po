@@ -1,0 +1,1431 @@
+# $Id: modules-photos.zh-hant.po,v 1.1.2.3 2009/03/06 08:18:44 eastcn Exp $
+#
+# Chinese, Simplified translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  photos.module,v 1.2.2.29 2008/12/20 05:47:21 eastcn
+#  photos.page.edit.inc,v 1.0 2009/2/15 14:31 eastcn
+#  photos.page.inc,v 1.1.2.25 2008/12/20 05:47:21 eastcn
+#  photos_albumview.tpl.php,v 1.0 2009/2/25 17:10 eastcn
+#  photos.admin.inc,v 1.1.2.12 2008/12/20 05:47:20 eastcn
+#  photos_default.tpl.php,v 1.0 2009/3/4 15:11 eastcn
+#  photos.album.inc,v 1.0 2009/2/25 16:22 eastcn
+#  photos.info,v 1.1.2.6 2008/09/16 09:21:57 eastcn
+#  photos_swfu.info,v 1.1.2.3 2008/09/16 09:21:57 eastcn
+#  photos.form.inc,v 1.0 2009/2/25 15:40 eastcn
+#  photos_imageview.tpl.php,v 1.1.2.5 2008/10/08 09:27:25 eastcn
+#  photos.down.inc,v 1.0 2009/2/26 1:10 eastcn
+#  photos_imageblock.tpl.php,v 1.1.2.3 2008/10/08 09:27:25 eastcn
+#  photos.image.inc,v 1.0 2009/2/10 23:29 eastcn
+#  photos_share.tpl.php,v 1.0 2009/3/4 20:12 eastcn
+#  photos.data.inc,v 1.0 2009/2/12 13:19 eastcn
+#  photos.js,v 1.1.2.3 2008/08/27 17:02:16 eastcn
+#  js/jquery.jeditable.js: n/a
+#  photos_swfu_style.tpl.php,v 1.1.2.1 2008/12/20 05:50:29 eastcn
+#  photos_swfu/simpledemo/handlers.js: n/a
+#  photos_swfu.module,v 1.1.2.17 2008/12/20 05:47:21 eastcn
+#  photos_albumlinks.tpl.php,v 1.0 2009/2/25 20:43 eastcn
+#  photos_list.tpl.php,v 1.0 2009/3/5 16:45 eastcn
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2009-03-06 15:54+0800\n"
+"PO-Revision-Date: 2009-03-06 15:54+0800\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Chinese, Simplified <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: photos.module:191
+msgid "images"
+msgstr "圖片"
+
+#: photos.module:201
+msgid "albums"
+msgstr "相冊"
+
+#: photos.module:212
+msgid "slide"
+msgstr "幻燈片"
+
+#: photos.module:263
+msgid "@name's !str"
+msgstr "@name的!str"
+
+#: photos.module:265
+msgid "My !str"
+msgstr "我的!str"
+
+#: photos.module:328
+msgid "Album"
+msgstr "相冊"
+
+#: photos.module:331
+msgid "Album name"
+msgstr "相冊名稱"
+
+#: photos.module:333
+msgid "Album description"
+msgstr "相冊描述"
+
+#: photos.module:404
+msgid "You cannot create more albums."
+msgstr "你不能再創建相冊了。"
+
+#: photos.module:406;409;412
+msgid "Slide size is not correct."
+msgstr "幻燈片尺寸不正確。"
+
+#: photos.module:436 inc/photos.edit.inc:322
+msgid "%count images are deleted."
+msgstr "%count 張圖片被刪除。"
+
+#: photos.module:464;527;533 inc/photos.edit.inc:155;179
+msgid "Album view"
+msgstr "流覽相冊"
+
+#: photos.module:477
+msgid "There are !a albums in total"
+msgstr "共有 !a 個相冊"
+
+#: photos.module:479
+msgid "No alubms yet, "
+msgstr "還沒有相冊"
+
+#: photos.module:479
+msgid "Create album"
+msgstr "創建相冊"
+
+#: photos.module:482
+msgid "There are !a images in total"
+msgstr "共有 !a 張圖片"
+
+#: photos.module:484
+msgid "No images yet, "
+msgstr "還沒有圖片"
+
+#: photos.module:484
+msgid "Upload images"
+msgstr "上傳圖片"
+
+#: photos.module:487;542 inc/photos.edit.inc:17 inc/photos.page.inc:41 tpl/photos_albumview.tpl.php:11
+msgid "Slideshow"
+msgstr "幻燈片"
+
+#: photos.module:492
+msgid "Album image"
+msgstr "相冊圖片"
+
+#: photos.module:530;533
+msgid "Sub-Album view"
+msgstr "流覽子相冊"
+
+#: photos.module:538
+msgid "A total of !count images"
+msgstr "共有 !count 張圖片"
+
+#: photos.module:550
+msgid "View image"
+msgstr "流覽圖片"
+
+#: photos.module:563
+msgid "Sub-Album settings"
+msgstr "子相冊設置"
+
+#: photos.module:569
+msgid "Sub-Album"
+msgstr "子相冊"
+
+#: photos.module:571;578;671 inc/photos.admin.inc:29;85;94;103;112;264;302;340;359;396;417
+msgid "Disabled"
+msgstr "禁用"
+
+#: photos.module:571;578;671 inc/photos.admin.inc:29;85;94;103;112;359;396;417
+msgid "Enabled"
+msgstr "啟用"
+
+#: photos.module:572
+msgid "Node will become a sub-album, you can upload images to the node."
+msgstr "啟用後節點將可以做為子相冊，可以上傳圖片到節點中。"
+
+#: photos.module:576
+msgid "Reference"
+msgstr "引用"
+
+#: photos.module:579
+msgid "After enable this, you can insert a reference of images from other albums to the node, but do not attach the image to the node."
+msgstr "啟用後將可以把其它相冊中的圖片插入到節點中，但圖片不與節點關聯。"
+
+#: photos.module:599;1580
+msgid "Insert image"
+msgstr "插入圖片"
+
+#: photos.module:604
+msgid "Insert an existing image"
+msgstr "插入已有圖片"
+
+#: photos.module:604;604
+msgid "Choose an image from my albums to insert into the node"
+msgstr "從我的圖片庫中選取圖片插入到文章中"
+
+#: photos.module:604 tpl/photos_albumview.tpl.php:12
+msgid "Open a new window"
+msgstr "新視窗打開"
+
+#: photos.module:663;688;177 tpl/photos_default.tpl.php:14
+msgid "Latest images"
+msgstr "最新圖片"
+
+#: photos.module:664
+msgid "User's images"
+msgstr "使用者圖片"
+
+#: photos.module:665;733
+msgid "Photo information"
+msgstr "圖片資訊"
+
+#: photos.module:666;740
+msgid "Random images"
+msgstr "隨機圖片"
+
+#: photos.module:671
+msgid "Show sub-album info"
+msgstr "展示子相冊資訊"
+
+#: photos.module:675
+msgid "Show several images"
+msgstr "顯示幾張圖片"
+
+#: photos.module:707
+msgid "%name's images"
+msgstr "%name 的圖片"
+
+#: photos.module:715
+msgid "Copy image to share code"
+msgstr "複製圖片共用代碼"
+
+#: photos.module:717
+msgid "View image Exif information"
+msgstr "查看圖片Exif資訊"
+
+#: photos.module:730
+msgid "!name in !time to create"
+msgstr "!name 於 !time 創建"
+
+#: photos.module:764;799
+msgid "View more"
+msgstr "流覽更多"
+
+#: photos.module:816
+msgid "By: @name"
+msgstr "來自：@name"
+
+#: photos.module:821
+msgid "A total of @title images"
+msgstr ""
+
+#: photos.module:821 inc/photos.album.inc:50
+msgid "Album is empty"
+msgstr "相冊是空的"
+
+#: photos.module:1000
+msgid "All albums"
+msgstr "全部相冊"
+
+#: photos.module:1017
+msgid "You do not have an album yet."
+msgstr "你還沒有相冊"
+
+#: photos.module:1250
+msgid "Login to vote"
+msgstr "請登錄再投票"
+
+#: photos.module:1261
+msgid "I like this image"
+msgstr "我喜歡這張圖片"
+
+#: photos.module:1265
+msgid "I do not like this image"
+msgstr "我不喜歡這張圖片"
+
+#: photos.module:1277
+msgid "View voting users"
+msgstr ""
+
+#: photos.module:1303
+msgid "<a href=\"@login\">Login</a> to post comments"
+msgstr "要發表評論，請先<a href=\"@login\">登錄</a>"
+
+#: photos.module:1305
+msgid "Add new comment"
+msgstr "添加新評論"
+
+#: photos.module:1308
+msgid "!con comments"
+msgstr "!con 條評論"
+
+#: photos.module:1310
+msgid "!con comment"
+msgstr "!con 條評論"
+
+#: photos.module:1319;1354
+msgid "Compressed file does not exist, please check the path: "
+msgstr "壓縮檔不存在，請檢查路徑："
+
+#: photos.module:1352
+msgid "To extract the success of %num image"
+msgstr "解壓成功 %num 張圖片。"
+
+#: photos.module:1367
+msgid "The selected file %name could not be uploaded."
+msgstr "所選%name文件無法上傳。"
+
+#: photos.module:1394
+msgid "Home"
+msgstr "首頁"
+
+#: photos.module:1479
+msgid "By weight"
+msgstr "按權重"
+
+#: photos.module:1480
+msgid "By time"
+msgstr "按時間"
+
+#: photos.module:1481
+msgid "By comments "
+msgstr "按評論"
+
+#: photos.module:1482
+msgid "By visits"
+msgstr "按點擊"
+
+#: photos.module:1483
+msgid "By filesize"
+msgstr "按大小"
+
+#: photos.module:1487;1497
+msgid "Default"
+msgstr "默認"
+
+#: photos.module:1517
+msgid "Date - newest first"
+msgstr "日期——由新到舊"
+
+#: photos.module:1518
+msgid "Date - oldest first"
+msgstr "日期——由舊到新"
+
+#: photos.module:1519
+msgid "Weight - smallest first"
+msgstr "按權重 - 最小優先"
+
+#: photos.module:1520
+msgid "Weight - largest first"
+msgstr "按權重 - 最大優先"
+
+#: photos.module:1521
+msgid "Comments - most first"
+msgstr "按評論 - 最多優先"
+
+#: photos.module:1522
+msgid "Comments - least first"
+msgstr "按評論 - 最少優先"
+
+#: photos.module:1523
+msgid "Filesize - smallest first"
+msgstr "按大小 - 最小優先"
+
+#: photos.module:1524
+msgid "Filesize - largest first"
+msgstr "按大小 - 最大優先"
+
+#: photos.module:1525
+msgid "Visits - most first"
+msgstr "按流覽 - 最多優先"
+
+#: photos.module:1526
+msgid "Visits - least first"
+msgstr "按流覽 - 最少優先"
+
+#: photos.module:1552;1576
+msgid "Insert image and album"
+msgstr "插入圖片和相冊"
+
+#: photos.module:1554
+msgid "photos.module filter format, at the node to insert images or albums. e.g: [photo=image]id=55,54,53,52|algin=right[/photo] or [photo=album]id=134[/photo] or [photo=album]id=134|limit=6[/photo]. "
+msgstr ""
+"photos.module "
+"輸入過濾格式，開啟後可以通過代碼插入圖片或相冊。例如：[photo=image]id=55,54,53,52|algin=right[/photo]，或者 "
+"[photo=album]id=134[/photo]，或者 "
+"[photo=album]id=134|limit=6[/photo]"
+
+#: photos.module:1574
+msgid "Insert an image: [photo=image]id=55[/photo], Insert multiple images: [photo=image]id=55,56,57,58[/photo], Insert album: [photo=album]id=10[/photo]. "
+msgstr ""
+"插入一張圖片: "
+"[photo=image]id=55[/photo]，插入多張圖片：[photo=image]id=55,56,57,58[/photo]，插入相冊：[photo=album]id=10[/photo]。"
+
+#: photos.module:1577
+msgid "Insert an image: [photo=image]id=55[/photo]."
+msgstr "插入一張圖片：[photo=image]id=55[/photo]。"
+
+#: photos.module:1578
+msgid "Insert multiple images: [photo=image]id=55,56,57,58,59[/photo]."
+msgstr "插入多張圖片：[photo=image]id=55,56,57,58,59[/photo]。"
+
+#: photos.module:1579
+msgid "Optional attributes: algin, e.g: [photo=image]id=55|algin=left[/photo] or [photo=image]id=55,56,57|algin=right[/photo]."
+msgstr ""
+"可選的屬性：algin。使用舉例：[photo=image]id=55|algin=left[/photo] "
+"或者 [photo=image]id=55,56,57|algin=right[/photo]。"
+
+#: photos.module:1582
+msgid "Insert album: [photo=album]id=10[/photo].The default display album cover. You can change, please configure the \"limit\" property. "
+msgstr "插入相冊：[photo=album]id=10[/photo]。預設顯示相冊封面，可通過設置“limit”屬性來顯示相冊內的最新圖片。"
+
+#: photos.module:1583
+msgid "Optional attributes: algin or limit, e.g: [photo=album]id=10|algin=left[/photo] or [photo=album]id=10|algin=right|limit=5[/photo]."
+msgstr ""
+"可選的屬性：algin 和 "
+"limit。使用舉例：[photo=album]id=10|algin=left[/photo] 或者 "
+"[photo=album]id=10|algin=right|limit=5[/photo]。"
+
+#: photos.module:1584
+msgid "Insert album"
+msgstr "插入相冊"
+
+#: photos.module:1585
+msgid "This is similar to bbcode, do not seem friendly, You can try visualization interface: !url"
+msgstr "這類似bbcode，並不那麼友好，你可以試試視覺化介面：!url"
+
+#: photos.module:1585
+msgid "Click to here"
+msgstr "點擊這兒"
+
+#: photos.module:339
+msgid "view photo"
+msgstr "流覽相冊"
+
+#: photos.module:339
+msgid "create photo"
+msgstr "創建相冊"
+
+#: photos.module:339
+msgid "edit own photo"
+msgstr "編輯自己的相冊（圖片）"
+
+#: photos.module:339
+msgid "edit any photo"
+msgstr "編輯所有的相冊（圖片）"
+
+#: photos.module:339
+msgid "delete own photo"
+msgstr "刪除自己的相冊（圖片）"
+
+#: photos.module:339
+msgid "delete any photo"
+msgstr "刪除所有的相冊（圖片）"
+
+#: photos.module:339
+msgid "allowed to vote"
+msgstr "給圖片投票"
+
+#: photos.module:339
+msgid "view vote list"
+msgstr "流覽投票列表"
+
+#: photos.module:339
+msgid "view original"
+msgstr "流覽原圖"
+
+#: photos.module:32
+msgid "To sub-album"
+msgstr "發至子相冊"
+
+#: photos.module:75;84;237 inc/photos.album.inc:127;127
+msgid "Share code"
+msgstr "共用代碼"
+
+#: photos.module:93 tpl/photos_albumview.tpl.php:16
+msgid "Images Management"
+msgstr "圖片管理"
+
+#: photos.module:126
+msgid "Photos upload"
+msgstr "圖片上傳"
+
+#: photos.module:133
+msgid "Batch update"
+msgstr "批量更新"
+
+#: photos.module:171
+msgid "Album photos"
+msgstr "相冊圖片"
+
+#: photos.module:183 tpl/photos_default.tpl.php:18
+msgid "Latest albums"
+msgstr "最新相冊"
+
+#: photos.module:189 inc/photos.page.inc:116
+msgid "My images"
+msgstr "我的圖片"
+
+#: photos.module:199
+msgid "My albums"
+msgstr "我的相冊"
+
+#: photos.module:210
+msgid "My slide"
+msgstr "我的幻燈片"
+
+#: photos.module:243 inc/photos.edit.inc:37
+msgid "Image upload"
+msgstr "圖片上傳"
+
+#: photos.module:251
+msgid "Import ZIP"
+msgstr "導入ZIP"
+
+#: photos.module:0
+msgid "photos"
+msgstr "相冊"
+
+#: photos.info:0;0 photos_swfu/photos_swfu.info:0
+msgid "album photos"
+msgstr "相冊圖片"
+
+#: photos.info:0
+msgid "Picture Management Module"
+msgstr "相冊圖片模組"
+
+#: inc/photos.admin.inc:19
+msgid "Basic settings"
+msgstr "基本設置"
+
+#: inc/photos.admin.inc:26
+msgid "privacy settings"
+msgstr "隱私設置"
+
+#: inc/photos.admin.inc:28
+msgid "This option is enabled, users will be able to album set to confidentiality"
+msgstr "啟用此選項，使用者將可以把相冊和圖片設置為保密或特定人可見。"
+
+#: inc/photos.admin.inc:28
+msgid "Please enable <a href=\"@url\">photos_access</a> module"
+msgstr "請啟用 <a href=\"@url\">photos_access</a> 模組"
+
+#: inc/photos.admin.inc:35
+msgid "Display the number of form"
+msgstr "顯示幾個上傳表單"
+
+#: inc/photos.admin.inc:39
+msgid "Upload through a form, permit the maximum number of"
+msgstr "使用表單上傳時，單次允許上傳的最大數量"
+
+#: inc/photos.admin.inc:42
+msgid "Number of albums"
+msgstr "相冊數量"
+
+#: inc/photos.admin.inc:45
+msgid "The number of albums a user allowed to create. Administrater is not limited."
+msgstr "每個用戶允許創建的相冊數，管理員不受此限制。"
+
+#: inc/photos.admin.inc:62
+msgid "Path of saving"
+msgstr "保存路徑"
+
+#: inc/photos.admin.inc:64
+msgid "The path where the files should be saved, may save by user id or user name or time, e.g.: photos/%uid or photos/%username or image/%Y/%m/%d. Available variables: %uid, %username, %Y, %m, %d."
+msgstr ""
+"圖片保存路徑，可按使用者id、用戶名或時間存儲。如：photos/%uid、photos/%username、image/%Y/%m/%d。可用的萬用字元：%uid，%username，%Y， "
+"%m，%d。"
+
+#: inc/photos.admin.inc:70
+msgid "How to display original image and all sizes?"
+msgstr "如何顯示原始圖片和全部尺寸頁面？"
+
+#: inc/photos.admin.inc:72
+msgid "Print rather than return. To avoid the theme layout been destroyed. Recommended selection \"print\""
+msgstr "通常原始尺寸巨大，列印而不是返回，這可以避免主題佈局被破壞。建議選擇“列印”。"
+
+#: inc/photos.admin.inc:74
+msgid "return"
+msgstr "回檔"
+
+#: inc/photos.admin.inc:74
+msgid "print"
+msgstr "列印"
+
+#: inc/photos.admin.inc:81
+msgid "Comment setting"
+msgstr "評論設置"
+
+#: inc/photos.admin.inc:83
+msgid "Open for the photo comments, you must first type of content in the overall set of options open comments."
+msgstr "讓單張圖片擁有評論功能，必須先開啟該內容類別型的評論。"
+
+#: inc/photos.admin.inc:90
+msgid "Images vote"
+msgstr "圖片投票"
+
+#: inc/photos.admin.inc:92
+msgid "For the image to increase the voting feature, you must first install the votingapi.module."
+msgstr "讓單張圖片擁有投票功能，必須先啟用votingapi模組。"
+
+#: inc/photos.admin.inc:99
+msgid "zip compressed upload"
+msgstr "壓縮包上傳"
+
+#: inc/photos.admin.inc:101
+msgid "Will be allowed to upload images compressed into a zip, extract the necessary support to open php"
+msgstr "允許將圖片壓縮成zip上傳，需要php開啟解壓縮支援。"
+
+#: inc/photos.admin.inc:108
+msgid "Rename image"
+msgstr "重命名圖片"
+
+#: inc/photos.admin.inc:110
+msgid "Rename uploaded image by random numbers, to solve problems with non-ASCII filenames such as Chinese."
+msgstr "將上傳的圖片以亂數的方式重新命名，可解決中文名稱圖片上傳問題。"
+
+#: inc/photos.admin.inc:140
+msgid "Thumbnails settings"
+msgstr "縮略圖設置"
+
+#: inc/photos.admin.inc:143
+msgid "Permit the use of the name of the characters: a-z, A-z ,0-9, e.g: \"thumb\", \"100x75\", \"320x240\". After confirmation, please do not change easily"
+msgstr "縮略圖名稱只能使用：a-z、A-Z、0-9，如：“thumb”，“100x75”，“320x240”。設定後，請不要輕易改動。"
+
+#: inc/photos.admin.inc:149
+msgid "Name"
+msgstr "名稱"
+
+#: inc/photos.admin.inc:157
+msgid "Size"
+msgstr "大小"
+
+#: inc/photos.admin.inc:164
+msgid "Format"
+msgstr "樣式"
+
+#: inc/photos.admin.inc:173
+msgid "What time to create thumbnails"
+msgstr "何時生成縮略圖"
+
+#: inc/photos.admin.inc:175
+msgid "Immediately"
+msgstr "上傳時立即生成"
+
+#: inc/photos.admin.inc:175
+msgid "First visit"
+msgstr "第一次訪問時生成"
+
+#: inc/photos.admin.inc:177
+msgid "Album privacy settings must be enabled"
+msgstr "該選項需要啟用相冊隱私設置"
+
+#: inc/photos.admin.inc:182
+msgid "Display Settings"
+msgstr "顯示設定"
+
+#: inc/photos.admin.inc:189 inc/photos.form.inc:47
+msgid "Global Settings"
+msgstr "全域設置"
+
+#: inc/photos.admin.inc:191
+msgid "Albums basic display settings"
+msgstr "相冊基本顯示設定"
+
+#: inc/photos.admin.inc:195 inc/photos.form.inc:117
+msgid "Page Settings"
+msgstr "頁面設置"
+
+#: inc/photos.admin.inc:197
+msgid "Page (e.g: node/[nid]) display settings"
+msgstr "頁面（如：node/[nid]）顯示設定"
+
+#: inc/photos.admin.inc:203 inc/photos.form.inc:160
+msgid "Teaser Settings"
+msgstr "摘要設置"
+
+#: inc/photos.admin.inc:205
+msgid "Teaser display settings"
+msgstr "摘要顯示設定"
+
+#: inc/photos.admin.inc:212 inc/photos.form.inc:54
+msgid "How many images show in each page?"
+msgstr "每頁顯示多少圖片？"
+
+#: inc/photos.admin.inc:218 inc/photos.form.inc:60
+msgid "Image display order"
+msgstr "圖片顯示排序"
+
+#: inc/photos.admin.inc:239 inc/photos.form.inc:83
+msgid "Image display size(by list)"
+msgstr "圖片顯示尺寸（在清單頁）"
+
+#: inc/photos.admin.inc:242 inc/photos.form.inc:86
+msgid "Displayed in the list(e.g: photos/album/[nid]) of image size."
+msgstr "顯示在清單頁面（如：photos/album/[nid]）的圖片尺寸。"
+
+#: inc/photos.admin.inc:247 inc/photos.form.inc:91
+msgid "Image display size(by page)"
+msgstr "圖片顯示尺寸（在流覽頁）"
+
+#: inc/photos.admin.inc:250 inc/photos.form.inc:94
+msgid "Displayed in the page(e.g: photos/image/[fid]) of image size."
+msgstr "顯示在流覽頁面（如：photos/image/[fid]）的圖片尺寸。"
+
+#: inc/photos.admin.inc:256;292;330 inc/photos.form.inc:101;149;192
+msgid "Slide width and height"
+msgstr "幻燈片寬度與高度"
+
+#: inc/photos.admin.inc:258;294;332;366 inc/photos.form.inc:103;151;194
+msgid "The width and height of flash, e.g: 640x480."
+msgstr "播放幻燈片的Flash寬度和高度，如：640x480"
+
+#: inc/photos.admin.inc:262;300;338
+msgid "Create an album, when that allows users to modify this setting"
+msgstr "用戶創建相冊時，允許自訂此設置"
+
+#: inc/photos.admin.inc:264;302;340
+msgid "Enabled(Recommend)"
+msgstr "開啟（推薦）"
+
+#: inc/photos.admin.inc:269;307 inc/photos.form.inc:126;169
+msgid "Display setting"
+msgstr "顯示設定"
+
+#: inc/photos.admin.inc:271;309 inc/photos.form.inc:109
+msgid "Do not display"
+msgstr "不顯示"
+
+#: inc/photos.admin.inc:271;309 inc/photos.form.inc:109
+msgid "Display cover"
+msgstr "顯示封面"
+
+#: inc/photos.admin.inc:271;309;356 inc/photos.form.inc:105;111
+msgid "Slide show"
+msgstr "顯示幻燈片"
+
+#: inc/photos.admin.inc:271;309 inc/photos.form.inc:109
+msgid "Display thumbnails"
+msgstr "顯示縮略圖"
+
+#: inc/photos.admin.inc:276;314 inc/photos.form.inc:133;176
+msgid "Display quantity"
+msgstr "顯示數量"
+
+#: inc/photos.admin.inc:283;321 inc/photos.form.inc:140;183
+msgid "Image display size"
+msgstr "圖片顯示尺寸"
+
+#: inc/photos.admin.inc:344
+msgid "Slideshow default settings"
+msgstr "幻燈片預設設置"
+
+#: inc/photos.admin.inc:349
+msgid "Slide show image size"
+msgstr "幻燈片中顯示的圖片尺寸"
+
+#: inc/photos.admin.inc:358
+msgid "Please enable <a href=\"@url\">dfgallery</a> module"
+msgstr "請上載 <a href=\"@url\">dfgallery</a> 模組"
+
+#: inc/photos.admin.inc:364
+msgid "Slide default width and height"
+msgstr "幻燈片預設寬度和高度"
+
+#: inc/photos.admin.inc:372 inc/photos.edit.inc:347
+msgid "Thumbnails"
+msgstr "縮略圖"
+
+#: inc/photos.admin.inc:379
+msgid "Medium image"
+msgstr "中型圖"
+
+#: inc/photos.admin.inc:387
+msgid "Statistics"
+msgstr "統計"
+
+#: inc/photos.admin.inc:393
+msgid "Count image views"
+msgstr "統計圖片流覽量"
+
+#: inc/photos.admin.inc:395
+msgid "Increment a counter each time image is viewed."
+msgstr "圖片被流覽一次計數器加1。"
+
+#: inc/photos.admin.inc:400
+msgid "Image quantity statistics"
+msgstr "圖像數量統計"
+
+#: inc/photos.admin.inc:402
+msgid "Users/Site images and albums quantity statistics."
+msgstr "使用者/全站的圖片和相冊數量統計。"
+
+#: inc/photos.admin.inc:403
+msgid "When in the implementation of cron(affect the count update)"
+msgstr "當執行cron時統計（影響計數更新）"
+
+#: inc/photos.admin.inc:403
+msgid "When the image upload (affect the upload speed)"
+msgstr "當上傳時統計（影響上傳速度，建議此項）"
+
+#: inc/photos.admin.inc:408
+msgid "Exif Settings"
+msgstr "Exif 設置"
+
+#: inc/photos.admin.inc:414
+msgid "Show exif information"
+msgstr "顯示exif資訊"
+
+#: inc/photos.admin.inc:416
+msgid "When the image is available exif information, automatically read and display. Open this option, you must load the php exif."
+msgstr "當圖片有可用exif資訊時，自動讀取並顯示。開啟此選項，你的php必須載入exif"
+
+#: inc/photos.admin.inc:422
+msgid "Cache exif information"
+msgstr "緩存exif信息"
+
+#: inc/photos.admin.inc:424
+msgid "Exif information cache can improve access speed."
+msgstr "緩存Exif資訊可以提高存取速度。"
+
+#: inc/photos.admin.inc:425
+msgid "Do not cache"
+msgstr "不緩存"
+
+#: inc/photos.admin.inc:425
+msgid "To database"
+msgstr "緩存到資料庫"
+
+#: inc/photos.admin.inc:428
+msgid "Custom exif. Please modify function _photos_exif_tag, at this location: .../modules/photos/inc/photos.down.inc"
+msgstr ""
+"如果你想自訂Exif資訊。請修改函數 "
+"_photos_exif_tag。它在這個檔中：.../modules/photos/inc/photos.down.inc。"
+
+#: inc/photos.admin.inc:432
+msgid "Photos swfu"
+msgstr "Photos swfu"
+
+#: inc/photos.admin.inc:434
+msgid "SWFUpload could provide a better upload experience."
+msgstr "SWFUpload可以提供更好的上傳體驗。"
+
+#: inc/photos.admin.inc:439
+msgid "Number of upload"
+msgstr "上傳數量"
+
+#: inc/photos.admin.inc:442
+msgid "Please enable photos_swfu module."
+msgstr "請啟用 photos_swfu 模組"
+
+#: inc/photos.admin.inc:442
+msgid "Maxium amount allowed for one upload"
+msgstr "單次允許上傳的最大數量"
+
+#: inc/photos.admin.inc:454
+msgid "Album privacy settings must be enabled: !url"
+msgstr "該選項需要啟用相冊隱私設置：!url"
+
+#: inc/photos.admin.inc:460;487
+msgid "May not be empty"
+msgstr "不允許留空"
+
+#: inc/photos.admin.inc:466
+msgid "Variables(%uid, %username, %Y, %m, %d) can not be on the top floor"
+msgstr ""
+"變數(%uid, %username, %Y, %m, "
+"%d)不能位於頂層，必須有一個根目錄，如：photos/..."
+
+#: inc/photos.admin.inc:470
+msgid "Allow only letters and numbers"
+msgstr "只允許字母和數位"
+
+#: inc/photos.admin.inc:474
+msgid "Formats such as: 100x100"
+msgstr "正確的格式如：100x100"
+
+#: inc/photos.admin.inc:478
+msgid "Not allowed to repeat"
+msgstr "不允許重複"
+
+#: inc/photos.admin.inc:483
+msgid "Not allowed to use \"_\""
+msgstr "不能使用底線 “_”"
+
+#: inc/photos.admin.inc:511
+msgid "%name creating successful"
+msgstr "%name 創建成功"
+
+#: inc/photos.admin.inc:541
+msgid "Thumbnail-size bulk update"
+msgstr "縮略圖批量重生成"
+
+#: inc/photos.admin.inc:541
+msgid "Normally, you do not need to update it."
+msgstr "更新將耗費較長時間（取決於圖片的數量），通常情況下，你不需要更新。"
+
+#: inc/photos.admin.inc:556
+msgid "Update the %num images. Please wait, the next group is being updated ..."
+msgstr "更新完成 %num 張圖片，請稍候，正在更新下一組…"
+
+#: inc/photos.admin.inc:565
+msgid "Update is complete."
+msgstr "更新完成"
+
+#: inc/photos.admin.inc:574 inc/photos.edit.inc:70
+msgid "Upload to album"
+msgstr "上傳到相冊"
+
+#: inc/photos.admin.inc:582
+msgid "Filepath"
+msgstr "路徑"
+
+#: inc/photos.admin.inc:584
+msgid "From the server directory into zip files, to extract. You can upload images to a directory server, enter here path, you can extract and add to the album phtos. Path such as: !zip/test.zip. Documents must be read and write, php can operate."
+msgstr "從伺服器目錄中導入一個zip壓縮包。請在此輸入路徑，比如：!zip/test.zip。該檔必須可讀寫，同時php需要開啟zip支援。"
+
+#: inc/photos.admin.inc:589 inc/photos.edit.inc:50;245
+msgid "Image title"
+msgstr "圖片名稱"
+
+#: inc/photos.admin.inc:593 inc/photos.edit.inc:54;238
+msgid "Image description"
+msgstr "圖片描述"
+
+#: inc/photos.admin.inc:599
+msgid "Confirm import"
+msgstr "確認導入"
+
+#: inc/photos.album.inc:26;78 inc/photos.page.inc:61 tpl/photos_imageview.tpl.php:50
+msgid "!cou visits"
+msgstr "!cou 次流覽"
+
+#: inc/photos.album.inc:28 inc/photos.down.inc:8 tpl/photos_imageblock.tpl.php:4
+msgid "Uploaded on !time by !name"
+msgstr "!name 上傳於 !time"
+
+#: inc/photos.album.inc:31;83 inc/photos.edit.inc:227 inc/photos.image.inc:17 inc/photos.page.inc:68
+msgid "Set to Cover"
+msgstr "設為封面"
+
+#: inc/photos.album.inc:35 inc/photos.edit.inc:207;338 inc/photos.image.inc:20 inc/photos.page.inc:67
+msgid "Delete"
+msgstr "刪除"
+
+#: inc/photos.album.inc:52;103;123
+msgid "@name's albums"
+msgstr "@name 的相冊"
+
+#: inc/photos.album.inc:53
+msgid "Albums: @title"
+msgstr "相冊：@title"
+
+#: inc/photos.album.inc:80 inc/photos.page.inc:63
+msgid "!name in !time upload to !title"
+msgstr "!name 於 !time 上傳在 !title"
+
+#: inc/photos.album.inc:87 inc/photos.edit.inc:212
+msgid "Move out"
+msgstr "移出"
+
+#: inc/photos.album.inc:101
+msgid "Sub-Album is empty"
+msgstr "子相冊是空的。"
+
+#: inc/photos.album.inc:104
+msgid "Sub-Album: @title"
+msgstr "子相冊：@title"
+
+#: inc/photos.album.inc:125
+msgid "Slide: @title"
+msgstr "幻燈片：@title"
+
+#: inc/photos.album.inc:127
+msgid "Back"
+msgstr "返回"
+
+#: inc/photos.album.inc:130 inc/photos.edit.inc:361 tpl/photos_share.tpl.php:43
+msgid "No image"
+msgstr "沒有圖片"
+
+#: inc/photos.data.inc:9
+msgid "has not yet create an album"
+msgstr "還沒有創建相冊"
+
+#: inc/photos.down.inc:6
+msgid "Sharing code and download image: @title"
+msgstr "圖片共用代碼與下載：@title"
+
+#: inc/photos.down.inc:7
+msgid "Back to the image page"
+msgstr "返回圖片流覽頁面"
+
+#: inc/photos.down.inc:12
+msgid "Original"
+msgstr "原圖"
+
+#: inc/photos.down.inc:16
+msgid "Exif"
+msgstr "Exif"
+
+#: inc/photos.down.inc:19
+msgid "Vote list"
+msgstr "投票列表"
+
+#: inc/photos.down.inc:29
+msgid "Without this size image"
+msgstr "沒有這個尺寸的縮略圖。"
+
+#: inc/photos.down.inc:36
+msgid "This image there is no Exif information."
+msgstr "此圖片沒有Exif資訊。"
+
+#: inc/photos.down.inc:54 inc/photos.image.inc:30
+msgid "All sizes"
+msgstr "全部尺寸"
+
+#: inc/photos.down.inc:127
+msgid "Vote user"
+msgstr "投票用戶"
+
+#: inc/photos.down.inc:128
+msgid "Vote result"
+msgstr "投票結果"
+
+#: inc/photos.down.inc:129
+msgid "Vote time"
+msgstr "投票時間"
+
+#: inc/photos.down.inc:142
+msgid "No vote available."
+msgstr "暫時沒有人投票"
+
+#: inc/photos.down.inc:146
+msgid "See a image vote"
+msgstr "流覽圖片投票"
+
+#: inc/photos.edit.inc:6
+msgid "Album title"
+msgstr "相冊標題"
+
+#: inc/photos.edit.inc:7
+msgid "Image count"
+msgstr "圖片計數"
+
+#: inc/photos.edit.inc:8
+msgid "Link"
+msgstr "連結"
+
+#: inc/photos.edit.inc:9
+msgid "Create time"
+msgstr "創建時間"
+
+#: inc/photos.edit.inc:17
+msgid "Upload"
+msgstr "上傳"
+
+#: inc/photos.edit.inc:17
+msgid "View"
+msgstr "查看"
+
+#: inc/photos.edit.inc:25
+msgid "Please create a album."
+msgstr "請創建一個相冊。"
+
+#: inc/photos.edit.inc:27
+msgid "Or select an album: "
+msgstr "或者選擇一個相冊進入："
+
+#: inc/photos.edit.inc:41
+msgid "Allow the type:"
+msgstr "允許的類型："
+
+#: inc/photos.edit.inc:60
+msgid "You must first !create an album to upload images."
+msgstr "你必須先 !create 一個相冊才能上傳圖片。"
+
+#: inc/photos.edit.inc:60
+msgid "create"
+msgstr "創建"
+
+#: inc/photos.edit.inc:87
+msgid "Confirm upload"
+msgstr "確認上傳"
+
+#: inc/photos.edit.inc:121
+msgid "Please Album photos set to open zip upload"
+msgstr "請先到圖片上傳設置中開啟zip上傳。"
+
+#: inc/photos.edit.inc:126
+msgid "Failed to upload"
+msgstr "上傳失敗"
+
+#: inc/photos.edit.inc:133
+msgid "%count image(s) uploaded successfully."
+msgstr "上傳成功 %count 張圖片。"
+
+#: inc/photos.edit.inc:143
+msgid "Organize Albums: @title"
+msgstr "相冊管理：@title"
+
+#: inc/photos.edit.inc:146
+msgid "Organize Sub-Album: @title"
+msgstr "子相冊管理：@title"
+
+#: inc/photos.edit.inc:156
+msgid "Move image: Move out of the image, but it will not delete it."
+msgstr "移出圖片：移出並不會刪除該圖片，圖片在相冊或其它子相冊中仍然存在。如要徹底刪除圖片，請在相冊中操作。"
+
+#: inc/photos.edit.inc:229
+msgid "Filesize: !size KB"
+msgstr "圖片大小: !size KB"
+
+#: inc/photos.edit.inc:231
+msgid "Visits: !count"
+msgstr "流覽：!count 次"
+
+#: inc/photos.edit.inc:234
+msgid "Comments: !count"
+msgstr "評論：!count 條"
+
+#: inc/photos.edit.inc:251
+msgid "Weight"
+msgstr "權重"
+
+#: inc/photos.edit.inc:258
+msgid "Uploaded on !time by @name"
+msgstr "@name 上傳於 !time"
+
+#: inc/photos.edit.inc:260
+msgid "Move to the album"
+msgstr "移動相冊"
+
+#: inc/photos.edit.inc:267
+msgid "@name in !time upload to @title"
+msgstr "@name 於 !time 上傳在 @title"
+
+#: inc/photos.edit.inc:275
+msgid "Confirm the change"
+msgstr "確認更改"
+
+#: inc/photos.edit.inc:295
+msgid "%count images are move out."
+msgstr "%count 張圖片被移除。"
+
+#: inc/photos.edit.inc:346
+msgid "Select All"
+msgstr "全選"
+
+#: inc/photos.edit.inc:348
+msgid "Content"
+msgstr "內容"
+
+#: inc/photos.edit.inc:371
+msgid "Cover successfully set."
+msgstr "封面設置成功"
+
+#: inc/photos.edit.inc:412
+msgid "Delete success"
+msgstr "刪除成功"
+
+#: inc/photos.edit.inc:415 js/photos.js:0
+msgid "Delete failure"
+msgstr "刪除失敗"
+
+#: inc/photos.edit.inc:430
+msgid "Please select sub-album: "
+msgstr "請選擇子相冊"
+
+#: inc/photos.edit.inc:453
+msgid "Send confirmation"
+msgstr "確認發送"
+
+#: inc/photos.edit.inc:457
+msgid "You do not have can be used to receive a subset of the album."
+msgstr "你沒有可用于接收這張圖片的子相冊。"
+
+#: inc/photos.edit.inc:460
+msgid "Sub-album feature is not turned on."
+msgstr "子相冊功能沒有開啟。"
+
+#: inc/photos.edit.inc:478
+msgid "Successfully sent the %count sub-album"
+msgstr "成功發送到 %count 個子相冊"
+
+#: inc/photos.form.inc:21
+msgid "You may create %a albums, now you have created %b albums, you can still create %aa albums."
+msgstr ""
+"你可以創建 %a 個相冊，已經創建了 %b "
+"個，還可以創建 %aa 個。"
+
+#: inc/photos.form.inc:39 tpl/photos_albumview.tpl.php:15
+msgid "Album settings"
+msgstr "相冊設置"
+
+#: inc/photos.image.inc:15
+msgid "To sub-album..."
+msgstr "發至子相冊..."
+
+#: inc/photos.image.inc:35
+msgid "Post new comment"
+msgstr "發表新評論"
+
+#: inc/photos.image.inc:41 inc/photos.page.inc:42
+msgid "Images"
+msgstr "圖片"
+
+#: inc/photos.image.inc:41 tpl/photos_imageblock.tpl.php:13
+msgid "@name's images"
+msgstr "@name的圖片"
+
+#: inc/photos.image.inc:81
+msgid "Vote success."
+msgstr "投票成功"
+
+#: inc/photos.image.inc:83
+msgid "Vote failure."
+msgstr "投票失敗"
+
+#: inc/photos.image.inc:101;115
+msgid "Image does not exist"
+msgstr "圖片不存在"
+
+#: inc/photos.page.inc:19
+msgid "Albums"
+msgstr "相冊"
+
+#: inc/photos.page.inc:29
+msgid "@name has not yet create an album"
+msgstr "@name還沒有創建相冊"
+
+#: inc/photos.page.inc:79
+msgid "@name has not yet upload an image"
+msgstr "@name還沒有上傳圖片"
+
+#: inc/photos.page.inc:105
+msgid "By: !name"
+msgstr "來自：!name"
+
+#: inc/photos.page.inc:116
+msgid "« Back"
+msgstr "« 返回"
+
+#: inc/photos.page.inc:116
+msgid "All the shared images"
+msgstr "所有公開的圖片"
+
+#: js/jquery.jeditable.js:0 js/photos.js:0
+msgid "Click to edit"
+msgstr "點擊編輯"
+
+#: js/photos.js:0
+msgid "Operation failed."
+msgstr "操作失敗。"
+
+#: js/photos.js:0
+msgid "Please copy the above code."
+msgstr "請複製上面的代碼"
+
+#: js/photos.js:0
+msgid "Save"
+msgstr "保存"
+
+#: js/photos.js:0
+msgid "Cancel"
+msgstr "取消"
+
+#: js/photos.js:0
+msgid "Being updated..."
+msgstr "正在更新…"
+
+#: photos_swfu/photos_swfu_style.tpl.php:48 photos_swfu/simpledemo/handlers.js:0
+msgid "Queue is empty"
+msgstr "請選擇圖片"
+
+#: photos_swfu/photos_swfu_style.tpl.php:50
+msgid "Loading..."
+msgstr "載入中…"
+
+#: photos_swfu/photos_swfu_style.tpl.php:51
+msgid "Cancel All Uploads"
+msgstr "取消上傳"
+
+#: photos_swfu/photos_swfu_style.tpl.php:52
+msgid "Click here to start upload"
+msgstr "點此這兒開始上傳"
+
+#: photos_swfu/photos_swfu.module:91
+msgid "Click here to switch to the classic upload form"
+msgstr "點擊這兒切換到表單上傳"
+
+#: photos_swfu/photos_swfu.module:93
+msgid "Click here to switch back to the flash form"
+msgstr "點擊這兒切換到Flash上傳"
+
+#: photos_swfu/photos_swfu.module:108
+msgid "Model form"
+msgstr "表單上傳"
+
+#: photos_swfu/photos_swfu.module:111
+msgid "Model flash"
+msgstr "Flash上傳"
+
+#: photos_swfu/photos_swfu.module:162
+msgid "Wrong file type"
+msgstr "錯誤的檔案類型"
+
+#: photos_swfu/photos_swfu.module:189
+msgid "The file %file could not be saved, because it exceeds %maxsize, the maximum allowed size for uploads."
+msgstr "因為超過檔大小%maxsize上限所以%file檔未被保存。"
+
+#: photos_swfu/photos_swfu.module:192
+msgid "The file %file could not be saved, because the upload did not complete."
+msgstr "檔上傳失敗，%file檔未被保存。"
+
+#: photos_swfu/photos_swfu.module:195
+msgid "The file %file could not be saved. An unknown error has occurred."
+msgstr "出現未知錯誤，%file檔無法保存。"
+
+#: photos_swfu/photos_swfu.module:204
+msgid "The file is %filesize exceeding the maximum file size of %maxsize."
+msgstr "當前文件大小 %filesize 超過了限定的最大值 %maxsize."
+
+#: photos_swfu/photos_swfu.module:209
+msgid "The file is %filesize which would exceed your disk quota of %quota."
+msgstr "當前檔大小 %filesize 將超過您的磁片限額 %quota."
+
+#: photos_swfu/photos_swfu.module:134;139;166;170;174;178;0
+msgid "photos_swfu"
+msgstr "flash圖片上傳"
+
+#: photos_swfu/photos_swfu.module:134;139
+msgid "User do not have permission to update the node"
+msgstr "用戶沒有更新節點的許可權"
+
+#: photos_swfu/photos_swfu.module:166;170
+msgid "Upload error."
+msgstr "上傳失敗"
+
+#: photos_swfu/photos_swfu.module:174
+msgid "Upload path may have been illegally modified"
+msgstr "上傳路徑可能被非法修改"
+
+#: photos_swfu/photos_swfu.module:178
+msgid "Album or user is not correct"
+msgstr "相冊或用戶不正確"
+
+#: photos_swfu/photos_swfu.info:0
+msgid "photos swfu"
+msgstr "flash圖片上傳"
+
+#: photos_swfu/photos_swfu.info:0
+msgid "SWFUpload"
+msgstr "SWFUpload"
+
+#: photos_swfu/simpledemo/handlers.js:0
+msgid "Pending..."
+msgstr "等待中…"
+
+#: photos_swfu/simpledemo/handlers.js:0;0
+msgid "Uploading..."
+msgstr "上傳中…"
+
+#: photos_swfu/simpledemo/handlers.js:0
+msgid "uploaded success."
+msgstr "上傳成功"
+
+#: photos_swfu/simpledemo/handlers.js:0
+msgid " files queued"
+msgstr " 個文件等候上傳"
+
+#: photos_swfu/simpledemo/handlers.js:0
+msgid "!count file uploaded"
+msgstr "!count 張圖片上傳成功"
+
+#: photos_swfu/simpledemo/handlers.js:0
+msgid "!count files uploaded"
+msgstr "!count 張圖片上傳成功"
+
+#: tpl/photos_albumlinks.tpl.php:7 tpl/photos_albumview.tpl.php:28
+msgid "!cou images"
+msgstr "!cou 張圖片"
+
+#: tpl/photos_albumlinks.tpl.php:12
+msgid "Sort by:"
+msgstr "排序條件："
+
+#: tpl/photos_albumlinks.tpl.php:17
+msgid "Limit by:"
+msgstr "顯示數量："
+
+#: tpl/photos_albumlist.tpl.php:9
+msgid "Published in "
+msgstr "創建於"
+
+#: tpl/photos_albumlist.tpl.php:9
+msgid "A total of %num images"
+msgstr "共有 %num 張圖片"
+
+#: tpl/photos_default.tpl.php:6
+msgid "My latest images"
+msgstr "我的最新圖片"
+
+#: tpl/photos_default.tpl.php:10
+msgid "My latest albums"
+msgstr "我的最新相冊"
+
+#: tpl/photos_imageblock.tpl.php:11
+msgid "View as slideshow"
+msgstr "查看幻燈片"
+
+#: tpl/photos_imageblock.tpl.php:22 tpl/photos_imageview.tpl.php:61
+msgid "previou"
+msgstr "上一張"
+
+#: tpl/photos_imageblock.tpl.php:32 tpl/photos_imageview.tpl.php:66
+msgid "next"
+msgstr "下一張"
+
+#: tpl/photos_imageblock.tpl.php:38
+msgid "By !album"
+msgstr "來自 !album"
+
+#: tpl/photos_imageblock.tpl.php:45
+msgid "This photo also belongs to:"
+msgstr "這張圖片也屬於："
+
+#: tpl/photos_share.tpl.php:18
+msgid "Made selected images sharing code: "
+msgstr "獲取選中圖片的共用代碼："
+
+#: tpl/photos_share.tpl.php:18
+msgid "Can only be used at node"
+msgstr "只能用於站內"
+
+#: tpl/photos_share.tpl.php:18
+msgid "Can be used at other sites"
+msgstr "可用於其它網站"
+
+#: tpl/photos_share.tpl.php:22
+msgid "Please copy the code:"
+msgstr "請複製共用代碼："
+
+#: tpl/photos_share.tpl.php:25
+msgid "Please select Image Size:"
+msgstr "請造反圖片尺寸："
+
+#: tpl/photos_share.tpl.php:30
+msgid "Sizes:"
+msgstr "尺寸："
+
+msgid "Wrong file type"
+msgstr "錯誤的檔案類型"

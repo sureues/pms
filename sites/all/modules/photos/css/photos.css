@@ -1,0 +1,441 @@
+/*$Id: photos.css,v 1.1.4.3 2009/03/11 02:37:43 eastcn Exp $*/
+/*admin*/
+.photos-admin-inline{
+  margin: 5px 0;
+}
+.photos-edit-info div, .photos-edit-info .form-item label, .photos-admin-inline div, .photos-admin-inline label{
+  display: inline;
+}
+/*image vote*/
+.photos-votes{
+	padding:4px 12px;
+	overflow:hidden;
+	height:100%;
+	width:100px;
+}
+.photos-vote-u, .photos-vote, a.photos-vote{
+	display:block;
+	width:15px;
+	height:15px;
+	float:left;
+	padding:0;
+}
+.photos-vote-up-u,.photos-vote-up{
+	background:url(up2.gif);
+}
+
+a.photos-vote-up-u:hover,.photos-vote-up-x,a.photos-vote-up:hover {
+	background:url(up1.gif);
+}
+.photos-vote-down-u,.photos-vote-down{
+
+	background:url(down2.gif);
+
+}
+a.photos-vote-down-u:hover,.photos-vote-down-x, a.photos-vote-down:hover{
+	background:url(down1.gif);
+}
+.photos-vote-sum{
+	width:70px;
+	float:left;
+	text-align:center;
+	line-height:15px;
+	cursor:hand;
+}
+.photos-votes {
+	float:right;
+}
+.photos-vote-load {
+	background: url(loading.gif) no-repeat;
+}
+.photos-to-album{
+	display:inline;
+	width:100px;
+}
+.photos a{
+	margin-right:16px
+}
+#photos_upload_new{
+	padding:0 5px;
+	margin:5px 0;
+	border:1px solid #ccc;
+	height:100%;
+	overflow:hidden;
+}
+
+/*Image page*/
+.photos_album_edit_table_link a, .photo-zoom a, .photo-rg a{
+  padding-left:10px;
+}
+.photo-rg{
+  text-align:right;
+  padding:0 10px;
+  color:#818B95;
+  line-height:26px
+}
+.photo_link_pager {
+  height:30px;
+  line-height:30px
+}
+.photo-pager-left{
+  float:left
+}
+.photo-pager-right{
+  float:right
+}
+.image-a{
+  margin:5px 0;
+  text-align:center;
+  clear:both;
+}
+/*block pager*/
+.photos_block_info {
+  color:#666666;
+  font-size:14px;
+  margin-bottom:8px;
+  font-weight:bold;
+}
+
+table.photos_block_pager tbody{
+  border:none;
+}
+table.photos_block_pager td, table.photos_block_pager th{
+  padding:0;
+}
+.photos_block_pager_open{
+  width:18px;
+  height:25px;
+  background: url(context_open.gif) no-repeat; 
+}
+.photos_block_pager_left{
+  width:18px;
+  height:104px;
+  background: url(context_crap_bg.gif) repeat-y left top; 
+  border-bottom:1px solid #E3E3E3;
+}
+.photos_block_pager_center{
+  background:#F3F3F3;
+  border-top:1px solid #E3E3E3;
+}
+.photos-block-link{
+  text-align:center;
+  background:#F3F3F3;
+  height:28px;
+  line-height:28px;
+  border-bottom:1px solid #E3E3E3;
+  border-right:1px solid #E3E3E3;
+}
+.photos_block_pager_title{
+  background:#F3F3F3;
+  border:1px solid #ddd;
+  border-bottom:1px solid #F3F3F3;
+  margin-left:2px;
+}
+.photos_block_pager_name{
+  padding:0;
+  padding-left:5px;
+  font-size:14px;
+  font-weight:bold;
+}
+ .photos_prev{
+  text-align:center;
+  border-right:1px solid #E3E3E3;
+}
+.photos_block_sub{
+  border:1px solid #E3E3E3;
+  margin: 5px 0;
+}
+.photos_block_sub_title{
+  height:28px;
+  line-height:28px;
+  border-bottom: 1px solid #89B97E;
+  background: #F3F3F3;
+}
+.photos_block_sub_name{
+  text-align:right;
+  padding-right: 5px;
+}
+.photos_block_sub_open{
+  width:26px;
+  height:28px;
+  float:left;
+  background: #F3F3F3 url(sort_down.gif) no-repeat center center;
+  border-right: 1px solid #485046;
+  cursor: pointer;
+}
+.photos_block_sub_open_hover{
+  background: #A5E395 url(sort_down.gif) no-repeat center center;
+}
+.photos_block_sub_open_c{
+  background: #A5E395 url(sort_up.gif) no-repeat center center;
+}
+.photos_block_sub_body_load{
+  background: #F3F3F3 url(loading.gif) no-repeat center center;
+}
+.photos_block_sub_body{
+  text-align:center;
+  min-height: 60px;
+  display: none;
+  _height: 60px;
+}
+a.photos_block_pager_flash{
+  display:block;
+  float:right;
+  width:23px;
+  height:23px;
+  background: url(context_slideshow_icon_default.png) no-repeat;
+  text-decoration:none;
+}
+a.photos_block_pager_flash:hover{
+  text-decoration:none;
+  background: url(context_slideshow_icon_hover.png) no-repeat;
+}
+.photos_block_sub_body img, .photos_prev img{
+  max-width:50px;
+  border:1px solid #ccc;
+  padding:2px;
+  margin:6px 1px 1px 1px;
+  _width: expression(this.width > 50 && this.height < this.width ? 50: true);
+}
+.photos_block_sub_body a:hover img, .photos_prev a:hover img,.photos_prev a.active img{
+  border:1px solid #f00;
+  padding:2px;
+  margin:6px 1px 1px 1px;
+}
+/*album edit*/
+.photos_album_edit{
+  border-bottom: 1px solid #ddd;
+  clear:both;
+  overflow:hidden;
+  padding:5px 0;
+}
+.photos_album_edit_view{
+  float:left;
+  margin-right:5px;
+}
+.photos_edit_thumb img{
+  border:1px solid #ccc;
+  padding:2px;
+}
+.photos_edit_thumb a:hover img, .photos_edit_thumb a.active img{
+  border:1px solid #f00;
+  padding:2px;
+}
+.photos-edit-info{
+  margin:5px 0;
+  text-align:right
+}
+
+.photos_check{
+  background:#F5F089;
+}
+.photos_album_links{
+  padding:5px 0;
+  margin:5px 0;
+  border:1px solid #ddd;
+}
+.photos_album_links span{
+  padding: 0 6px;
+  font-weight:bold;
+}
+.photos_album_links a{
+  padding: 0 8px;
+}
+a.photos_order_desc{
+  background: url(sort_down.gif) no-repeat center right;
+}
+a.photos_order_asc{
+  background: url(sort_up.gif) no-repeat center right;
+}
+.photos_album_links a.active{
+  color:#6B9F1F;
+}
+.photos_album_links a.orderac{
+  color:#3121A0;
+  text-decoration: underline;
+}
+.photos_link_info{
+  float:right;
+}
+.photos_link_info div{
+  display:inline;
+}
+/*album view*/
+.photos_image_list_view{
+  margin:5px 0;
+  padding:5px 0;
+  border-bottom:1px solid #ccc
+}
+.photos_view_des, .photos_view_filename, .photos_list_view_des, .photos_list_view_filename{
+  margin:4px 0;
+  padding:5px 8px;
+}
+.photot_ajax_hover{
+  background-color: #FAF7DE;
+}
+.photos_ajax_del_img{
+  background: url(loading.gif) no-repeat center right;
+  padding-right:16px;
+}
+a.jQueryeditable_edit_delete{
+  display:block;
+  float:right;
+}
+/*node form*/
+.photos-form-count{
+  padding:0 5px;
+  border: 1px solid #eee;
+}
+/*album view*/
+.photos_album_right{
+  text-align: right;
+}
+.photos_album_menu{
+  border-bottom: 1px solid #C9EDA5;
+  margin: 5px 0;
+  padding: 5px 0;
+  height: 28px;
+}
+.photos_album_header{
+  overflow: hidden;
+  height: auto;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #C9EDA5;
+}
+.photos_album_body{
+  padding-left: 5px;
+}
+.photos_album_cover{
+  margin-right: 5px;
+  float:left;
+}
+.photos_album_float_right{
+  float:right;
+}
+/*download*/
+.photos_download_view{
+  margin: 5px 10px;
+  padding: 10px;
+  clear:both;
+}
+.photos_download_bucket{
+  margin:10px;
+  padding-left:10px;
+  padding-top:0;
+}
+.photos_download_menu{
+  margin-left:10px;
+  padding-left:10px;
+  overflow: hidden;
+  height: auto;
+}
+
+.photos_download_menu a{
+  padding:4px 10px;
+}
+.photos_exif_name, .photos_download_menu a.active{
+  font-weight: bold;
+  color: #5A550A
+}
+.photos_download_menu_t{
+  height: 24px;
+  line-height: 24px;
+  border-bottom: 1px solid #A2F093;
+}
+.photos_download_menu_b ul li{
+  float:left;
+  list-style-type: none;
+}
+.photos_exif_title{
+  font-weight: bold;
+  font-size:14px;
+  background: #CEE8D3
+}
+/*共享链接*/
+#photos-image-sharing{
+  margin-left:10px;
+  padding-left:10px;
+}
+#photos-image-sharing input {
+  background:url(input.gif) repeat-x left top;
+  border:1px solid #CED7D6;
+  color:#B59EC6;
+  height:20px;
+  line-height: 20px;
+  width:90%;
+  clear:both;
+  margin-bottom: 5px;
+}
+/*filter*/
+.photos_filter_left{
+  float:left;
+}
+.photos_filter_right{
+  float:right;
+}
+.photos_filter_center{
+  text-align:center;
+}
+#photos_share_ul, #photos_default .item-list{
+  clear: both;
+  height: auto;
+  overflow: hidden;
+}
+#photos_share li, #photos_default li{
+  float: left;
+}
+/*share*/
+#photos_share{
+  margin:10px;
+}
+#photos_share_ul li{
+  height:125px;
+  width:140px;
+  text-align:center;
+  background-image: none;
+  margin: 2px;
+  padding:2px;
+  border:1px solid #F7F5F5;
+}
+#photos_share_ul li img{
+  max-width:100px;
+  padding:2px;
+  margin:1px;
+  _width: expression(this.width > 100 && this.height < this.width ? 100: true);
+}
+.photos_share_hover{
+  background: #FCFCCE;
+}
+#photos_share_ul .photos_share_selected{
+  border:1px solid #EA0F34;
+}
+.photos_share_textarea{
+  display:none;
+}
+#photos_share_textarea{
+  width: 98%;
+}
+.photos_share_links a{
+  padding-right: 12px;
+}
+/*image html*/
+.photos_imagehtml{
+  float: left;
+  position:relative;
+  margin: 1px;
+  padding:1px;
+}
+
+.photos_imagehtml_thickbox{
+  background:url(thickbox.gif) no-repeat center;
+  position: absolute;
+  left: 4px;
+  bottom: 10px;
+  display:none;
+  width:20px;
+  height:20px;
+}
+
+a.photos_imagehtml_thickbox:hover{
+  background:#5AA224 url(thickbox.gif) no-repeat center;
+}

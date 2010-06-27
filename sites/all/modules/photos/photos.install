@@ -1,0 +1,373 @@
+<?php
+// $Id: photos.install,v 1.1.2.7 2009/12/30 03:35:18 eastcn Exp $
+function photos_schema() {
+  $schema['x_album'] = array(
+    'fields' => array(
+    	'pid' => array(
+		    'type' => 'int',
+		    'unsigned' => TRUE,
+		    'not null' => TRUE
+    	),
+    	'fid' => array(
+		    'type' => 'int',
+		    'unsigned' => TRUE,
+		    'not null' => TRUE,
+				'default' => 0,
+    	),
+      'count' => array(
+		    'type' => 'int',
+		    'unsigned' => TRUE,
+		    'not null' => TRUE,
+				'default' => 0,
+    	),
+      'data' => array(
+		    'type' => 'text',
+		    'not null' => TRUE,
+		    'size' => 'big'
+    	)
+    ),
+    'indexes' => array(
+    	'fid' => array('fid'),
+      'count' => array('count')
+    ),
+    'primary key' => array('pid'),
+  );
+  $schema['x_image'] = array(
+    'fields' => array(
+    	'fid' => array(
+		    'type' => 'int',
+		    'unsigned' => TRUE,
+		    'not null' => TRUE
+    	),
+    	'pid' => array(
+		    'type' => 'int',
+		    'unsigned' => TRUE,
+		    'not null' => TRUE
+    	),
+    	'des' => array(
+		    'type' => 'text',
+		    'not null' => TRUE,
+		    'size' => 'big'
+    	),
+    	'wid' => array(
+		    'type' => 'int',
+		    'size' => 'tiny',
+		    'length' => 4,
+		    'not null' => TRUE,
+				'default' => 0,
+    	),
+    	'count' => array(
+		    'type' => 'int',
+		    'unsigned' => TRUE,
+		    'not null' => TRUE,
+				'default' => 0,
+    	),
+      'comcount' => array(
+		    'type' => 'int',
+		    'unsigned' => TRUE,
+		    'not null' => TRUE,
+				'default' => 0,
+    	),
+      'exif' => array(
+		    'type' => 'int',
+		    'size' => 'tiny',
+		    'length' => 1,
+		    'default' => 0
+    	),
+    ),
+    'indexes' => array(
+    	'pid'    => array('pid'),
+      'wid'    => array('wid'),
+    	'count'    => array('count'),
+      'comcount'    => array('comcount'),
+    ),
+    'primary key' => array('fid'),
+  );
+  $schema['x_vote'] = array(
+  	'fields' => array(
+  		'fid' => array(
+		  	'type' => 'int',
+		  	'unsigned' => TRUE,
+		  	'not null' => TRUE
+  		),
+  		'cid' => array(
+		  	'type' => 'int',
+		    'unsigned' => TRUE,
+		    'not null' => TRUE,
+  		)
+  	),
+  	'indexes' => array(
+  		'fid' => array('fid'),
+      'cid' => array('cid'),
+  	)
+  );
+	$schema['x_node'] = array(
+		'fields' => array(
+			'nid' => array(
+				'type' => 'int',
+				'unsigned' => TRUE,
+				'not null' => TRUE
+			),
+			'fid' => array(
+				'type' => 'int',
+				'unsigned' => TRUE,
+				'not null' => TRUE
+			)
+		),
+		'indexes' => array(
+			'nid' => array('nid'),
+      'fid' => array('fid'),
+		)
+	);
+	$schema['x_count'] = array(
+		'fields' => array(
+			'id' => array(
+				'type' => 'serial',
+				'not null' => TRUE
+			),
+      'cid' => array(
+		    'type' => 'int',
+		    'default' => 0,
+		    'unsigned' => TRUE,
+		    'not null' => TRUE,
+				'default' => 0,
+    	),
+      'changed' => array(
+		    'type' => 'int',
+		    'unsigned' => TRUE,
+		    'not null' => TRUE,
+				'default' => 0,
+    	),
+			'type' => array(
+				'type' => 'varchar',
+				'length' => 12,
+				'default' => '',
+				'not null' => TRUE
+			),
+      'value' => array(
+		    'type' => 'int',
+		    'unsigned' => TRUE,
+		    'not null' => TRUE,
+				'default' => 0,
+    	),
+		),
+		'indexes' => array(
+			'cid' => array('cid'),
+			'type' => array('type'),
+      'value' => array('value')
+		),
+    'primary key' => array('id')
+	);
+  $schema['cache_photos'] = drupal_get_schema_unprocessed('system', 'cache');
+  return $schema;
+}
+
+function photos_install() {
+  drupal_install_schema('photos');
+  $size = array(
+    array(
+      'name' => 'thumb',
+      'w' => 100,
+      'h' => 75,
+      'r' => 'scale_and_crop'
+    ),
+    array(
+      'name' => '240x180',
+      'w' => 240,
+      'h' => 180,
+      'r' => 'scale'
+    ),
+    array(
+      'name' => '640x480',
+      'w' => 640,
+      'h' => 480,
+      'r' => 'scale'
+    )
+  );
+  variable_set('photos_title_0', $size[0]['name']);
+  variable_set('photos_title_1', $size[1]['name']);
+  variable_set('photos_title_2', $size[2]['name']);
+  variable_set('photos_size', $size);
+  variable_set('photos_display_list_imagesize', $size[1]['name']);
+  variable_set('photos_display_view_imagesize', $size[2]['name']);
+  db_query("INSERT INTO {x_count} (cid, changed, type, value) VALUES (0, %d, '%s', 0), (0, %d, '%s', 0)", time(), 'site_album', time(), 'site_image');
+}
+
+function photos_update_1() {
+	$ret = array();
+	$schema['x_vote'] = array(
+		'fields' => array(
+			'fid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE),
+			'cid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE)
+		),
+		'indexes' => array(
+			'fid' => array('fid'),
+		)
+	);
+	db_create_table($ret, 'x_vote', $schema['x_vote']);
+	return $ret;
+}
+
+function photos_update_2() {
+	$ret = array();
+	db_add_field($ret, 'x_image', 'count', array('type' => 'int', 'not null' => TRUE));
+	return $ret;
+}
+
+//删除x_album uid字段，创建count字段，统计相册下图片数量。
+//创建x_node表，存放节点中引用的图片数据
+//2009/2/14 15:12
+function photos_update_3() {
+  $ret = array();
+	$schema['x_node'] = array(
+		'fields' => array(
+			'nid'    => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE),
+			'fid'    => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE)
+		),
+		'indexes' => array(
+			'nid' => array('nid'),
+      'fid' => array('fid'),
+		)
+	);
+  db_create_table($ret, 'x_node', $schema['x_node']);
+  db_drop_index($ret, 'x_vote', 'cid');
+  db_drop_index($ret, 'x_album', 'uid');
+  db_change_field($ret, 'x_album', 'uid', 'count', array('type' => 'int', 'not null' => TRUE));
+  db_add_index($ret, 'x_album', 'count', array('count'));
+  db_add_field($ret, 'x_album', 'data', array('type' => 'text', 'not null' => TRUE, 'size' => 'big'));
+  $result = db_query('SELECT pid FROM {x_album} ORDER BY pid ASC');
+  while($image = db_fetch_object($result)){
+    db_query('UPDATE {x_album} SET count = (SELECT count(pid) FROM {x_image} WHERE pid = %d) WHERE pid = %d', $image->pid, $image->pid);
+  }
+  return $ret;
+}
+
+//删除缩略图数量字段，添加图片评论数量、exif字段。
+//2009/2/14 15:13
+function photos_update_4() {
+  $ret = array();
+  $result = db_query('SELECT fid, nid FROM {x_image} ORDER BY fid DESC');
+  while($file = db_fetch_object($result)){
+    if($file->nid){
+      db_query('INSERT INTO {x_node} (fid, nid) VALUES (%d, %d)', $file->fid, $file->nid);
+    }
+  }
+  db_drop_field($ret, 'x_image', 'nid');
+  db_change_field($ret, 'x_image', 'num', 'comcount', array('type' => 'int', 'not null' => TRUE));
+  db_change_field($ret, 'x_image', 'uid', 'exif', array('type' => 'int', 'size' => 'tiny', 'length' => 1, 'default' => 0));
+  db_add_index($ret, 'x_image', 'comcount', array('comcount'));
+  db_add_index($ret, 'x_image', 'wid', array('wid'));
+
+  $schema['cache_photos'] = drupal_get_schema_unprocessed('system', 'cache');
+  db_create_table($ret, 'cache_photos', $schema['cache_photos']);
+  $result = db_query('SELECT f.fid, f.filemime FROM {files} f INNER JOIN {x_image} p ON f.fid = p.fid ORDER BY f.fid ASC');
+  while($image = db_fetch_object($result)){
+    db_query('UPDATE {x_image} SET comcount = (SELECT COUNT(fid) FROM {x_vote} WHERE fid = %d), exif = %d WHERE fid = %d', $image->fid, (($image->filemie == 'image/jpeg') ? 1 : 0), $image->fid);
+  }
+  return $ret;
+}
+//创建统计数据表，记录用户(全站)相册、图片数量。
+//2009/2/14 15:11
+function photos_update_5() {
+  $ret = array();
+	$schema['x_count'] = array(
+		'fields' => array(
+			'id'  => array('type' => 'serial', 'not null' => TRUE),
+      'cid'  => array('type' => 'int', 'default' => 0, 'not null' => TRUE),
+      'changed'  => array('type' => 'int', 'default' => 0, 'not null' => TRUE),
+			'type'  => array('type' => 'varchar', 'length' => 12, 'default' => '', 'not null' => TRUE),
+      'value' => array('type' => 'int', 'default' => 0, 'not null' => TRUE),
+		),
+		'indexes' => array(
+			'cid'    => array('cid'),
+			'type'    => array('type'),
+      'value' => array('value')
+		),
+    'primary key' => array('id')
+	);
+	db_create_table($ret, 'x_count', $schema['x_count']);
+  $site_album_count = db_result(db_query('SELECT count(pid) FROM {x_album}'));
+  $site_image_count = db_result(db_query('SELECT count(fid) FROM {x_image}'));
+  db_query("INSERT INTO {x_count} (cid, changed, type, value) VALUES (0, %d, '%s', %d), (0, %d, '%s', %d)", time(), 'site_album', $site_album_count, time(), 'site_image', $site_image_count);
+  $result = db_query('SELECT uid FROM {users} WHERE uid != 0 ORDER BY uid ASC');
+  while($image = db_fetch_object($result)){
+    $album_count = db_result(db_query('SELECT count(x.pid) FROM {x_album} x INNER JOIN {node} n ON x.pid = n.nid WHERE n.uid = %d', $image->uid));
+    $image_count = db_result(db_query('SELECT count(x.fid) FROM {x_image} x INNER JOIN {files} f ON x.fid = f.fid WHERE f.uid = %d', $image->uid));
+    db_query("INSERT INTO {x_count} (cid, changed, type, value) VALUES (%d, %d, '%s', %d), (%d, %d, '%s', %d)", $image->uid, time(), 'user_album', $album_count, $image->uid, time(), 'user_image', $image_count);
+  }
+  $result = db_query('SELECT pid FROM {x_album}');
+  while($t = db_fetch_object($result)){
+    photos_set_count('node_album', $t->pid);
+  }
+  $result = db_query('SELECT DISTINCT(nid) FROM {x_node}');
+  while($t = db_fetch_object($result)){
+    photos_set_count('node_node', $t->nid);
+  }
+  return $ret;
+}
+//删除旧的缩略图尺寸、样式等设置
+//2009/2/14 15:15
+function photos_update_6() {
+  $ret = array();
+  $t = explode('x', variable_get('photos_t_w', '100x100'));
+  $t1 = explode('x', variable_get('photos_t_ww', '640x480'));
+  variable_set('photos_title_0', variable_get('photos_t_w', '100x100'));
+  variable_set('photos_title_1', variable_get('photos_t_ww', '640x480'));
+  $size = array(
+    array(
+      'name' => variable_get('photos_t_w', '100x100'),
+      'w' => $t[0],
+      'h' => $t[1],
+      'r' => variable_get('photos_t_s', 'crop')
+    ),
+    array(
+      'name' => variable_get('photos_t_ww', '640x480'),
+      'w' => $t1[0],
+      'h' => $t1[1],
+      'r' => variable_get('photos_t_ss', 'scale')
+    )
+  );
+  $types = node_get_types();
+  foreach ($types as $type){
+    variable_set('photos_node_'.$type->type, variable_get('photos_'.$type->type, 0));
+    variable_get('photos_share_'.$type->type, variable_get('photos_quote_'.$type->type, 0));
+    variable_del('photos_'.$type->type);
+    variable_del('photos_quote_'.$type->type);
+  }
+  variable_set('photos_size', $size);
+  module_exists('dfgallery') ? variable_set('photos_flash', 0) : NULL;
+  extension_loaded('exif') ? variable_set('photos_exif', 0) : NULL;
+  (version_compare(PHP_VERSION, '5') >= 0) ? variable_set('photos_upzip', 0) : NULL;
+  variable_set('photos_print_sizes', variable_get('photos_open_orig', 0));
+  variable_del('photos_open_orig');
+  variable_del('photos_privacy_default');
+  variable_del('photos_pnum');
+  variable_del('photos_t_w');
+  variable_del('photos_t_s');
+  variable_del('photos_t_ww');
+  variable_del('photos_t_ss');
+  variable_del('photos_block_num_2_1');
+  return $ret;
+}
+
+//hook_uninstall
+//2009/2/14 15:47
+function photos_uninstall() {
+  db_query("DELETE FROM {variable} WHERE name LIKE 'photos_%'");
+  // remove photos nodes.
+  $result = db_query("SELECT nid FROM {node} WHERE type = 'photos'");
+  while ($node = db_fetch_object($result)) {
+    node_delete($node->nid);
+  }
+  //remove files
+  $result = db_query("SELECT fid FROM {x_image}");
+  while ($file = db_fetch_object($result)) {
+    db_query('DELETE FROM {files} WHERE fid = %d', $file->fid);
+    //file_delete($file->filepath);
+  }
+  // clear cache.
+  cache_clear_all('*', 'cache', TRUE);
+  cache_clear_all('*', 'cache_menu', TRUE);
+  cache_clear_all('*', 'cache_page', TRUE);
+  drupal_uninstall_schema('photos');
+}

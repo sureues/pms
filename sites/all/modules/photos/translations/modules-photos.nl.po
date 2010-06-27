@@ -1,0 +1,958 @@
+# $Id: modules-photos.nl.po,v 1.1.2.1 2009/03/06 11:13:14 eastcn Exp $
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  photos-quote-page.tpl.php,v 1.1.2.1 2008/08/11 16:12:33 eastcn
+#  photos_albumview.tpl.php: n/a
+#  photos.page.inc,v 1.1.2.18 2008/09/16 04:19:22 eastcn
+#  photos_flash.tpl.php,v 1.1.2.2 2008/08/19 15:09:32 eastcn
+#  photos_imageblock.tpl.php,v 1.1.2.1 2008/09/12 08:18:40 eastcn
+#  photos_imageview.tpl.php,v 1.1.2.4 2008/09/12 08:18:40 eastcn
+#  photos.admin.inc,v 1.1.2.6 2008/09/10 03:08:38 eastcn
+#  photos.module,v 1.2.2.22 2008/09/16 04:19:22 eastcn
+#  photos_swfu.module,v 1.1.2.12 2008/09/16 04:19:22 eastcn
+#  photos.info,v 1.1.2.5 2008/08/20 06:55:18 eastcn
+#  photos_swfu.info,v 1.1.2.2 2008/08/11 16:32:32 eastcn
+#  photos.js,v 1.1.2.3 2008/08/27 17:02:16 eastcn
+#  v102demo/swfupload.v102.callbacks.js: n/a
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nl\n"
+"POT-Creation-Date: 2008-09-16 14:17+0800\n"
+"PO-Revision-Date: 2009-02-01 21:37+0100\n"
+"Last-Translator: Adriaan Vanheule <adriaan_vanheule@hotmail.com>\n"
+"Language-Team: nl <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: photos-quote-page.tpl.php:6
+msgid "Select picture"
+msgstr "Selecteer afbeelding"
+
+#: photos_albumview.tpl.php:6
+msgid "Published in "
+msgstr "Toegevoegd op "
+
+#: photos_albumview.tpl.php:6
+#: photos.page.inc:64;66
+msgid "A total of %num images"
+msgstr "%num afbeeldingen in totaal"
+
+#: photos_flash.tpl.php:32
+msgid "Please wait"
+msgstr "Wacht aub"
+
+#: photos_flash.tpl.php:33
+msgid "Loading"
+msgstr "Laden"
+
+#: photos_flash.tpl.php:34
+msgid "Previous Page"
+msgstr "Vorige pagina"
+
+#: photos_flash.tpl.php:36
+msgid "Next Page"
+msgstr "Volgende pagina"
+
+#: photos_imageblock.tpl.php:4
+msgid "Uploaded by: "
+msgstr "Geupload door:"
+
+#: photos_imageblock.tpl.php:7;15
+msgid "View all images"
+msgstr "Bekijk alle afbeeldingen"
+
+#: photos_imageblock.tpl.php:9
+msgid "Time of upload: "
+msgstr "Geupload op:"
+
+#: photos_imageblock.tpl.php:11
+msgid "Belongs to album:"
+msgstr "Hoort bij album:"
+
+#: photos_imageblock.tpl.php:19
+msgid "Belongs to node:"
+msgstr "Hoort bij node:"
+
+#: photos_imageblock.tpl.php:30
+#: photos_imageview.tpl.php:33
+msgid "« previou"
+msgstr "« Vorige"
+
+#: photos_imageblock.tpl.php:42
+#: photos_imageview.tpl.php:38
+msgid "next »"
+msgstr "Volgende »"
+
+#: photos_imageblock.tpl.php:47
+#: photos.page.inc:256
+msgid "Photo html: "
+msgstr "Foto html link:"
+
+#: photos_imageblock.tpl.php:49
+#: photos.page.inc:256
+msgid "Photo link: "
+msgstr "Foto URL: "
+
+#: photos_imageview.tpl.php:5
+msgid "previou"
+msgstr "Vorige"
+
+#: photos_imageview.tpl.php:8
+msgid "next"
+msgstr "Volgende"
+
+#: photos_imageview.tpl.php:22
+msgid "%cou visits"
+msgstr "%cou keer bekeken"
+
+#: photos.admin.inc:5
+msgid "Basic settings"
+msgstr "Basis instellingen"
+
+#: photos.admin.inc:11
+msgid "Advanced Settings"
+msgstr "Geavanceerd instellingen"
+
+#: photos.admin.inc:18
+msgid "Number of upload"
+msgstr "Aantal uploads"
+
+#: photos.admin.inc:21
+msgid "Maxium amount allowed for one upload"
+msgstr "Maximum aantal toegestane foto's voor één upload"
+
+#: photos.admin.inc:25
+msgid "Number of albums"
+msgstr "Aantal albums"
+
+#: photos.admin.inc:28
+msgid "The number of albums a user allowed to create. Administrater is not limited."
+msgstr "Maximum aantal albums dat een gebruiker mag aanmaken. Administrator heeft geen beperkingen."
+
+#: photos.admin.inc:32
+msgid "Thumbnail size"
+msgstr "Thumbnail grootte"
+
+#: photos.admin.inc:34;48
+msgid "This photos module creates 2 formats of thumbnails, and saves original image. Please set size"
+msgstr "Stel grootte in"
+
+#: photos.admin.inc:39
+msgid "Thumbnail format"
+msgstr "Thumbnail formaat"
+
+#: photos.admin.inc:42;56
+msgid "scale: Keep ratio for resizing, crop:  Fix size, aligned by a border."
+msgstr "Scale: Behoud de huidige verhoudingen bij het kleiner maken; crop: pas grootte aan, begrensd door een border"
+
+#: photos.admin.inc:46;143
+msgid "Medium image size"
+msgstr "Medium grootte voor afbeelding"
+
+#: photos.admin.inc:53
+msgid "Medium image format"
+msgstr "Medium formaat voor afbeelding"
+
+#: photos.admin.inc:60
+msgid "Path of saving"
+msgstr "Path voor opslaan"
+
+#: photos.admin.inc:62
+msgid "The path where the files should be saved, may save by user id or user name, e.g.: photos/%uid or photos/%username"
+msgstr "De URL waar de files moeten opgeslaan worden, volgens user id of username, vb: photos/%uid of phoots/%username"
+
+#: photos.admin.inc:69
+msgid "privacy settings"
+msgstr "Privacy instellingen"
+
+#: photos.admin.inc:71
+msgid "This option is enabled, users will be able to album set to confidentiality"
+msgstr "Deze optie bepaalt of gebruikers albums als privé kunnen markeren"
+
+#: photos.admin.inc:72;81;88;95;103;111;119;127
+#: photos.module:837;844;872;930;931
+msgid "Enabled"
+msgstr "Ingeschakeld"
+
+#: photos.admin.inc:72;81;88;95;103;111;119;127
+#: photos.module:837;844;872;930;931
+msgid "Disabled"
+msgstr "Uitgeschakeld"
+
+#: photos.admin.inc:78
+msgid "zip compressed upload"
+msgstr "Uploaden van .zip"
+
+#: photos.admin.inc:80
+msgid "Will be allowed to upload images compressed into a zip, extract the necessary support to open php"
+msgstr "Afbeeldingen in .zip formaat uploaden wordt toegestaan, php zip functie moet ingeschakeld zijn"
+
+#: photos.admin.inc:85
+msgid "Rename image"
+msgstr "Hernoem afbeelding"
+
+#: photos.admin.inc:87
+msgid "Rename uploaded image by random numbers, to solve problems with non-ASCII filenames such as Chinese."
+msgstr "Hernoem geuploade afbeelding met willekeurig getal"
+
+#: photos.admin.inc:92
+#: photos.module:930
+msgid "Show exif information"
+msgstr "Toon exif informatie"
+
+#: photos.admin.inc:94
+msgid "When the image is available exif information, automatically read and display. Open this option, you must load the php exif."
+msgstr "Als exif informatie beschikbaar is, automatisch lezen en weergeven. Php exif functie moet ingeschakeld zijn"
+
+#: photos.admin.inc:100
+msgid "Comment setting"
+msgstr "Comment instellingen"
+
+#: photos.admin.inc:102
+msgid "Open for the photo comments, you must first type of content in the overall set of options open comments."
+msgstr ""
+
+#: photos.admin.inc:108
+msgid "Images vote"
+msgstr "Stem op de afbeeldingen"
+
+#: photos.admin.inc:110
+msgid "For the image to increase the voting feature, you must first install the votingapi.module."
+msgstr "Installeer eerst de votingapi.module om deze optie aan te leggen"
+
+#: photos.admin.inc:116
+msgid "Count image views"
+msgstr "Tel aantal bezoekers voor de afbeeldingen"
+
+#: photos.admin.inc:118
+msgid "Increment a counter each time image is viewed."
+msgstr "Verhoog een teller met +1 bij elk bezoek"
+
+#: photos.admin.inc:124
+msgid "FLASH slide show"
+msgstr "Flash slideshow"
+
+#: photos.admin.inc:126
+msgid "Please download <a href=\"@url\">dfgallery</a>, and save to flash_gallery under , e.g: @swfurl"
+msgstr "Download eerst <a href=\"@url\">dfgallery</a> en sla op onder flash_gallery, vb @swfurl"
+
+#: photos.admin.inc:132
+msgid "Flash width and height"
+msgstr "Flash breedte en hoogte"
+
+#: photos.admin.inc:134
+msgid "The width and length of flash, e.g: 500x450."
+msgstr "De breedte en hoogte van de flash, vb 500x450"
+
+#: photos.admin.inc:141
+msgid "FLASH show image size"
+msgstr "Grootte van de afbeeldingen in de Flash show"
+
+#: photos.admin.inc:143
+#: photos.page.inc:255
+msgid "Original Size"
+msgstr "Oorspronkelijke grootte"
+
+#: photos.page.inc:5
+msgid "From my gallery, select the image"
+msgstr "Selecteer een afbeelding uit het album"
+
+#: photos.page.inc:5
+msgid "Upload new image"
+msgstr "Voeg afbeeldingen toe"
+
+#: photos.page.inc:8;445
+msgid "Please create a new album"
+msgstr "Maak een nieuw album aan"
+
+#: photos.page.inc:10
+msgid "Back to"
+msgstr "Terug naar"
+
+#: photos.page.inc:19
+msgid "Please select checkbox to get photos quoted link."
+msgstr ""
+
+#: photos.page.inc:32;255;620
+msgid "Thumbnails"
+msgstr "Thumbnails"
+
+#: photos.page.inc:32
+msgid "Appropriate"
+msgstr ""
+
+#: photos.page.inc:46
+msgid "Select Album"
+msgstr "Selecteer een album"
+
+#: photos.page.inc:62
+msgid "« Back to album"
+msgstr "« Terug naar album"
+
+#: photos.page.inc:62;361;484
+#: photos.module:286;804
+msgid "Flash View image"
+msgstr "Bekijk de afbeeldingen in flashformaat"
+
+#: photos.page.inc:62;455;484
+#: photos.module:796
+msgid "Organize images"
+msgstr "Bewerk afbeeldingen"
+
+#: photos.page.inc:73
+msgid "Flash View image: "
+msgstr ""
+
+#: photos.page.inc:83;416
+msgid "!name's album"
+msgstr "Album van !name"
+
+#: photos.page.inc:99;433;494
+#: photos.module:547
+msgid "Home"
+msgstr "Home"
+
+#: photos.page.inc:155;712
+msgid "delete"
+msgstr "Verwijder"
+
+#: photos.page.inc:159
+msgid "weight"
+msgstr "Gewicht"
+
+#: photos.page.inc:169;593
+msgid "Confirm the change"
+msgstr "Bevestig veranderingen"
+
+#: photos.page.inc:174
+msgid "Cancel"
+msgstr "Cancel"
+
+#: photos.page.inc:186
+msgid "Delete success"
+msgstr ""
+
+#: photos.page.inc:188
+msgid "Failure to delete"
+msgstr "Kon niet verwijderen"
+
+#: photos.page.inc:195
+msgid "Laws success"
+msgstr ""
+
+#: photos.page.inc:197
+msgid "Laws failure"
+msgstr ""
+
+#: photos.page.inc:254
+msgid "Back to album"
+msgstr "Terug naar album"
+
+#: photos.page.inc:255
+msgid "Moderate size"
+msgstr "Gemiddelde grootte"
+
+#: photos.page.inc:255
+msgid "Vote list"
+msgstr ""
+
+#: photos.page.inc:255
+msgid "Show EXIF"
+msgstr "Toon EXIF"
+
+#: photos.page.inc:255
+msgid "Back to image"
+msgstr "Terug naar afbeelding"
+
+#: photos.page.inc:269
+msgid "Vote user"
+msgstr ""
+
+#: photos.page.inc:270
+msgid "Vote result"
+msgstr ""
+
+#: photos.page.inc:271
+msgid "Vote time"
+msgstr ""
+
+#: photos.page.inc:289
+msgid "No vote available."
+msgstr "Geen stemmen beschikbaar"
+
+#: photos.page.inc:294
+msgid "See a image vote"
+msgstr ""
+
+#: photos.page.inc:298
+msgid "See a image exif"
+msgstr ""
+
+#: photos.page.inc:334
+msgid "A total of !img image, !num albums"
+msgstr "Er zijn in totaal !img afbeeldingen in !num albums"
+
+#: photos.page.inc:334;361
+msgid "View albums"
+msgstr "Bekijk albums"
+
+#: photos.page.inc:337;375;637
+msgid "No image"
+msgstr "Geen afbeeldingen"
+
+#: photos.page.inc:337;356;375;395
+msgid "Create a album"
+msgstr "Maak een album aan"
+
+#: photos.page.inc:337;356;375;395
+msgid "Upload a image"
+msgstr "Voeg een afbeelding toe"
+
+#: photos.page.inc:347;361
+msgid "A total of !num albums, !img image"
+msgstr "Er zijn in totaal !img afbeeldingen in !num albums"
+
+#: photos.page.inc:347;361
+msgid "View images"
+msgstr "Bekijk afbeeldingen"
+
+#: photos.page.inc:356;395
+msgid "No album"
+msgstr "Geen albums"
+
+#: photos.page.inc:365
+#: photos.module:890
+msgid "Image"
+msgstr "Afbeelding"
+
+#: photos.page.inc:367
+msgid "My image"
+msgstr "Mijn afbeelding"
+
+#: photos.page.inc:369
+msgid "!name's image"
+msgstr "Afbeelding van !name"
+
+#: photos.page.inc:380;420
+#: photos.module:7
+msgid "Album"
+msgstr "Album"
+
+#: photos.page.inc:382
+msgid "My Album"
+msgstr "Mijn album"
+
+#: photos.page.inc:384
+msgid "!name's Album"
+msgstr "Album van !name"
+
+#: photos.page.inc:422
+#: photos.module:450
+msgid "My flash"
+msgstr "Mijn flashvoorstelling"
+
+#: photos.page.inc:424
+msgid "!name's flash"
+msgstr "Flashvoorstelling van !name"
+
+#: photos.page.inc:455
+msgid "Edit album"
+msgstr "Edit album"
+
+#: photos.page.inc:457
+msgid "View album"
+msgstr "Bekijk album"
+
+#: photos.page.inc:459
+msgid "Flash View album"
+msgstr "Flashvoorstelling van album"
+
+#: photos.page.inc:478
+msgid "Cover successfully set."
+msgstr "Cover werd succesvol ingesteld"
+
+#: photos.page.inc:484
+msgid "« Back to"
+msgstr "« Terug naar"
+
+#: photos.page.inc:486
+msgid "You are in management article !title image. A total of !num images. "
+msgstr "U bewerkt nu afbeelding !title. Er zijn in totaal !num afbeeldingen."
+
+#: photos.page.inc:488
+msgid "You are in management album !title image. A total of !num images. "
+msgstr ""
+
+#: photos.page.inc:493
+msgid "Organize images: "
+msgstr "Bewerk afbeeldingen:"
+
+#: photos.page.inc:513
+msgid "Import zip"
+msgstr "Importeer .zip bestand"
+
+#: photos.page.inc:515
+msgid "From the server directory into zip files, to extract. You can upload images to a directory server, enter here path, you can extract and add to the album phtos. Path such as: !zip/test.zip. Documents must be read and write, php can operate."
+msgstr "Voeg de path naar het .zip bestand in. Voorbeeld: !zip/test.zip. U moet de php zip functie inschakelen en zorgen dat de nodige read and write permissies gegeven zijn."
+
+#: photos.page.inc:520
+#: photos.module:687
+msgid "Upload to album"
+msgstr "Upload naar album"
+
+#: photos.page.inc:525
+#: photos.module:692
+msgid "You may create a new album"
+msgstr "U kunt een nieuw album aanmaken"
+
+#: photos.page.inc:531
+#: photos.module:699
+msgid "Confirm upload"
+msgstr "Bevestig upload"
+
+#: photos.page.inc:563
+msgid "Uploaded to the article "
+msgstr "Geupload naar article"
+
+#: photos.page.inc:568
+msgid "Categories in the album "
+msgstr ""
+
+#: photos.page.inc:571
+msgid "Is set to album cover. "
+msgstr "Dit is de album cover."
+
+#: photos.page.inc:579
+msgid "Upload the images in "
+msgstr "Upload de afbeeldingen naar"
+
+#: photos.page.inc:590
+msgid "Select All"
+msgstr "Selecteer alle"
+
+#: photos.page.inc:590
+msgid "Deselect"
+msgstr "Deselecteer"
+
+#: photos.page.inc:614
+msgid "Move to the album"
+msgstr "Verplaats naar album"
+
+#: photos.page.inc:616
+msgid "His album"
+msgstr ""
+
+#: photos.page.inc:619
+msgid "Delete"
+msgstr "Verwijder"
+
+#: photos.page.inc:621
+msgid "Description"
+msgstr "Beschrijving"
+
+#: photos.page.inc:623
+msgid "Weight"
+msgstr "Gewicht"
+
+#: photos.page.inc:717
+msgid "edit"
+msgstr "edit"
+
+#: photos.page.inc:724
+msgid "reply"
+msgstr "reply"
+
+#: photos.page.inc:765
+msgid "Unknown"
+msgstr "Onbekend"
+
+#: photos.page.inc:835
+msgid "Show details"
+msgstr "Toon details"
+
+#: photos.page.inc:893
+msgid "Information"
+msgstr "Informatie"
+
+#: photos.page.inc:893
+msgid "This image does not EXIF information"
+msgstr "Deze afbeelding heeft geen EXIF informatie"
+
+#: photos.page.inc:898
+msgid "EXIF information"
+msgstr "EXIF informatie"
+
+#: photos.module:10
+msgid "Album name"
+msgstr "Naam van het album"
+
+#: photos.module:12
+msgid "Album description"
+msgstr "Beschrijving van het album"
+
+#: photos.module:52
+msgid "You may create %a albums, now you have created %b albums, you can still create %aa albums."
+msgstr "U mag %a albums aanmaken, u heeft er al %b aangemaakt en mag er nog %aa aanmaken."
+
+#: photos.module:72
+msgid "album cover"
+msgstr "Album cover"
+
+#: photos.module:80
+msgid "the best size of the cover image is 120x90."
+msgstr "De beste grootte voor de cover is 120x90px."
+
+#: photos.module:109
+msgid "You cannot create more albums."
+msgstr "U kan geen albums meer aanmaken."
+
+#: photos.module:146
+msgid "There's no cover uploaded for the album, this image is the default cover."
+msgstr "Er is geen cover geupload voor het album, deze afbeelding is de default cover."
+
+#: photos.module:219;230
+msgid "%count images are deleted."
+msgstr "%count afbeeldingen werden verwijderd"
+
+#: photos.module:283
+msgid "There are !a albums in total"
+msgstr "Er zijn in totaal !a albums"
+
+#: photos.module:283
+msgid "No alubms yet, "
+msgstr "Nog geen albums"
+
+#: photos.module:283
+msgid "Create album"
+msgstr "Maak een album aan"
+
+#: photos.module:284
+msgid "There are !a images in total"
+msgstr "Er zijn in totaal !a afbeeldingen"
+
+#: photos.module:284
+msgid "No images yet, "
+msgstr "Nog geen afbeeldingen"
+
+#: photos.module:284
+msgid "Upload images"
+msgstr "Upload afbeeldingen"
+
+#: photos.module:290
+msgid "Album image"
+msgstr "Afbeelding van het album"
+
+#: photos.module:545
+msgid "Browse images: "
+msgstr "Bekijk afbeeldingen:"
+
+#: photos.module:546
+msgid "A total of %num albums under the image"
+msgstr "Er zijn %num foto's in dit album"
+
+#: photos.module:558
+msgid "Click to change description"
+msgstr "Klik om de beschrijving te veranderen"
+
+#: photos.module:571;572
+msgid "Login to vote"
+msgstr "Login om te stemmen "
+
+#: photos.module:574;577
+msgid "I like this image"
+msgstr "Deze afbeelding vind ik goed"
+
+#: photos.module:575;579
+msgid "I do not like this image"
+msgstr "Deze afbeelding vind ik niet goed"
+
+#: photos.module:592
+msgid "<a href=\"@login\">Login</a> to post comments"
+msgstr "<a href=\"@login\">Login</a> om te reageren"
+
+#: photos.module:594
+msgid "Add new comment"
+msgstr "Zend een reactie in"
+
+#: photos.module:597
+msgid "!con comments"
+msgstr "!con reacties"
+
+#: photos.module:599
+msgid "!con comment"
+msgstr "!con reacties"
+
+#: photos.module:602
+msgid "View original image"
+msgstr "Bekijk oorspronkelijke afbeelding"
+
+#: photos.module:607
+msgid "Post new comment"
+msgstr "Voeg een nieuwe reactie toe"
+
+#: photos.module:615
+msgid "The image does not exist."
+msgstr "Deze afbeelding bestaat niet."
+
+#: photos.module:652;828
+msgid "Image upload"
+msgstr "Afbeeldingen uploaden"
+
+#: photos.module:655
+msgid "Allow the type:"
+msgstr "Sta volgende types toe:"
+
+#: photos.module:666
+msgid "description"
+msgstr "Beschrijving"
+
+#: photos.module:674
+msgid "You must first !create an album to upload images."
+msgstr "U moet eerst een album !create om afbeeldingen toe te voegen"
+
+#: photos.module:674
+msgid "create"
+msgstr "aanmaken"
+
+#: photos.module:732;759
+msgid "Failed to upload"
+msgstr "Kon niet uploaden"
+
+#: photos.module:752
+msgid "Please Album photos set to open zip upload"
+msgstr ""
+
+#: photos.module:775
+msgid "%count image(s) uploaded successfully."
+msgstr "%count afbeeldingen succesvol geupload"
+
+#: photos.module:798
+msgid "Organize images of !title"
+msgstr "Bewerk afbeeldingen van album !title"
+
+#: photos.module:806
+msgid "A total of !title images"
+msgstr "In totaal !title afbeeldingen"
+
+#: photos.module:814
+msgid "View image"
+msgstr "Bekijk afbeelding"
+
+#: photos.module:835
+msgid "Upload"
+msgstr "Upload"
+
+#: photos.module:838
+msgid "You can upload images to nodes after enable this."
+msgstr "Hiermee kunt u afbeeldingen uploaden naar nodes"
+
+#: photos.module:842
+msgid "Reference"
+msgstr "Referentie"
+
+#: photos.module:845
+msgid "After enable this, you can insert a reference of images from other albums to the node, but do not attach the image to the node."
+msgstr ""
+
+#: photos.module:850
+msgid "display album cover"
+msgstr "Toon album cover"
+
+#: photos.module:852
+msgid "none display"
+msgstr ""
+
+#: photos.module:852
+msgid "the teaser"
+msgstr "De teaser"
+
+#: photos.module:852
+msgid "the page"
+msgstr "De pagina"
+
+#: photos.module:852
+msgid "teaser and page"
+msgstr "Teaser en pagina"
+
+#: photos.module:858
+msgid "Number of images displayed in a teaser"
+msgstr "Aantal afbeeldingen getoond in de teaser"
+
+#: photos.module:864
+msgid "Number of images displayed in a page"
+msgstr "Aantal afbeeldingen getoond op één pagina"
+
+#: photos.module:870
+msgid "display pager"
+msgstr ""
+
+#: photos.module:898
+msgid "Insert an existing image"
+msgstr "Voeg een bestaande afbeelding in"
+
+#: photos.module:898
+msgid "Choose an image from my albums to insert into the node"
+msgstr "Selecteer een afbeelding uit mijn albums om aan de node toe te voegen"
+
+#: photos.module:922;962;372
+msgid "Latest images"
+msgstr "Laatste foto's"
+
+#: photos.module:923
+msgid "User's images"
+msgstr "Foto's van de gebruiker"
+
+#: photos.module:924;991
+msgid "Photo information"
+msgstr "Foto informatie"
+
+#: photos.module:931
+msgid "Show photo link"
+msgstr "Toon link naar de foto"
+
+#: photos.module:935
+msgid "Show several images"
+msgstr "Toon verscheidene foto's"
+
+#: photos.module:959;983
+msgid "more"
+msgstr "meer"
+
+#: photos.module:985
+msgid "%name's images"
+msgstr "Afbeeldingen van %name"
+
+#: photos.module:1169
+msgid "All albums"
+msgstr "Alle albums"
+
+#: photos.module:1178
+msgid "You do not have an album yet."
+msgstr "U heeft nog geen albums."
+
+#: photos.module:1269
+msgid "Compressed file does not exist, please check the path: "
+msgstr "Bestand bestaat niet, controleer aub de locatie"
+
+#: photos.module:1314;1359
+msgid "To extract the success of %num image"
+msgstr "%num afbeeldingen succesvol geupload"
+
+#: photos.module:19
+msgid "view photo"
+msgstr "Bekijk foto"
+
+#: photos.module:20
+msgid "create photo"
+msgstr "Maak foto aan"
+
+#: photos.module:21
+msgid "edit own photo"
+msgstr "Edit eigen foto's"
+
+#: photos.module:22
+msgid "edit any photo"
+msgstr "Edit alle foto's"
+
+#: photos.module:23
+msgid "delete own photo"
+msgstr "Verwijder eigen foto's"
+
+#: photos.module:24
+msgid "delete any photo"
+msgstr "Verwijder alle foto's"
+
+#: photos.module:25
+msgid "allowed to vote"
+msgstr "Mag stemmen"
+
+#: photos.module:26
+msgid "view vote list"
+msgstr "Mag lijst met stemmen bekijken"
+
+#: photos.module:324
+msgid "Photos upload"
+msgstr "Upload foto's"
+
+#: photos.module:333
+msgid "Photos management"
+msgstr "Beheer"
+
+#: photos.module:350
+msgid "Album photos"
+msgstr "Foto albums"
+
+#: photos.module:380
+msgid "Latest albums"
+msgstr "Nieuwste albums"
+
+#: photos.module:388
+msgid "Photos admin"
+msgstr "Foto admin"
+
+#: photos.module:397
+msgid "Import ZIP"
+msgstr "Importeer zip"
+
+#: photos.module:407
+msgid "Photos reference download"
+msgstr ""
+
+#: photos.module:431
+msgid "My albums"
+msgstr "Mijn albums"
+
+#: photos.module:440
+msgid "My images"
+msgstr "Mijn afbeeldingen"
+
+#: photos.module:460
+msgid "Upload image"
+msgstr "Upload afbeelding"
+
+#: photos.module:0
+msgid "photos"
+msgstr "foto's"
+
+#: photos_swfu.module:30
+msgid "Queue is empty"
+msgstr "Wachtlijst is leeg"
+
+#: photos_swfu.module:0
+msgid "photos_swfu"
+msgstr "Flash upload"
+
+#: photos.info:0;0
+#: photos_swfu.info:0
+msgid "album photos"
+msgstr "Foto albums"
+
+#: photos.info:0
+msgid "Picture Management Module"
+msgstr ""
+
+#: photos_swfu.info:0
+msgid "photos swfu"
+msgstr "Flash upload"
+
+#: photos_swfu.info:0
+msgid "SWFUpload"
+msgstr "Flash upload"
+
+#: photos.js:0
+msgid "Please copy the above code."
+msgstr "Kopieer bovenstaande code"
+
+#: v102demo/swfupload.v102.callbacks.js:0;0
+msgid " files queued"
+msgstr " bestanden in wachtlijst"
+
+#: v102demo/swfupload.v102.callbacks.js:0
+msgid "Upload finished (Failed to upload marked in red)"
+msgstr "Upload is afgewerkt, gefaalde uploads zijn rood gemarkeerd"
+

@@ -1,0 +1,927 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Album Photos DE\n"
+"POT-Creation-Date: 2008-08-20 14:19+0800\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Jan Niggemann <jn@hz6.de>\n"
+"Language-Team: Jan Niggemann <jn@hz6.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+
+#: photos-quote-page.tpl.php:6
+msgid "Select picture"
+msgstr "Bild auswählen"
+
+#: photos_flash.tpl.php:32
+msgid "Please wait"
+msgstr "Bitte warten"
+
+#: photos_flash.tpl.php:33
+msgid "Loading"
+msgstr "Laden..."
+
+#: photos_flash.tpl.php:34
+msgid "Previous Page"
+msgstr "Vorherige Seite"
+
+#: photos_flash.tpl.php:36
+msgid "Next Page"
+msgstr "Nächste Seite"
+
+#: photos.admin.inc:5
+msgid "Basic settings"
+msgstr "Grund-Einstellungen"
+
+#: photos.admin.inc:11
+msgid "Advanced Settings"
+msgstr "Fortgeschrittene Einstellungen"
+
+#: photos.admin.inc:18
+#, fuzzy
+msgid "Number of upload"
+msgstr "Zahl der Uploads"
+
+#: photos.admin.inc:21
+#, fuzzy
+msgid "Maxium amount allowed for one upload"
+msgstr "Maximale Anzahl für einen einzelnen Upload"
+
+#: photos.admin.inc:25
+msgid "Number of albums"
+msgstr "Anzahl der Alben"
+
+#: photos.admin.inc:28
+msgid "The number of albums a user allowed to create. Administrater is not limited."
+msgstr "Anzahl der Alben, die ein user erstellen darf. Der Administrator unterliegt keiner Beschränkung."
+
+#: photos.admin.inc:32
+msgid "Thumbnail size"
+msgstr "Größe der Vorschaubilder"
+
+#: photos.admin.inc:34;48
+msgid "This photos module creates 2 formats of thumbnails, and saves original image. Please set size"
+msgstr "Dieses Modul erstellt 2 unterschiedlich große Vorschaubilder. Bitte Größe eingeben"
+
+#: photos.admin.inc:39
+msgid "Thumbnail format"
+msgstr "Format der Vorschaubilder"
+
+#: photos.admin.inc:42;56
+#, fuzzy
+msgid "scale: Keep ratio for resizing, crop:  Fix size, aligned by a border."
+msgstr "scale: Seitenverhältnis beim resizing beibehalten, crop: feste Größe, ausgerichtet am Rand."
+
+#: photos.admin.inc:46
+msgid "Medium image size"
+msgstr "Mittlere Bild-Größe"
+
+#: photos.admin.inc:53
+msgid "Medium image format"
+msgstr "Format der mittleren Bild-Größe"
+
+#: photos.admin.inc:60
+msgid "Path of saving"
+msgstr "Speicherpfad"
+
+#: photos.admin.inc:62
+msgid "The path where the files should be saved, may save by user id or user name, e.g.: photos/%uid or photos/%username"
+msgstr "Der Pfad, in dem die Dateien gespeichert werden, entweder nach user id oder username, z.B.: photos/%uid oder photos/%username"
+
+#: photos.admin.inc:68
+msgid "zip compressed upload"
+msgstr "ZIP-komprimierter Upload"
+
+#: photos.admin.inc:70
+msgid "Will be allowed to upload images compressed into a zip, extract the necessary support to open php"
+msgstr "Will be allowed to upload images compressed into a zip, extract the necessary support to open php"
+
+#: photos.admin.inc:71;78;85;92;104;112
+#: photos.module:792;799;827;883;884
+msgid "Disabled"
+msgstr "Deaktiviert"
+
+#: photos.admin.inc:71;78;85;92;104;112
+#: photos.module:792;799;827;883;884
+msgid "Enabled"
+msgstr "Aktiviert"
+
+#: photos.admin.inc:75
+msgid "Rename image"
+msgstr "Bild umbenennen"
+
+#: photos.admin.inc:77
+msgid "Rename uploaded image by random numbers, to solve problems with non-ASCII filenames such as Chinese."
+msgstr "Bild nach upload in Zufallszahl umbenennen, um Probleme mit nicht-ASCII dateinamen wie z.B. chinesisch zu beheben."
+
+#: photos.admin.inc:82
+#: photos.module:883
+msgid "Show exif information"
+msgstr "EXIF-Informationen anzeigen"
+
+#: photos.admin.inc:84
+#, fuzzy
+msgid "When the image is available exif information, automatically read and display. Open this option, you must load the php exif."
+msgstr "Wenn das Bild EXIF-Informationen enthält, diese automatisch laden und anzeigen. Open this option, you must load the php exif."
+
+#: photos.admin.inc:89
+msgid "Comment setting"
+msgstr "kommentareinstellungen"
+
+#: photos.admin.inc:91
+#, fuzzy
+msgid "Open for the photo comments, you must first type of content in the overall set of options open comments."
+msgstr "Open for the photo comments, you must first type of content in the overall set of options open comments."
+
+#: photos.admin.inc:101
+msgid "Images vote"
+msgstr "Bilder beurteilen"
+
+#: photos.admin.inc:103
+#, fuzzy
+msgid "For the image to increase the voting feature, you must first install the votingapi.module."
+msgstr "For the image to increase the voting feature, you must first install the votingapi.module."
+
+#: photos.admin.inc:109
+msgid "FLASH slide show"
+msgstr "Flash Dia-Show"
+
+#: photos.admin.inc:111
+#, fuzzy
+msgid "Please download <a href=\"@url\">dfgallery</a>, and save to flash_gallery under , e.g: sites/all/modules/photos/flash_gallery/gallery.swf"
+msgstr "Bitte <a href=\"@url\">dfgallery</a> herunterladen und nach flash_gallery speichern"
+
+#: photos.admin.inc:116
+msgid "Flash width and height"
+msgstr "Flash Breite und Höhe"
+
+#: photos.admin.inc:118
+#, fuzzy
+msgid "The width and length of flash, e.g: 500x450."
+msgstr "Die Breite und Höhe von flash, z.B.: 500x450"
+
+#: photos.page.inc:5
+msgid "From my gallery, select the image"
+msgstr ""
+
+#: photos.page.inc:5
+msgid "Upload new image"
+msgstr "Neues Bild hochladen"
+
+#: photos.page.inc:9;386
+msgid "Please create a new album"
+msgstr "Bitte ein neues Album anlegen"
+
+#: photos.page.inc:11
+msgid "Back to"
+msgstr "Zurück nach"
+
+#: photos.page.inc:20
+msgid "Please select checkbox to get photos quoted link."
+msgstr ""
+
+#: photos.page.inc:33;234;559
+msgid "Thumbnails"
+msgstr "Vorschaubilder"
+
+#: photos.page.inc:33
+msgid "Appropriate"
+msgstr ""
+
+#: photos.page.inc:47
+msgid "Select Album"
+msgstr "Album auswählen"
+
+#: photos.page.inc:63
+msgid "« Back to album"
+msgstr "« Zurück zum Album"
+
+#: photos.page.inc:63;426
+#: photos.module:759
+msgid "Flash View image"
+msgstr ""
+
+#: photos.page.inc:63;398;426
+#: photos.module:751
+msgid "Organize images"
+msgstr "Bilder verwalten"
+
+#: photos.page.inc:65;67;396
+msgid "A total of %num images"
+msgstr "%num Bilder insgesamt"
+
+#: photos.page.inc:92
+msgid "Flash View image: "
+msgstr ""
+
+#: photos.page.inc:102
+msgid "!name's album"
+msgstr ""
+
+#: photos.page.inc:123;373;436
+#: photos.module:523
+msgid "Home"
+msgstr ""
+
+#: photos.page.inc:135;651
+msgid "delete"
+msgstr "löschen"
+
+#: photos.page.inc:139
+msgid "weight"
+msgstr ""
+
+#: photos.page.inc:149;532
+msgid "Confirm the change"
+msgstr "Änderung bestätigen"
+
+#: photos.page.inc:154
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: photos.page.inc:166
+msgid "Delete success"
+msgstr ""
+
+#: photos.page.inc:168
+msgid "Failure to delete"
+msgstr ""
+
+#: photos.page.inc:175
+msgid "Laws success"
+msgstr ""
+
+#: photos.page.inc:177
+msgid "Laws failure"
+msgstr ""
+
+#: photos.page.inc:233
+msgid "Back to album"
+msgstr ""
+
+#: photos.page.inc:234
+msgid "Original Size"
+msgstr "Originalgröße"
+
+#: photos.page.inc:234
+msgid "Moderate size"
+msgstr ""
+
+#: photos.page.inc:234
+msgid "Vote list"
+msgstr ""
+
+#: photos.page.inc:234
+msgid "Show EXIF"
+msgstr "EXIF Informationen anzeigen"
+
+#: photos.page.inc:234
+msgid "Back to image"
+msgstr "Zurück zum Bild"
+
+#: photos.page.inc:235
+#: photos.module:513
+msgid "Photo html: "
+msgstr ""
+
+#: photos.page.inc:235
+#: photos.module:513
+msgid "Photo link: "
+msgstr ""
+
+#: photos.page.inc:248
+msgid "Vote user"
+msgstr ""
+
+#: photos.page.inc:249
+msgid "Vote result"
+msgstr ""
+
+#: photos.page.inc:250
+msgid "Vote time"
+msgstr ""
+
+#: photos.page.inc:268
+msgid "No vote available."
+msgstr ""
+
+#: photos.page.inc:273
+msgid "See a image vote"
+msgstr ""
+
+#: photos.page.inc:277
+msgid "See a image exif"
+msgstr ""
+
+#: photos.page.inc:310;346
+msgid "A total of !img image, !num albums"
+msgstr "Insgesamt !img Bilder und !num Alben"
+
+#: photos.page.inc:310;346
+msgid "View albums"
+msgstr ""
+
+#: photos.page.inc:313;348;576
+msgid "No image"
+msgstr "Kein Bild"
+
+#: photos.page.inc:313;329;348;367
+msgid "Create a album"
+msgstr "Album anlegen"
+
+#: photos.page.inc:313;329;348;367
+msgid "Upload a image"
+msgstr "Bild hochladen"
+
+#: photos.page.inc:323;361
+msgid "A total of !num albums, !img image"
+msgstr "Insgesamt !num Alben und !img Bilder"
+
+#: photos.page.inc:323;361
+msgid "View images"
+msgstr "Bilder ansehen"
+
+#: photos.page.inc:329;367
+msgid "No album"
+msgstr "Kein Album"
+
+#: photos.page.inc:337
+#: photos.module:844
+msgid "Image"
+msgstr "Bild"
+
+#: photos.page.inc:339
+#, fuzzy
+msgid "My image"
+msgstr "Meine Bilder"
+
+#: photos.page.inc:341
+msgid "!name's image"
+msgstr ""
+
+#: photos.page.inc:353
+#: photos.module:14
+msgid "Album"
+msgstr "Album"
+
+#: photos.page.inc:355
+msgid "My Album"
+msgstr "Meine Alben"
+
+#: photos.page.inc:357
+msgid "!name's Album"
+msgstr ""
+
+#: photos.page.inc:396
+msgid "Published in "
+msgstr "Veröffentlicht am"
+
+#: photos.page.inc:398
+msgid "Edit album"
+msgstr "Album verwalten"
+
+#: photos.page.inc:400
+msgid "View album"
+msgstr "Album betrachten"
+
+#: photos.page.inc:400
+msgid "Flash View album"
+msgstr ""
+
+#: photos.page.inc:420
+msgid "Cover successfully set."
+msgstr ""
+
+#: photos.page.inc:426
+msgid "« Back to"
+msgstr "« zurück"
+
+#: photos.page.inc:428
+msgid "You are in management article !title image. A total of !num images. "
+msgstr ""
+
+#: photos.page.inc:430
+msgid "You are in management album !title image. A total of !num images. "
+msgstr "Sie verwalten gerade Bilder im Album !title. Bisher gibt es !num Bilder."
+
+#: photos.page.inc:435
+msgid "Organize images: "
+msgstr ""
+
+#: photos.page.inc:453
+msgid "Import zip"
+msgstr ""
+
+#: photos.page.inc:455
+msgid "From the server directory into zip files, to extract. You can upload images to a directory server, enter here path, you can extract and add to the album phtos. Path such as: !zip/test.zip. Documents must be read and write, php can operate."
+msgstr ""
+
+#: photos.page.inc:460
+#: photos.module:658
+msgid "Upload to album"
+msgstr "Album auswählen"
+
+#: photos.page.inc:465
+#: photos.module:663
+msgid "You may create a new album"
+msgstr "Neues Album anlegen"
+
+#: photos.page.inc:471
+#: photos.module:670
+msgid "Confirm upload"
+msgstr "Upload"
+
+#: photos.page.inc:502
+msgid "Uploaded to the article "
+msgstr ""
+
+#: photos.page.inc:507
+msgid "Categories in the album "
+msgstr ""
+
+#: photos.page.inc:510
+msgid "Is set to album cover. "
+msgstr "Als Album-Cover setzen "
+
+#: photos.page.inc:518
+msgid "Upload the images in "
+msgstr "Bild hochgeladen am "
+
+#: photos.page.inc:529
+msgid "Select All"
+msgstr "Alle auswählen"
+
+#: photos.page.inc:529
+msgid "Deselect"
+msgstr ""
+
+#: photos.page.inc:553
+msgid "Move to the album"
+msgstr "In Album verschieben"
+
+#: photos.page.inc:555
+msgid "His album"
+msgstr "In Album"
+
+#: photos.page.inc:558
+msgid "Delete"
+msgstr "Löschen"
+
+#: photos.page.inc:560
+msgid "Description"
+msgstr "Beschreibung"
+
+#: photos.page.inc:562
+msgid "Weight"
+msgstr ""
+
+#: photos.page.inc:656
+msgid "edit"
+msgstr ""
+
+#: photos.page.inc:662
+msgid "reply"
+msgstr ""
+
+#: photos.page.inc:702
+msgid "Unknown"
+msgstr ""
+
+#: photos.page.inc:773
+msgid "Show details"
+msgstr "Details anzeigen"
+
+#: photos.page.inc:831
+msgid "Information"
+msgstr ""
+
+#: photos.page.inc:831
+msgid "This image does not EXIF information"
+msgstr "Dieses Bild enthält keine EXIF-Informationen"
+
+#: photos.page.inc:836
+msgid "EXIF information"
+msgstr "EXIF Informationen"
+
+#: photos.module:17
+msgid "Album name"
+msgstr "Name des Albums"
+
+#: photos.module:19
+msgid "Album description"
+msgstr "Albumbeschreibung"
+
+#: photos.module:59
+msgid "You may create %a albums, now you have created %b albums, you can still create %aa albums."
+msgstr "Sie können %a Alben anlegen, momentan haben Sie %b Alben. Sie können also noch %aa Alben anlegen."
+
+#: photos.module:79
+msgid "album cover"
+msgstr "album cover"
+
+#: photos.module:87
+msgid "the best size of the cover image is 120x90."
+msgstr "Beste Größe für das Cover-Bild ist 120x90 Pixel."
+
+#: photos.module:107
+msgid "You cannot create more albums."
+msgstr "Sie können nicht mehr Alben anlegen"
+
+#: photos.module:142
+#, fuzzy
+msgid "There's no cover uploaded for the album, this image is the default cover."
+msgstr "Es wurde kein Cover für das Album hochgeladen, dieses Bild ist das Default-Cover"
+
+#: photos.module:254;265
+msgid "%count images are deleted."
+msgstr "%count Bilder gelöscht"
+
+#: photos.module:273
+msgid "There are !a albums in total"
+msgstr "Es gibt insgesamt !a Alben"
+
+#: photos.module:273
+msgid "No alubms yet, "
+msgstr ""
+
+#: photos.module:273
+msgid "Create album"
+msgstr "Album anlegen"
+
+#: photos.module:274
+msgid "There are !a images in total"
+msgstr ""
+
+#: photos.module:274
+msgid "No images yet, "
+msgstr "Bisher keine Bilder"
+
+#: photos.module:274
+msgid "Upload images"
+msgstr "Bilder hochladen"
+
+#: photos.module:277
+msgid "Album image"
+msgstr ""
+
+#: photos.module:459
+msgid "Without"
+msgstr ""
+
+#: photos.module:463;466
+msgid "previou"
+msgstr "vorheriges Bild"
+
+#: photos.module:463;466;479;482
+msgid "There are !num image"
+msgstr ""
+
+#: photos.module:479;482
+msgid "next"
+msgstr "nächstes Bild"
+
+#: photos.module:504
+msgid "Uploaded by: "
+msgstr "Hochgeladen von:"
+
+#: photos.module:504
+msgid "View all images"
+msgstr "Alle Bilder sehen"
+
+#: photos.module:504
+msgid "Browse all images of the user"
+msgstr ""
+
+#: photos.module:504
+msgid "Time of upload: "
+msgstr ""
+
+#: photos.module:506
+msgid "Belongs to album:"
+msgstr "Gehört zu Album:"
+
+#: photos.module:506;509
+msgid "View flash »"
+msgstr ""
+
+#: photos.module:506
+msgid "There are !count images in the album"
+msgstr ""
+
+#: photos.module:509
+msgid "Belongs to node:"
+msgstr ""
+
+#: photos.module:509
+msgid "There are !count images in the node"
+msgstr ""
+
+#: photos.module:521
+msgid "Browse images: "
+msgstr ""
+
+#: photos.module:522
+msgid "A total of %num albums under the image"
+msgstr ""
+
+#: photos.module:534
+msgid "Click to change description"
+msgstr "Beschreibung ändern"
+
+#: photos.module:547;548
+msgid "Login to vote"
+msgstr ""
+
+#: photos.module:550;553
+msgid "I like this image"
+msgstr ""
+
+#: photos.module:551;555
+msgid "I do not like this image"
+msgstr ""
+
+#: photos.module:568
+msgid "<a href=\"@login\">Login</a> to post comments"
+msgstr ""
+
+#: photos.module:570
+msgid "Add new comment"
+msgstr ""
+
+#: photos.module:573
+msgid "!con comments"
+msgstr ""
+
+#: photos.module:575
+msgid "!con comment"
+msgstr ""
+
+#: photos.module:578
+msgid "View original image"
+msgstr "Originalbild ansehen"
+
+#: photos.module:583
+msgid "Post new comment"
+msgstr "Neuen Kommentar schreiben"
+
+#: photos.module:591
+msgid "The image does not exist."
+msgstr "Das Bild existiert nicht"
+
+#: photos.module:629;783
+#, fuzzy
+msgid "Image upload"
+msgstr "Bild hochladen"
+
+#: photos.module:632
+msgid "Allow the type:"
+msgstr "Erlaubte Dateitypen:"
+
+#: photos.module:645
+#, fuzzy
+msgid "You must first !create an album to upload images."
+msgstr "Sie müssen erst ein Album anlegen, um Bilder hochladen zu können."
+
+#: photos.module:645
+msgid "create"
+msgstr ""
+
+#: photos.module:703;723
+msgid "Failed to upload"
+msgstr ""
+
+#: photos.module:715
+msgid "Please Album photos set to open zip upload"
+msgstr ""
+
+#: photos.module:739
+msgid "%count image(s) uploaded successfully."
+msgstr "%count Bild(er) erfolgreich hochgeladen"
+
+#: photos.module:753
+msgid "Organize images of !title"
+msgstr ""
+
+#: photos.module:761
+msgid "A total of !title images"
+msgstr "Insgesamt !title Bilder"
+
+#: photos.module:769
+msgid "View image"
+msgstr ""
+
+#: photos.module:790
+msgid "Upload"
+msgstr "Upload"
+
+#: photos.module:793
+msgid "You can upload images to nodes after enable this."
+msgstr ""
+
+#: photos.module:797
+msgid "Reference"
+msgstr ""
+
+#: photos.module:800
+msgid "After enable this, you can insert a reference of images from other albums to the node, but do not attach the image to the node."
+msgstr ""
+
+#: photos.module:805
+msgid "display album cover"
+msgstr ""
+
+#: photos.module:807
+msgid "none display"
+msgstr ""
+
+#: photos.module:807
+msgid "the teaser"
+msgstr ""
+
+#: photos.module:807
+msgid "the page"
+msgstr ""
+
+#: photos.module:807
+msgid "teaser and page"
+msgstr ""
+
+#: photos.module:813
+msgid "Number of images displayed in a teaser"
+msgstr ""
+
+#: photos.module:819
+msgid "Number of images displayed in a page"
+msgstr ""
+
+#: photos.module:825
+msgid "display pager"
+msgstr ""
+
+#: photos.module:852
+msgid "Insert an existing image"
+msgstr ""
+
+#: photos.module:852
+msgid "Choose an image from my albums to insert into the node"
+msgstr ""
+
+#: photos.module:875;915;358
+msgid "Latest images"
+msgstr "Neueste Bilder"
+
+#: photos.module:876
+msgid "User's images"
+msgstr ""
+
+#: photos.module:877;944
+msgid "Photo information"
+msgstr ""
+
+#: photos.module:884
+msgid "Show photo link"
+msgstr ""
+
+#: photos.module:888
+msgid "Show several images"
+msgstr ""
+
+#: photos.module:912;936
+msgid "more"
+msgstr ""
+
+#: photos.module:938
+msgid "%name's images"
+msgstr ""
+
+#: photos.module:1116
+msgid "All albums"
+msgstr ""
+
+#: photos.module:1125
+msgid "You do not have an album yet."
+msgstr "Sie haben noch kein Album angelegt."
+
+#: photos.module:1219
+msgid "Compressed file does not exist, please check the path: "
+msgstr ""
+
+#: photos.module:1254;1289
+msgid "To extract the success of %num image"
+msgstr ""
+
+#: photos.module:26
+msgid "view photo"
+msgstr ""
+
+#: photos.module:27
+msgid "create photo"
+msgstr ""
+
+#: photos.module:28
+msgid "edit own photo"
+msgstr ""
+
+#: photos.module:29
+msgid "edit any photo"
+msgstr ""
+
+#: photos.module:30
+msgid "delete own photo"
+msgstr ""
+
+#: photos.module:31
+msgid "delete any photo"
+msgstr ""
+
+#: photos.module:32
+msgid "allowed to vote"
+msgstr ""
+
+#: photos.module:33
+msgid "view vote list"
+msgstr ""
+
+#: photos.module:310
+msgid "Photos upload"
+msgstr ""
+
+#: photos.module:319
+msgid "Photos management"
+msgstr ""
+
+#: photos.module:336
+msgid "Album photos"
+msgstr "Fotoalben"
+
+#: photos.module:366
+msgid "Latest albums"
+msgstr "Neueste Alben"
+
+#: photos.module:374
+msgid "Photos admin"
+msgstr "Verwaltung"
+
+#: photos.module:383
+msgid "Import ZIP"
+msgstr "ZIP importieren"
+
+#: photos.module:393
+msgid "Photos reference download"
+msgstr ""
+
+#: photos.module:408
+msgid "My albums"
+msgstr "Meine Alben"
+
+#: photos.module:417
+msgid "My images"
+msgstr "Meine Bilder"
+
+#: photos.module:426
+msgid "Upload image"
+msgstr "Bilder hochladen"
+
+#: photos.module:0
+msgid "photos"
+msgstr ""
+
+#: photos_swfu.module:24
+msgid "Queue is empty"
+msgstr ""
+
+#: photos_swfu.module:0
+msgid "photos_swfu"
+msgstr ""
+
+#: photos.info:0;0
+#: photos_swfu.info:0
+msgid "album photos"
+msgstr ""
+
+#: photos.info:0
+msgid "Picture Management Module"
+msgstr ""
+
+#: photos_swfu.info:0
+msgid "photos swfu"
+msgstr ""
+
+#: photos_swfu.info:0
+msgid "SWFUpload"
+msgstr ""
+
+#: photos.js:0
+msgid "Please copy the above code."
+msgstr ""
+
+#: v102demo/swfupload.v102.callbacks.js:0;0
+msgid " files queued"
+msgstr ""
+
+#: v102demo/swfupload.v102.callbacks.js:0
+msgid "All files uploaded..."
+msgstr "Alle Dateien hochgeladen..."
+

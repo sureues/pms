@@ -1,0 +1,113 @@
+#queueinfo{
+	margin: 1em 0;
+	padding: 10px 20px;
+	border: solid 1px #FFDD99;
+	background-color: #FFFFCC;
+}
+.photos_swfu_button{
+  line-height:22px;
+  height:22px;
+}
+.progressWrapper {
+	width: 357px;
+	overflow: hidden;
+}
+
+.progressContainer {
+	margin: 5px;
+ padding: 4px; 
+	border: solid 1px #E8E8E8;
+	overflow: hidden;
+}
+/* Error */
+.red {
+	border: solid 1px #B50000;
+	background-color: #FFEBEB;
+}
+
+/* Current */
+.green {
+	border: solid 1px #DDF0DD;
+	background-color: #EBFFEB;
+}
+
+/* Complete */
+.blue {
+	border: solid 1px #CEE2F2;
+	background-color: #F0F5FF;
+}
+
+.progressName {
+	font-size: 8pt;
+	font-weight: 700;
+	color: #555;
+	width: 323px;
+	height: 22px;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.progressBarComplete,
+.progressBarError {
+	font-size: 0;
+	width: 320px;
+	height: 5px;
+	background: #f0f0f0 url(swfupload.v102.progressbar.png) no-repeat -200px 0px;
+	margin-top: 2px;
+}
+
+.progressBarInProgress{
+	width: 320px;
+  height: 2px;
+  background: #E8DB5A;
+}
+
+.progressBarInProgressing{
+	width: 10px;
+  height: 2px;
+  background: #2E9508;
+}
+
+.progressBarComplete {
+	width: 320px;
+  height: 5px;
+  background: #f0f0f0 url(swfupload.v102.progressbar.png) no-repeat -200px 0px;
+	visibility: hidden;
+}
+
+.progressBarError {
+	width: 100%;
+	background-color: red;
+	visibility: hidden;
+}
+
+.progressBarStatus {
+	margin-top: 2px;
+	width: 337px;
+	font-size: 7pt;
+	font-family: Arial;
+	text-align: left;
+	white-space: nowrap;
+}
+
+a.progressCancel {
+	font-size: 0;
+	display: block;
+	height: 14px;
+	width: 14px;
+	background-image: url(cancelbutton.gif);
+	background-repeat: no-repeat;
+	background-position: -14px 0px;
+	float: right;
+}
+
+a.progressCancel:hover {
+	background-position: 0px 0px;
+}
+
+
+/* -- SWFUpload Object Styles ------------------------------- */
+.swfupload {
+	vertical-align: top;
+}

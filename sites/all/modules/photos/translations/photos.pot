@@ -1,0 +1,1409 @@
+# $Id: photos.pot,v 1.1.2.3 2009/03/06 08:18:45 eastcn Exp $
+#
+# Chinese, Simplified translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  photos.module,v 1.2.2.29 2008/12/20 05:47:21 eastcn
+#  photos.page.edit.inc,v 1.0 2009/2/15 14:31 eastcn
+#  photos.page.inc,v 1.1.2.25 2008/12/20 05:47:21 eastcn
+#  photos_albumview.tpl.php,v 1.0 2009/2/25 17:10 eastcn
+#  photos.admin.inc,v 1.1.2.12 2008/12/20 05:47:20 eastcn
+#  photos_default.tpl.php,v 1.0 2009/3/4 15:11 eastcn
+#  photos.album.inc,v 1.0 2009/2/25 16:22 eastcn
+#  photos.info,v 1.1.2.6 2008/09/16 09:21:57 eastcn
+#  photos_swfu.info,v 1.1.2.3 2008/09/16 09:21:57 eastcn
+#  photos.form.inc,v 1.0 2009/2/25 15:40 eastcn
+#  photos_imageview.tpl.php,v 1.1.2.5 2008/10/08 09:27:25 eastcn
+#  photos.down.inc,v 1.0 2009/2/26 1:10 eastcn
+#  photos_imageblock.tpl.php,v 1.1.2.3 2008/10/08 09:27:25 eastcn
+#  photos.image.inc,v 1.0 2009/2/10 23:29 eastcn
+#  photos_share.tpl.php,v 1.0 2009/3/4 20:12 eastcn
+#  photos.data.inc,v 1.0 2009/2/12 13:19 eastcn
+#  photos.js,v 1.1.2.3 2008/08/27 17:02:16 eastcn
+#  js/jquery.jeditable.js: n/a
+#  photos_swfu_style.tpl.php,v 1.1.2.1 2008/12/20 05:50:29 eastcn
+#  photos_swfu/simpledemo/handlers.js: n/a
+#  photos_swfu.module,v 1.1.2.17 2008/12/20 05:47:21 eastcn
+#  photos_albumlinks.tpl.php,v 1.0 2009/2/25 20:43 eastcn
+#  photos_list.tpl.php,v 1.0 2009/3/5 16:45 eastcn
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2009-03-06 15:53+0800\n"
+"PO-Revision-Date: 2009-03-06 15:53+0800\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Chinese, Simplified <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: photos.module:191
+msgid "images"
+msgstr ""
+
+#: photos.module:201
+msgid "albums"
+msgstr ""
+
+#: photos.module:212
+msgid "slide"
+msgstr ""
+
+#: photos.module:263
+msgid "@name's !str"
+msgstr ""
+
+#: photos.module:265
+msgid "My !str"
+msgstr ""
+
+#: photos.module:328
+msgid "Album"
+msgstr ""
+
+#: photos.module:331
+msgid "Album name"
+msgstr ""
+
+#: photos.module:333
+msgid "Album description"
+msgstr ""
+
+#: photos.module:404
+msgid "You cannot create more albums."
+msgstr ""
+
+#: photos.module:406;409;412
+msgid "Slide size is not correct."
+msgstr ""
+
+#: photos.module:436 inc/photos.edit.inc:322
+msgid "%count images are deleted."
+msgstr ""
+
+#: photos.module:464;527;533 inc/photos.edit.inc:155;179
+msgid "Album view"
+msgstr ""
+
+#: photos.module:477
+msgid "There are !a albums in total"
+msgstr ""
+
+#: photos.module:479
+msgid "No alubms yet, "
+msgstr ""
+
+#: photos.module:479
+msgid "Create album"
+msgstr ""
+
+#: photos.module:482
+msgid "There are !a images in total"
+msgstr ""
+
+#: photos.module:484
+msgid "No images yet, "
+msgstr ""
+
+#: photos.module:484
+msgid "Upload images"
+msgstr ""
+
+#: photos.module:487;542 inc/photos.edit.inc:17 inc/photos.page.inc:41 tpl/photos_albumview.tpl.php:11
+msgid "Slideshow"
+msgstr ""
+
+#: photos.module:492
+msgid "Album image"
+msgstr ""
+
+#: photos.module:530;533
+msgid "Sub-Album view"
+msgstr ""
+
+#: photos.module:538
+msgid "A total of !count images"
+msgstr ""
+
+#: photos.module:550
+msgid "View image"
+msgstr ""
+
+#: photos.module:563
+msgid "Sub-Album settings"
+msgstr ""
+
+#: photos.module:569
+msgid "Sub-Album"
+msgstr ""
+
+#: photos.module:571;578;671 inc/photos.admin.inc:29;85;94;103;112;264;302;340;359;396;417
+msgid "Disabled"
+msgstr ""
+
+#: photos.module:571;578;671 inc/photos.admin.inc:29;85;94;103;112;359;396;417
+msgid "Enabled"
+msgstr ""
+
+#: photos.module:572
+msgid "Node will become a sub-album, you can upload images to the node."
+msgstr ""
+
+#: photos.module:576
+msgid "Reference"
+msgstr ""
+
+#: photos.module:579
+msgid "After enable this, you can insert a reference of images from other albums to the node, but do not attach the image to the node."
+msgstr ""
+
+#: photos.module:599;1580
+msgid "Insert image"
+msgstr ""
+
+#: photos.module:604
+msgid "Insert an existing image"
+msgstr ""
+
+#: photos.module:604;604
+msgid "Choose an image from my albums to insert into the node"
+msgstr ""
+
+#: photos.module:604 tpl/photos_albumview.tpl.php:12
+msgid "Open a new window"
+msgstr ""
+
+#: photos.module:663;688;177 tpl/photos_default.tpl.php:14
+msgid "Latest images"
+msgstr ""
+
+#: photos.module:664
+msgid "User's images"
+msgstr ""
+
+#: photos.module:665;733
+msgid "Photo information"
+msgstr ""
+
+#: photos.module:666;740
+msgid "Random images"
+msgstr ""
+
+#: photos.module:671
+msgid "Show sub-album info"
+msgstr ""
+
+#: photos.module:675
+msgid "Show several images"
+msgstr ""
+
+#: photos.module:707
+msgid "%name's images"
+msgstr ""
+
+#: photos.module:715
+msgid "Copy image to share code"
+msgstr ""
+
+#: photos.module:717
+msgid "View image Exif information"
+msgstr ""
+
+#: photos.module:730
+msgid "!name in !time to create"
+msgstr ""
+
+#: photos.module:764;799
+msgid "View more"
+msgstr ""
+
+#: photos.module:816
+msgid "By: @name"
+msgstr ""
+
+#: photos.module:821
+msgid "A total of @title images"
+msgstr ""
+
+#: photos.module:821 inc/photos.album.inc:50
+msgid "Album is empty"
+msgstr ""
+
+#: photos.module:1000
+msgid "All albums"
+msgstr ""
+
+#: photos.module:1017
+msgid "You do not have an album yet."
+msgstr ""
+
+#: photos.module:1250
+msgid "Login to vote"
+msgstr ""
+
+#: photos.module:1261
+msgid "I like this image"
+msgstr ""
+
+#: photos.module:1265
+msgid "I do not like this image"
+msgstr ""
+
+#: photos.module:1277
+msgid "View voting users"
+msgstr ""
+
+#: photos.module:1303
+msgid "<a href=\"@login\">Login</a> to post comments"
+msgstr ""
+
+#: photos.module:1305
+msgid "Add new comment"
+msgstr ""
+
+#: photos.module:1308
+msgid "!con comments"
+msgstr ""
+
+#: photos.module:1310
+msgid "!con comment"
+msgstr ""
+
+#: photos.module:1319;1354
+msgid "Compressed file does not exist, please check the path: "
+msgstr ""
+
+#: photos.module:1352
+msgid "To extract the success of %num image"
+msgstr ""
+
+#: photos.module:1367
+msgid "The selected file %name could not be uploaded."
+msgstr ""
+
+#: photos.module:1394
+msgid "Home"
+msgstr ""
+
+#: photos.module:1479
+msgid "By weight"
+msgstr ""
+
+#: photos.module:1480
+msgid "By time"
+msgstr ""
+
+#: photos.module:1481
+msgid "By comments "
+msgstr ""
+
+#: photos.module:1482
+msgid "By visits"
+msgstr ""
+
+#: photos.module:1483
+msgid "By filesize"
+msgstr ""
+
+#: photos.module:1487;1497
+msgid "Default"
+msgstr ""
+
+#: photos.module:1517
+msgid "Date - newest first"
+msgstr ""
+
+#: photos.module:1518
+msgid "Date - oldest first"
+msgstr ""
+
+#: photos.module:1519
+msgid "Weight - smallest first"
+msgstr ""
+
+#: photos.module:1520
+msgid "Weight - largest first"
+msgstr ""
+
+#: photos.module:1521
+msgid "Comments - most first"
+msgstr ""
+
+#: photos.module:1522
+msgid "Comments - least first"
+msgstr ""
+
+#: photos.module:1523
+msgid "Filesize - smallest first"
+msgstr ""
+
+#: photos.module:1524
+msgid "Filesize - largest first"
+msgstr ""
+
+#: photos.module:1525
+msgid "Visits - most first"
+msgstr ""
+
+#: photos.module:1526
+msgid "Visits - least first"
+msgstr ""
+
+#: photos.module:1552;1576
+msgid "Insert image and album"
+msgstr ""
+
+#: photos.module:1554
+msgid "photos.module filter format, at the node to insert images or albums. e.g: [photo=image]id=55,54,53,52|algin=right[/photo] or [photo=album]id=134[/photo] or [photo=album]id=134|limit=6[/photo]. "
+msgstr ""
+
+#: photos.module:1574
+msgid "Insert an image: [photo=image]id=55[/photo], Insert multiple images: [photo=image]id=55,56,57,58[/photo], Insert album: [photo=album]id=10[/photo]. "
+msgstr ""
+
+#: photos.module:1577
+msgid "Insert an image: [photo=image]id=55[/photo]."
+msgstr ""
+
+#: photos.module:1578
+msgid "Insert multiple images: [photo=image]id=55,56,57,58,59[/photo]."
+msgstr ""
+
+#: photos.module:1579
+msgid "Optional attributes: algin, e.g: [photo=image]id=55|algin=left[/photo] or [photo=image]id=55,56,57|algin=right[/photo]."
+msgstr ""
+
+#: photos.module:1582
+msgid "Insert album: [photo=album]id=10[/photo].The default display album cover. You can change, please configure the \"limit\" property. "
+msgstr ""
+
+#: photos.module:1583
+msgid "Optional attributes: algin or limit, e.g: [photo=album]id=10|algin=left[/photo] or [photo=album]id=10|algin=right|limit=5[/photo]."
+msgstr ""
+
+#: photos.module:1584
+msgid "Insert album"
+msgstr ""
+
+#: photos.module:1585
+msgid "This is similar to bbcode, do not seem friendly, You can try visualization interface: !url"
+msgstr ""
+
+#: photos.module:1585
+msgid "Click to here"
+msgstr ""
+
+#: photos.module:339
+msgid "view photo"
+msgstr ""
+
+#: photos.module:339
+msgid "create photo"
+msgstr ""
+
+#: photos.module:339
+msgid "edit own photo"
+msgstr ""
+
+#: photos.module:339
+msgid "edit any photo"
+msgstr ""
+
+#: photos.module:339
+msgid "delete own photo"
+msgstr ""
+
+#: photos.module:339
+msgid "delete any photo"
+msgstr ""
+
+#: photos.module:339
+msgid "allowed to vote"
+msgstr ""
+
+#: photos.module:339
+msgid "view vote list"
+msgstr ""
+
+#: photos.module:339
+msgid "view original"
+msgstr ""
+
+#: photos.module:32
+msgid "To sub-album"
+msgstr ""
+
+#: photos.module:75;84;237 inc/photos.album.inc:127;127
+msgid "Share code"
+msgstr ""
+
+#: photos.module:93 tpl/photos_albumview.tpl.php:16
+msgid "Images Management"
+msgstr ""
+
+#: photos.module:126
+msgid "Photos upload"
+msgstr ""
+
+#: photos.module:133
+msgid "Batch update"
+msgstr ""
+
+#: photos.module:171
+msgid "Album photos"
+msgstr ""
+
+#: photos.module:183 tpl/photos_default.tpl.php:18
+msgid "Latest albums"
+msgstr ""
+
+#: photos.module:189 inc/photos.page.inc:116
+msgid "My images"
+msgstr ""
+
+#: photos.module:199
+msgid "My albums"
+msgstr ""
+
+#: photos.module:210
+msgid "My slide"
+msgstr ""
+
+#: photos.module:243 inc/photos.edit.inc:37
+msgid "Image upload"
+msgstr ""
+
+#: photos.module:251
+msgid "Import ZIP"
+msgstr ""
+
+#: photos.module:0
+msgid "photos"
+msgstr ""
+
+#: photos.info:0;0 photos_swfu/photos_swfu.info:0
+msgid "album photos"
+msgstr ""
+
+#: photos.info:0
+msgid "Picture Management Module"
+msgstr ""
+
+#: inc/photos.admin.inc:19
+msgid "Basic settings"
+msgstr ""
+
+#: inc/photos.admin.inc:26
+msgid "privacy settings"
+msgstr ""
+
+#: inc/photos.admin.inc:28
+msgid "This option is enabled, users will be able to album set to confidentiality"
+msgstr ""
+
+#: inc/photos.admin.inc:28
+msgid "Please enable <a href=\"@url\">photos_access</a> module"
+msgstr ""
+
+#: inc/photos.admin.inc:35
+msgid "Display the number of form"
+msgstr ""
+
+#: inc/photos.admin.inc:39
+msgid "Upload through a form, permit the maximum number of"
+msgstr ""
+
+#: inc/photos.admin.inc:42
+msgid "Number of albums"
+msgstr ""
+
+#: inc/photos.admin.inc:45
+msgid "The number of albums a user allowed to create. Administrater is not limited."
+msgstr ""
+
+#: inc/photos.admin.inc:62
+msgid "Path of saving"
+msgstr ""
+
+#: inc/photos.admin.inc:64
+msgid "The path where the files should be saved, may save by user id or user name or time, e.g.: photos/%uid or photos/%username or image/%Y/%m/%d. Available variables: %uid, %username, %Y, %m, %d."
+msgstr ""
+
+#: inc/photos.admin.inc:70
+msgid "How to display original image and all sizes?"
+msgstr ""
+
+#: inc/photos.admin.inc:72
+msgid "Print rather than return. To avoid the theme layout been destroyed. Recommended selection \"print\""
+msgstr ""
+
+#: inc/photos.admin.inc:74
+msgid "return"
+msgstr ""
+
+#: inc/photos.admin.inc:74
+msgid "print"
+msgstr ""
+
+#: inc/photos.admin.inc:81
+msgid "Comment setting"
+msgstr ""
+
+#: inc/photos.admin.inc:83
+msgid "Open for the photo comments, you must first type of content in the overall set of options open comments."
+msgstr ""
+
+#: inc/photos.admin.inc:90
+msgid "Images vote"
+msgstr ""
+
+#: inc/photos.admin.inc:92
+msgid "For the image to increase the voting feature, you must first install the votingapi.module."
+msgstr ""
+
+#: inc/photos.admin.inc:99
+msgid "zip compressed upload"
+msgstr ""
+
+#: inc/photos.admin.inc:101
+msgid "Will be allowed to upload images compressed into a zip, extract the necessary support to open php"
+msgstr ""
+
+#: inc/photos.admin.inc:108
+msgid "Rename image"
+msgstr ""
+
+#: inc/photos.admin.inc:110
+msgid "Rename uploaded image by random numbers, to solve problems with non-ASCII filenames such as Chinese."
+msgstr ""
+
+#: inc/photos.admin.inc:140
+msgid "Thumbnails settings"
+msgstr ""
+
+#: inc/photos.admin.inc:143
+msgid "Permit the use of the name of the characters: a-z, A-z ,0-9, e.g: \"thumb\", \"100x75\", \"320x240\". After confirmation, please do not change easily"
+msgstr ""
+
+#: inc/photos.admin.inc:149
+msgid "Name"
+msgstr ""
+
+#: inc/photos.admin.inc:157
+msgid "Size"
+msgstr ""
+
+#: inc/photos.admin.inc:164
+msgid "Format"
+msgstr ""
+
+#: inc/photos.admin.inc:173
+msgid "What time to create thumbnails"
+msgstr ""
+
+#: inc/photos.admin.inc:175
+msgid "Immediately"
+msgstr ""
+
+#: inc/photos.admin.inc:175
+msgid "First visit"
+msgstr ""
+
+#: inc/photos.admin.inc:177
+msgid "Album privacy settings must be enabled"
+msgstr ""
+
+#: inc/photos.admin.inc:182
+msgid "Display Settings"
+msgstr ""
+
+#: inc/photos.admin.inc:189 inc/photos.form.inc:47
+msgid "Global Settings"
+msgstr ""
+
+#: inc/photos.admin.inc:191
+msgid "Albums basic display settings"
+msgstr ""
+
+#: inc/photos.admin.inc:195 inc/photos.form.inc:117
+msgid "Page Settings"
+msgstr ""
+
+#: inc/photos.admin.inc:197
+msgid "Page (e.g: node/[nid]) display settings"
+msgstr ""
+
+#: inc/photos.admin.inc:203 inc/photos.form.inc:160
+msgid "Teaser Settings"
+msgstr ""
+
+#: inc/photos.admin.inc:205
+msgid "Teaser display settings"
+msgstr ""
+
+#: inc/photos.admin.inc:212 inc/photos.form.inc:54
+msgid "How many images show in each page?"
+msgstr ""
+
+#: inc/photos.admin.inc:218 inc/photos.form.inc:60
+msgid "Image display order"
+msgstr ""
+
+#: inc/photos.admin.inc:239 inc/photos.form.inc:83
+msgid "Image display size(by list)"
+msgstr ""
+
+#: inc/photos.admin.inc:242 inc/photos.form.inc:86
+msgid "Displayed in the list(e.g: photos/album/[nid]) of image size."
+msgstr ""
+
+#: inc/photos.admin.inc:247 inc/photos.form.inc:91
+msgid "Image display size(by page)"
+msgstr ""
+
+#: inc/photos.admin.inc:250 inc/photos.form.inc:94
+msgid "Displayed in the page(e.g: photos/image/[fid]) of image size."
+msgstr ""
+
+#: inc/photos.admin.inc:256;292;330 inc/photos.form.inc:101;149;192
+msgid "Slide width and height"
+msgstr ""
+
+#: inc/photos.admin.inc:258;294;332;366 inc/photos.form.inc:103;151;194
+msgid "The width and height of flash, e.g: 640x480."
+msgstr ""
+
+#: inc/photos.admin.inc:262;300;338
+msgid "Create an album, when that allows users to modify this setting"
+msgstr ""
+
+#: inc/photos.admin.inc:264;302;340
+msgid "Enabled(Recommend)"
+msgstr ""
+
+#: inc/photos.admin.inc:269;307 inc/photos.form.inc:126;169
+msgid "Display setting"
+msgstr ""
+
+#: inc/photos.admin.inc:271;309 inc/photos.form.inc:109
+msgid "Do not display"
+msgstr ""
+
+#: inc/photos.admin.inc:271;309 inc/photos.form.inc:109
+msgid "Display cover"
+msgstr ""
+
+#: inc/photos.admin.inc:271;309;356 inc/photos.form.inc:105;111
+msgid "Slide show"
+msgstr ""
+
+#: inc/photos.admin.inc:271;309 inc/photos.form.inc:109
+msgid "Display thumbnails"
+msgstr ""
+
+#: inc/photos.admin.inc:276;314 inc/photos.form.inc:133;176
+msgid "Display quantity"
+msgstr ""
+
+#: inc/photos.admin.inc:283;321 inc/photos.form.inc:140;183
+msgid "Image display size"
+msgstr ""
+
+#: inc/photos.admin.inc:344
+msgid "Slideshow default settings"
+msgstr ""
+
+#: inc/photos.admin.inc:349
+msgid "Slide show image size"
+msgstr ""
+
+#: inc/photos.admin.inc:358
+msgid "Please enable <a href=\"@url\">dfgallery</a> module"
+msgstr ""
+
+#: inc/photos.admin.inc:364
+msgid "Slide default width and height"
+msgstr ""
+
+#: inc/photos.admin.inc:372 inc/photos.edit.inc:347
+msgid "Thumbnails"
+msgstr ""
+
+#: inc/photos.admin.inc:379
+msgid "Medium image"
+msgstr ""
+
+#: inc/photos.admin.inc:387
+msgid "Statistics"
+msgstr ""
+
+#: inc/photos.admin.inc:393
+msgid "Count image views"
+msgstr ""
+
+#: inc/photos.admin.inc:395
+msgid "Increment a counter each time image is viewed."
+msgstr ""
+
+#: inc/photos.admin.inc:400
+msgid "Image quantity statistics"
+msgstr ""
+
+#: inc/photos.admin.inc:402
+msgid "Users/Site images and albums quantity statistics."
+msgstr ""
+
+#: inc/photos.admin.inc:403
+msgid "When in the implementation of cron(affect the count update)"
+msgstr ""
+
+#: inc/photos.admin.inc:403
+msgid "When the image upload (affect the upload speed)"
+msgstr ""
+
+#: inc/photos.admin.inc:408
+msgid "Exif Settings"
+msgstr ""
+
+#: inc/photos.admin.inc:414
+msgid "Show exif information"
+msgstr ""
+
+#: inc/photos.admin.inc:416
+msgid "When the image is available exif information, automatically read and display. Open this option, you must load the php exif."
+msgstr ""
+
+#: inc/photos.admin.inc:422
+msgid "Cache exif information"
+msgstr ""
+
+#: inc/photos.admin.inc:424
+msgid "Exif information cache can improve access speed."
+msgstr ""
+
+#: inc/photos.admin.inc:425
+msgid "Do not cache"
+msgstr ""
+
+#: inc/photos.admin.inc:425
+msgid "To database"
+msgstr ""
+
+#: inc/photos.admin.inc:428
+msgid "Custom exif. Please modify function _photos_exif_tag, at this location: .../modules/photos/inc/photos.down.inc"
+msgstr ""
+
+#: inc/photos.admin.inc:432
+msgid "Photos swfu"
+msgstr ""
+
+#: inc/photos.admin.inc:434
+msgid "SWFUpload could provide a better upload experience."
+msgstr ""
+
+#: inc/photos.admin.inc:439
+msgid "Number of upload"
+msgstr ""
+
+#: inc/photos.admin.inc:442
+msgid "Please enable photos_swfu module."
+msgstr ""
+
+#: inc/photos.admin.inc:442
+msgid "Maxium amount allowed for one upload"
+msgstr ""
+
+#: inc/photos.admin.inc:454
+msgid "Album privacy settings must be enabled: !url"
+msgstr ""
+
+#: inc/photos.admin.inc:460;487
+msgid "May not be empty"
+msgstr ""
+
+#: inc/photos.admin.inc:466
+msgid "Variables(%uid, %username, %Y, %m, %d) can not be on the top floor"
+msgstr ""
+
+#: inc/photos.admin.inc:470
+msgid "Allow only letters and numbers"
+msgstr ""
+
+#: inc/photos.admin.inc:474
+msgid "Formats such as: 100x100"
+msgstr ""
+
+#: inc/photos.admin.inc:478
+msgid "Not allowed to repeat"
+msgstr ""
+
+#: inc/photos.admin.inc:483
+msgid "Not allowed to use \"_\""
+msgstr ""
+
+#: inc/photos.admin.inc:511
+msgid "%name creating successful"
+msgstr ""
+
+#: inc/photos.admin.inc:541
+msgid "Thumbnail-size bulk update"
+msgstr ""
+
+#: inc/photos.admin.inc:541
+msgid "Normally, you do not need to update it."
+msgstr ""
+
+#: inc/photos.admin.inc:556
+msgid "Update the %num images. Please wait, the next group is being updated ..."
+msgstr ""
+
+#: inc/photos.admin.inc:565
+msgid "Update is complete."
+msgstr ""
+
+#: inc/photos.admin.inc:574 inc/photos.edit.inc:70
+msgid "Upload to album"
+msgstr ""
+
+#: inc/photos.admin.inc:582
+msgid "Filepath"
+msgstr ""
+
+#: inc/photos.admin.inc:584
+msgid "From the server directory into zip files, to extract. You can upload images to a directory server, enter here path, you can extract and add to the album phtos. Path such as: !zip/test.zip. Documents must be read and write, php can operate."
+msgstr ""
+
+#: inc/photos.admin.inc:589 inc/photos.edit.inc:50;245
+msgid "Image title"
+msgstr ""
+
+#: inc/photos.admin.inc:593 inc/photos.edit.inc:54;238
+msgid "Image description"
+msgstr ""
+
+#: inc/photos.admin.inc:599
+msgid "Confirm import"
+msgstr ""
+
+#: inc/photos.album.inc:26;78 inc/photos.page.inc:61 tpl/photos_imageview.tpl.php:50
+msgid "!cou visits"
+msgstr ""
+
+#: inc/photos.album.inc:28 inc/photos.down.inc:8 tpl/photos_imageblock.tpl.php:4
+msgid "Uploaded on !time by !name"
+msgstr ""
+
+#: inc/photos.album.inc:31;83 inc/photos.edit.inc:227 inc/photos.image.inc:17 inc/photos.page.inc:68
+msgid "Set to Cover"
+msgstr ""
+
+#: inc/photos.album.inc:35 inc/photos.edit.inc:207;338 inc/photos.image.inc:20 inc/photos.page.inc:67
+msgid "Delete"
+msgstr ""
+
+#: inc/photos.album.inc:52;103;123
+msgid "@name's albums"
+msgstr ""
+
+#: inc/photos.album.inc:53
+msgid "Albums: @title"
+msgstr ""
+
+#: inc/photos.album.inc:80 inc/photos.page.inc:63
+msgid "!name in !time upload to !title"
+msgstr ""
+
+#: inc/photos.album.inc:87 inc/photos.edit.inc:212
+msgid "Move out"
+msgstr ""
+
+#: inc/photos.album.inc:101
+msgid "Sub-Album is empty"
+msgstr ""
+
+#: inc/photos.album.inc:104
+msgid "Sub-Album: @title"
+msgstr ""
+
+#: inc/photos.album.inc:125
+msgid "Slide: @title"
+msgstr ""
+
+#: inc/photos.album.inc:127
+msgid "Back"
+msgstr ""
+
+#: inc/photos.album.inc:130 inc/photos.edit.inc:361 tpl/photos_share.tpl.php:43
+msgid "No image"
+msgstr ""
+
+#: inc/photos.data.inc:9
+msgid "has not yet create an album"
+msgstr ""
+
+#: inc/photos.down.inc:6
+msgid "Sharing code and download image: @title"
+msgstr ""
+
+#: inc/photos.down.inc:7
+msgid "Back to the image page"
+msgstr ""
+
+#: inc/photos.down.inc:12
+msgid "Original"
+msgstr ""
+
+#: inc/photos.down.inc:16
+msgid "Exif"
+msgstr ""
+
+#: inc/photos.down.inc:19
+msgid "Vote list"
+msgstr ""
+
+#: inc/photos.down.inc:29
+msgid "Without this size image"
+msgstr ""
+
+#: inc/photos.down.inc:36
+msgid "This image there is no Exif information."
+msgstr ""
+
+#: inc/photos.down.inc:54 inc/photos.image.inc:30
+msgid "All sizes"
+msgstr ""
+
+#: inc/photos.down.inc:127
+msgid "Vote user"
+msgstr ""
+
+#: inc/photos.down.inc:128
+msgid "Vote result"
+msgstr ""
+
+#: inc/photos.down.inc:129
+msgid "Vote time"
+msgstr ""
+
+#: inc/photos.down.inc:142
+msgid "No vote available."
+msgstr ""
+
+#: inc/photos.down.inc:146
+msgid "See a image vote"
+msgstr ""
+
+#: inc/photos.edit.inc:6
+msgid "Album title"
+msgstr ""
+
+#: inc/photos.edit.inc:7
+msgid "Image count"
+msgstr ""
+
+#: inc/photos.edit.inc:8
+msgid "Link"
+msgstr ""
+
+#: inc/photos.edit.inc:9
+msgid "Create time"
+msgstr ""
+
+#: inc/photos.edit.inc:17
+msgid "Upload"
+msgstr ""
+
+#: inc/photos.edit.inc:17
+msgid "View"
+msgstr ""
+
+#: inc/photos.edit.inc:25
+msgid "Please create a album."
+msgstr ""
+
+#: inc/photos.edit.inc:27
+msgid "Or select an album: "
+msgstr ""
+
+#: inc/photos.edit.inc:41
+msgid "Allow the type:"
+msgstr ""
+
+#: inc/photos.edit.inc:60
+msgid "You must first !create an album to upload images."
+msgstr ""
+
+#: inc/photos.edit.inc:60
+msgid "create"
+msgstr ""
+
+#: inc/photos.edit.inc:87
+msgid "Confirm upload"
+msgstr ""
+
+#: inc/photos.edit.inc:121
+msgid "Please Album photos set to open zip upload"
+msgstr ""
+
+#: inc/photos.edit.inc:126
+msgid "Failed to upload"
+msgstr ""
+
+#: inc/photos.edit.inc:133
+msgid "%count image(s) uploaded successfully."
+msgstr ""
+
+#: inc/photos.edit.inc:143
+msgid "Organize Albums: @title"
+msgstr ""
+
+#: inc/photos.edit.inc:146
+msgid "Organize Sub-Album: @title"
+msgstr ""
+
+#: inc/photos.edit.inc:156
+msgid "Move image: Move out of the image, but it will not delete it."
+msgstr ""
+
+#: inc/photos.edit.inc:229
+msgid "Filesize: !size KB"
+msgstr ""
+
+#: inc/photos.edit.inc:231
+msgid "Visits: !count"
+msgstr ""
+
+#: inc/photos.edit.inc:234
+msgid "Comments: !count"
+msgstr ""
+
+#: inc/photos.edit.inc:251
+msgid "Weight"
+msgstr ""
+
+#: inc/photos.edit.inc:258
+msgid "Uploaded on !time by @name"
+msgstr ""
+
+#: inc/photos.edit.inc:260
+msgid "Move to the album"
+msgstr ""
+
+#: inc/photos.edit.inc:267
+msgid "@name in !time upload to @title"
+msgstr ""
+
+#: inc/photos.edit.inc:275
+msgid "Confirm the change"
+msgstr ""
+
+#: inc/photos.edit.inc:295
+msgid "%count images are move out."
+msgstr ""
+
+#: inc/photos.edit.inc:346
+msgid "Select All"
+msgstr ""
+
+#: inc/photos.edit.inc:348
+msgid "Content"
+msgstr ""
+
+#: inc/photos.edit.inc:371
+msgid "Cover successfully set."
+msgstr ""
+
+#: inc/photos.edit.inc:412
+msgid "Delete success"
+msgstr ""
+
+#: inc/photos.edit.inc:415 js/photos.js:0
+msgid "Delete failure"
+msgstr ""
+
+#: inc/photos.edit.inc:430
+msgid "Please select sub-album: "
+msgstr ""
+
+#: inc/photos.edit.inc:453
+msgid "Send confirmation"
+msgstr ""
+
+#: inc/photos.edit.inc:457
+msgid "You do not have can be used to receive a subset of the album."
+msgstr ""
+
+#: inc/photos.edit.inc:460
+msgid "Sub-album feature is not turned on."
+msgstr ""
+
+#: inc/photos.edit.inc:478
+msgid "Successfully sent the %count sub-album"
+msgstr ""
+
+#: inc/photos.form.inc:21
+msgid "You may create %a albums, now you have created %b albums, you can still create %aa albums."
+msgstr ""
+
+#: inc/photos.form.inc:39 tpl/photos_albumview.tpl.php:15
+msgid "Album settings"
+msgstr ""
+
+#: inc/photos.image.inc:15
+msgid "To sub-album..."
+msgstr ""
+
+#: inc/photos.image.inc:35
+msgid "Post new comment"
+msgstr ""
+
+#: inc/photos.image.inc:41 inc/photos.page.inc:42
+msgid "Images"
+msgstr ""
+
+#: inc/photos.image.inc:41 tpl/photos_imageblock.tpl.php:13
+msgid "@name's images"
+msgstr ""
+
+#: inc/photos.image.inc:81
+msgid "Vote success."
+msgstr ""
+
+#: inc/photos.image.inc:83
+msgid "Vote failure."
+msgstr ""
+
+#: inc/photos.image.inc:101;115
+msgid "Image does not exist"
+msgstr ""
+
+#: inc/photos.page.inc:19
+msgid "Albums"
+msgstr ""
+
+#: inc/photos.page.inc:29
+msgid "@name has not yet create an album"
+msgstr ""
+
+#: inc/photos.page.inc:79
+msgid "@name has not yet upload an image"
+msgstr ""
+
+#: inc/photos.page.inc:105
+msgid "By: !name"
+msgstr ""
+
+#: inc/photos.page.inc:116
+msgid "« Back"
+msgstr ""
+
+#: inc/photos.page.inc:116
+msgid "All the shared images"
+msgstr ""
+
+#: js/jquery.jeditable.js:0 js/photos.js:0
+msgid "Click to edit"
+msgstr ""
+
+#: js/photos.js:0
+msgid "Operation failed."
+msgstr ""
+
+#: js/photos.js:0
+msgid "Please copy the above code."
+msgstr ""
+
+#: js/photos.js:0
+msgid "Save"
+msgstr ""
+
+#: js/photos.js:0
+msgid "Cancel"
+msgstr ""
+
+#: js/photos.js:0
+msgid "Being updated..."
+msgstr ""
+
+#: photos_swfu/photos_swfu_style.tpl.php:48 photos_swfu/simpledemo/handlers.js:0
+msgid "Queue is empty"
+msgstr ""
+
+#: photos_swfu/photos_swfu_style.tpl.php:50
+msgid "Loading..."
+msgstr ""
+
+#: photos_swfu/photos_swfu_style.tpl.php:51
+msgid "Cancel All Uploads"
+msgstr ""
+
+#: photos_swfu/photos_swfu_style.tpl.php:52
+msgid "Click here to start upload"
+msgstr ""
+
+#: photos_swfu/photos_swfu.module:91
+msgid "Click here to switch to the classic upload form"
+msgstr ""
+
+#: photos_swfu/photos_swfu.module:93
+msgid "Click here to switch back to the flash form"
+msgstr ""
+
+#: photos_swfu/photos_swfu.module:108
+msgid "Model form"
+msgstr ""
+
+#: photos_swfu/photos_swfu.module:111
+msgid "Model flash"
+msgstr ""
+
+#: photos_swfu/photos_swfu.module:162
+msgid "Wrong file type"
+msgstr ""
+
+#: photos_swfu/photos_swfu.module:189
+msgid "The file %file could not be saved, because it exceeds %maxsize, the maximum allowed size for uploads."
+msgstr ""
+
+#: photos_swfu/photos_swfu.module:192
+msgid "The file %file could not be saved, because the upload did not complete."
+msgstr ""
+
+#: photos_swfu/photos_swfu.module:195
+msgid "The file %file could not be saved. An unknown error has occurred."
+msgstr ""
+
+#: photos_swfu/photos_swfu.module:204
+msgid "The file is %filesize exceeding the maximum file size of %maxsize."
+msgstr ""
+
+#: photos_swfu/photos_swfu.module:209
+msgid "The file is %filesize which would exceed your disk quota of %quota."
+msgstr ""
+
+#: photos_swfu/photos_swfu.module:134;139;166;170;174;178;0
+msgid "photos_swfu"
+msgstr ""
+
+#: photos_swfu/photos_swfu.module:134;139
+msgid "User do not have permission to update the node"
+msgstr ""
+
+#: photos_swfu/photos_swfu.module:166;170
+msgid "Upload error."
+msgstr ""
+
+#: photos_swfu/photos_swfu.module:174
+msgid "Upload path may have been illegally modified"
+msgstr ""
+
+#: photos_swfu/photos_swfu.module:178
+msgid "Album or user is not correct"
+msgstr ""
+
+#: photos_swfu/photos_swfu.info:0
+msgid "photos swfu"
+msgstr ""
+
+#: photos_swfu/photos_swfu.info:0
+msgid "SWFUpload"
+msgstr ""
+
+#: photos_swfu/simpledemo/handlers.js:0
+msgid "Pending..."
+msgstr ""
+
+#: photos_swfu/simpledemo/handlers.js:0;0
+msgid "Uploading..."
+msgstr ""
+
+#: photos_swfu/simpledemo/handlers.js:0
+msgid "uploaded success."
+msgstr ""
+
+#: photos_swfu/simpledemo/handlers.js:0
+msgid " files queued"
+msgstr ""
+
+#: photos_swfu/simpledemo/handlers.js:0
+msgid "!count file uploaded"
+msgstr ""
+
+#: photos_swfu/simpledemo/handlers.js:0
+msgid "!count files uploaded"
+msgstr ""
+
+#: tpl/photos_albumlinks.tpl.php:7 tpl/photos_albumview.tpl.php:28
+msgid "!cou images"
+msgstr ""
+
+#: tpl/photos_albumlinks.tpl.php:12
+msgid "Sort by:"
+msgstr ""
+
+#: tpl/photos_albumlinks.tpl.php:17
+msgid "Limit by:"
+msgstr ""
+
+#: tpl/photos_albumlist.tpl.php:9
+msgid "Published in "
+msgstr ""
+
+#: tpl/photos_albumlist.tpl.php:9
+msgid "A total of %num images"
+msgstr ""
+
+#: tpl/photos_default.tpl.php:6
+msgid "My latest images"
+msgstr ""
+
+#: tpl/photos_default.tpl.php:10
+msgid "My latest albums"
+msgstr ""
+
+#: tpl/photos_imageblock.tpl.php:11
+msgid "View as slideshow"
+msgstr ""
+
+#: tpl/photos_imageblock.tpl.php:22 tpl/photos_imageview.tpl.php:61
+msgid "previou"
+msgstr ""
+
+#: tpl/photos_imageblock.tpl.php:32 tpl/photos_imageview.tpl.php:66
+msgid "next"
+msgstr ""
+
+#: tpl/photos_imageblock.tpl.php:38
+msgid "By !album"
+msgstr ""
+
+#: tpl/photos_imageblock.tpl.php:45
+msgid "This photo also belongs to:"
+msgstr ""
+
+#: tpl/photos_share.tpl.php:18
+msgid "Made selected picture sharing code: "
+msgstr ""
+
+#: tpl/photos_share.tpl.php:18
+msgid "Can only be used at node"
+msgstr ""
+
+#: tpl/photos_share.tpl.php:18
+msgid "\t\r\nCan be used at other sites"
+msgstr ""
+
+#: tpl/photos_share.tpl.php:22
+msgid "Please copy the code:"
+msgstr ""
+
+#: tpl/photos_share.tpl.php:25
+msgid "Please select Image Size:"
+msgstr ""
+
+#: tpl/photos_share.tpl.php:30
+msgid "Sizes:"
+msgstr ""
