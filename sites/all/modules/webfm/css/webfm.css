@@ -7,7 +7,7 @@ img { border: 0; }
 #webfm-dirlist table { width:99%; font-weight:normal; font-size: 8pt; margin:0 auto; cursor:default; background-color:#f0f0f0; border:2px solid #d0d0d0; }
 #webfm-dirlist td { border-bottom: 1px solid #d8d8d8; }
 #webfm-dirlist img { margin-left: 5px; }
-#webfm-dirlist table tr.selected td { background-color: #e7e7e7; }
+#webfm-dirlist table tr.selected td { background-color: #A6D115; }
 #webfm-dirlist table tr { background-color: #f0f0f0; }
 #webfm-dirlist a:hover { color: red; text-decoration: none; }
 #webfm-dirlist .head { color: #2092d0; background-color: #e0e0e0; font-weight: bold; font-size: 9pt; }
