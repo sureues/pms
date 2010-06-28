@@ -1,0 +1,138 @@
+<?php
+// $Id: dfgallery.module,v 1.3 2009/03/08 08:29:07 eastcn Exp $
+
+//hook_menu
+function dfgallery_menu() {
+	$items = array();
+	$items['admin/settings/dfgallery'] = array(
+		'title' => 'Dfgallery settings',
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('dfgallery_admin_settings'),
+		'access arguments' => array('administer nodes'),
+		'file' => 'dfgallery.admin.inc',
+	);
+  return $items;
+}
+/*
+  while ($images = db_fetch_array($result)){
+    $array[] = array(
+      'title' => $image['filename'],
+      'timestamp' => $image['timestamp'],
+      'thumbnail' => _photos_l($image['thumb'][$thumb]),
+      'image' => _photos_l($image['thumb'][$view])
+    );
+  }
+  $albums = array(
+    array(
+      'properties' => array(
+        'title' => 'my album1',
+        'description' => 'description',//相册描述
+        //'icon' => 'http://www.cmsns.com/misc/CMSNS.png',//相册封面
+      ),
+      'images' => $array,
+    ),
+//    array(
+//      'properties' => array(
+//        'title' => 'my album2',
+//        'description' => 'description',//相册描述
+//        //'icon' => 'http://www.cmsns.com/misc/CMSNS.png',//相册封面
+//      ),
+//      'images' => $array,
+//    ),
+  );
+*/
+function dfgallery_json($gallery = array(), $v = array()){
+  if($gallery){
+    $meta = array(
+      'generator' => 'dfGallery',
+      'version' => '2.0',
+      'description' => 'dfGallery configuration file.',
+      'author' => 'Navin Raj Kumar G.S.',
+      'timestamp' => '1233972711',
+    );
+    $theme = array(
+      'config_theme_slideshow_pauseAtStart' => true,
+      'config_theme_slideshow_interval' => 5,
+      'config_theme_use_skin_config' => true
+    );
+    $url_xml = drupal_get_path('module', 'dfgallery') . '/dfgallery/resources/themes/standard/skins/'.$v['config']['theme']['global'].'.xml';
+    $c_theme = $v['config']['theme']['global'];
+    if(!is_file($url_xml)){
+      $url_xml = drupal_get_path('module', 'dfgallery') . '/dfgallery/resources/themes/standard/skins/mac.xml';
+      $c_theme = variable_get('dfgallery_skin', 'vista');
+    }
+    if(!$flv_xml = @file_get_contents($url_xml)){
+      return drupal_set_message(t('Configuration file(@xml) does not exist.', array('@xml' => $url_xml)), 'error');
+    }
+    $config = array(
+      'global' => array(
+        'theme' => $GLOBALS['base_url'] .'/'. drupal_get_path('module', 'dfgallery') .'/dfgallery/resources/themes/standard',
+        'skin' => $c_theme. '.png'
+      ),
+      'theme' => _dfgallery_array_set($theme, $v['config']['theme']),
+      'skin' => array('config_xml' => $flv_xml),
+     );
+    $propertie = array(
+      'album_type' => 'custom',
+      'config_image_width' => 640,
+      'config_image_height' => 480,
+      'config_thumbnail_width' => 100,
+      'config_thumbnail_height' => 75,
+      'exif-type' => 'none'
+    );
+    foreach($gallery as $album){
+      $albums[] = array('properties' => _dfgallery_array_set($propertie, $album['properties']), 'images' => $album['images']);
+    }
+    $json_array = array(
+      'albums' => $albums,
+      'meta' => _dfgallery_array_set($meta, $v['meta']),
+      'config' => $config,
+    );
+    if(function_exists('json_decode')){
+      return json_encode($json_array);
+    }else if(function_exists('_photos_json')){
+      return _photos_json('en', $json_array);
+    }else {
+      $php_json = drupal_get_path('module', 'dfgallery') . '/json-php4.php';
+      if(is_file($php_json)){
+        require_once($php_json);
+        $json = new Services_JSON();
+        return $json->encode($json_array);
+      }else{
+        return drupal_set_message(t('JSON extension of unopened. Please download the file: !url', array('!url' => $php_json)), 'error');
+      }
+    }
+  }
+}
+/*
+  dfgallery_flash.tpl.php
+  $v: array();
+    $v['url'] => ..../my.json
+    $v['width'] => flash object width
+    $v['height'] => flash object height
+*/
+function dfgallery_html($v = array()) {
+  if(!$v['url']) return drupal_set_message(t('Wrong parameters'), 'error');
+  if(!$v['width'])  $v['width'] = 640;
+  if(!$v['height'])  $v['height'] = 480;
+  $v['swf'] = $GLOBALS['base_url'] .'/'. drupal_get_path('module', 'dfgallery') . '/dfgallery/DfGallery.swf';
+  return theme('dfgallery_flash', $v);
+}
+
+//hook_theme
+function dfgallery_theme() {
+	return array(
+		'dfgallery_flash' => array(
+		  'template' => 'dfgallery_flash',
+		  'arguments' => array('flash' => NULL),
+		),
+  );
+}
+
+function _dfgallery_array_set($t, $b){
+  if(is_array($b)){
+    return array_merge($t, $b);
+  }else{
+    return $t;
+  }
+}
